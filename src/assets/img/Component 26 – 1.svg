@@ -1,0 +1,8 @@
+<svg id="Component_26_1" data-name="Component 26 – 1" xmlns="http://www.w3.org/2000/svg" width="295" height="466" viewBox="0 0 295 466">
+  <g id="Rectangle_21" data-name="Rectangle 21" fill="#f39c12" stroke="#707070" stroke-width="1">
+    <rect width="295" height="466" rx="34" stroke="none"/>
+    <rect x="0.5" y="0.5" width="294" height="465" rx="33.5" fill="none"/>
+  </g>
+  <text id="محل_تبلیغات" data-name="محل تبلیغات" transform="translate(103.293 411.5) rotate(-90)" fill="#fff" font-size="52" font-family="OpenSans-Bold, Open Sans" font-weight="700"><tspan x="39.301" y="56"> </tspan><tspan y="56" font-family="SegoeUI-Bold, Segoe UI">محل تبلیغا</tspan></text>
+  <text id="ads" transform="translate(23.793 32)" fill="#fff" font-size="25" font-family="OpenSans-Bold, Open Sans" font-weight="700"><tspan x="8.653" y="27">ads</tspan></text>
+</svg>

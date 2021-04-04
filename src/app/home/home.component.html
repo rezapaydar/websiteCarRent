@@ -1,0 +1,816 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta name="refresh" content="1000"/> -->
+    <title>home</title>
+</head>
+
+<style>
+    body {
+        overflow-x:hidden;
+    }
+
+    .swiper-container {
+        width: 100%;
+        height: 100%;
+    }
+
+    .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+    }
+</style>
+
+
+<script type="text/javascript">
+    $(function () {
+        $(function () {
+            $("#simpleText").persianDatepicker();
+            $("#daterestor").persianDatepicker();
+
+
+        });
+    });
+</script>
+
+<body style="background: rgb(247, 246, 246);">
+    <div id="img-cont" class="w-auto img-container">
+        <img src="assets/img/object2.svg" alt="bg-down" class="w-100">
+    </div>
+    <div class="cont-fluid">
+        <div class="menu-hot-top w-100 px-5 py-1 ">
+            <div class="icons-brands">
+                <img src="assets/img/facebook.png" alt="">
+                <img src="assets/img/linkedin.png" alt="">
+                <img src="assets/img/twitter.png" alt="">
+                <img src="assets/img/youtube.png" alt="">
+            </div>
+            <div class="whatsapp-number">
+                <p class="pt-1 pr-2">09121000000</p>
+                <img src="assets/img/whatsapp (2).svg" alt="">
+            </div>
+        </div>
+        <header class="w-100">
+            <nav class="nav w-100">
+                <nav class="navbar navbar-expand-md shadow navbar-dark d-flex flex-row-reverse px-5"
+                    style="background-color: white;width: 100%;">
+                    <div class="social-icons">
+
+                        <div class="icon-logo">
+                            <a class="navbar-brand d-block h2" style="color: black;" href="#">ل<span
+                                    style="color: aqua;display: inline;">و</span>گو</a>
+                        </div>
+                        <div class="slogan mx-3">
+                            <p>شعار وب سایت ما این است</p>
+                            <p>this is a logo for this website</p>
+                        </div>
+
+                    </div>
+                    <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse"
+                        data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
+                        aria-label="Toggle navigation"></button>
+                    <div class="collapse navbar-collapse" id="collapsibleNavId">
+                        <ul class="navbar-nav d-flex flex-row-reverse mr-auto mt-2 mt-lg-0 m-auto">
+                            <li class="nav-item active mx-2">
+                                <a class="nav-link =" href="#" data-toggle="dropdown">خانه <span
+                                        class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item mx-2">
+                                <a class="nav-link " href="#" data-toggle="dropdown">ماشین عروس</a>
+                            </li>
+                            <li class="nav-item mx-2">
+                                <a class="nav-link =" href="#" id="dropdownId" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">ماشین های لوکس</a>
+
+                            </li>
+                            <li class="nav-item mx-2">
+                                <a href="#" class="nav-link =" data-toggle="dropdown">تخفیفات ویژه</a>
+                            </li>
+                            <li class="nav-item mx-2">
+                                <a href="#" class="nav-link =" data-toggle="dropdown">سوالات متداول</a>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div class="user-section d-flex flex-column align-items-center my-2">
+                        <div class="buttons">
+                            <button class="btn-sign  rounded-pill mr-3" id="log">ورود</button>
+                            <button class="btn-sign  rounded-pill" id="reg">ثبت نام</button>
+                        </div>
+
+                        <!-- <div class="dropdown open" style="margin-top:10px;direction: rtl;">
+                            <button class="btn btn-black text-white dropdown-toggle" type="button" id="triggerId"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                ورود به عنوان کاربر مهمان
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="triggerId">
+                                <button class="dropdown-item" href="#">خروج</button>
+                                <button class="dropdown-item disabled" href="#">ویرایش مشخصات</button>
+                                <button class="dropdown-item">پیگیری سفارش</button>
+
+                            </div>
+                        </div> -->
+
+
+                    </div>
+                </nav>
+            </nav>
+            <div class="logo">
+                <div class="logo-text">
+                    <a class="navbar-brand h2" style="color: white;" href="#">ل<span style="color: aqua;">و</span>گو</a>
+                    <p style="color:white;text-align: center;" class="h6">شعار وب سایت ما این است</p>
+                    <div class="lorem">
+                        <p class="w-50 align-center" style="color: white;text-align: center;">لورم ایپسوم متن ساختگی با
+                            تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه
+                            روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و
+                            کاربردهای متنوع با هدف </p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="cont-search" class="w-100 d-flex rtl justify-content-center">
+
+                <div class="search-box-combo d-flex w-75 shadow-lg  bg-light rounded">
+
+                    <div class="coll-search-menu">
+                        <p class="text-search-menu">محل خدمت</p>
+                        <div class="icon-down-arrow">
+                            <img src="assets/img/down-arrow.svg" alt="" srcset="">
+                        </div>
+                    </div>
+
+                    <div class="coll-search-menu">
+                        <p class="text-search-menu">نوع خدمت</p>
+                        <div class="icon-down-arrow">
+                            <img src="assets/img/down-arrow.svg" alt="" srcset="">
+                        </div>
+                    </div>
+
+                    <div class="coll-search-menu">
+                        <p class="text-search-menu">زمان خدمت</p>
+                        <div class="icon-down-arrow">
+                            <img src="assets/img/down-arrow.svg" alt="" srcset="">
+
+                        </div>
+                    </div>
+
+                    <div class="coll-search-menu">
+
+                        <button class="btn-primary rounded-right btn-search d-flex flex-row-reverse">
+                            <div class="img-counter-arrow-left">
+                                &larr;
+                            </div>
+                            <p>جست و جو</p>
+                        </button>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+    <!-- </div> -->
+
+
+
+    </header>
+
+    <main class="w-100">
+
+        <div class="conter-one">
+
+            <div class="b-g-conter" style="position: relative; z-index: -1;">
+                <img src="assets/img/Layer 2.svg" alt="bg" class="w-100" style="position: absolute;">
+           
+            
+            <div class="main-conter" style="position: absolute;">
+                <div class="cards-icons w-75 d-flex m-auto " style="position: relative; top:300px">
+                    <div class="card-icon w-25 m-1 p-1">
+                        <div class="cont-img bg-white w-75 shadow-lg p-2 rounded-top">
+                            <img src="assets/img/believe.png" alt="" class="w-100">
+                        </div>
+                        <div class="card-body w-75 h-auto bg-white shadow-lg rounded-bottom">
+                            <p class="text-center">اعتماد و اطمینان</p>
+                            <p class="h6">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
+                                گرافیک است. چاپگرها و
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card-icon w-25 m-1 p-1">
+                        <div class="cont-img bg-white w-75 shadow-lg p-2 rounded-top">
+                            <img src="assets/img/login.png" alt="" class="w-100">
+                        </div>
+                        <div class="card-body w-75 h-auto bg-white shadow-lg rounded-bottom">
+                            <p class="text-center">امنیت اطلاعات</p>
+                            <p class="h6">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
+                                گرافیک است. چاپگرها و
+                            </p>
+                        </div>
+                    </div>
+        
+                    <div class="card-icon w-25  m-1 p-1">
+                        <div class="cont-img bg-white w-75 shadow-lg p-2 rounded-top">
+                            <img src="assets/img/money.png" alt="" class="w-100">
+                        </div>
+                        <div class="card-body w-75 h-auto bg-white shadow-lg rounded-bottom">
+                            <p class="text-center">بیمه شخص ثالت</p>
+                            <p class="h6">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
+                                گرافیک است. چاپگرها و
+                            </p>
+                        </div>
+                    </div>
+        
+                    <div class="card-icon w-25  m-1 p-1">
+                        <div class="cont-img bg-white w-75 shadow-lg  rounded-top">
+                            <img src="assets/img/online-learning.png" alt="" class="w-100">
+                        </div>
+                        <div class="card-body w-75 h-auto shadow-lg bg-white rounded-bottom">
+                            <p class="text-center">دارای مجوز از وزارت کار</p>
+                            <p class="h6">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
+                                گرافیک است. چاپگرها و
+                            </p>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="best-serv w-100  p-5" style="position: relative; top:600px">
+                    <div class="text-center w-50 m-auto">
+                        <h1 class="text-center">بهترین خدمات را از ما بگیرید</h1>
+                        <p class="text-center"> لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
+                            گرافیک است. چاپگرها و متون لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از
+                            طراحان گرافیک است. چاپگرها و متون </p>
+        
+                    </div>
+                </div>
+        
+                <div class="glass-icon-cont w-100 h-50 px-5 d-flex flex-row-reverse"  style="position: relative; top:900px">
+                    <div class="glass-icon rounded w-50 rounded-pill">
+                        <img src="assets/img/space-shuttle.svg" alt="" class="w-100 glass mr-5">
+                    </div>
+                    <div class="about-us-text mt-1 mb-0 d-flex flex-column align-items-center ">
+                        <h1 class="text-center" id="title-about-us-text">خدمات ما این است</h1>
+                        <p class="text-center w-75 m-auto" id="thisservme">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
+                            چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم
+                            استیپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
+                            چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم
+                            است</p>
+                        <button class="m-0 rounded" id="reservenet">!رزرو کنید</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        </div>
+
+        
+
+    </main>
+
+    <div class="favorite" style="margin-top: 2100px; margin-bottom: 200px;">
+
+        <div id="title-cont-specially" class="w-75 pl-5 pr-4 d-flex flex-row-reverse justify-content-between mb-4">
+            <h1>تخفیفات ویژه</h1>
+
+            <span>
+                <p class="d-flex flex-row">
+
+                    <img src="assets/img/icons8-expand-arrow-50.png" alt="" id="img-one"
+                        class="swiper-button-prev float-left mr-3">
+                    <img src="assets/img/icons8-expand-arrow-50.png" alt="" id="img-two"
+                        class="swiper-button-next float-right">
+
+                </p>
+            </span>
+        </div>
+        <div class="cont-specially d-flex flex-row-reverse w-100">
+            <img src="assets/img/Component 26 – 1.svg" alt="" img="one" class="px-5 w-25">
+            <div id="swiper" class="swipercontainer w-75 pl-5 pr-4 d-flex">
+                <div class="card-columns swiper-wrapper">
+                    <div class="card swiper-slide">
+                        <img class="card-img-top" src="assets/img/BENZ-S500.svg" alt="">
+                        <div class="card-body">
+                            <h4 class="card-title text-right">بنز s500</h4>
+                            <p class="card-text text-right">مدل 2018 </p>
+                        </div>
+                        <div class="card-body c-body-two d-flex rtl border-bottom">
+                            <div class="stars"></div>
+                            <div class="stars"></div>
+                            <div class="stars"></div>
+                            <div class="stars"></div>
+                            <div class="stars"></div>
+                        </div>
+                        <div class="price-cont">
+                            <p class="text-center"><span class="badge badge-primary badge-pill mr-2">1000000</span>هزینه
+                                هر
+                                شب اجاره </p>
+                        </div>
+                        <button class="btn w-100" id="log"> رزرو کنید</button>
+                    </div>
+
+                    <div class="card swiper-slide">
+                        <img class="card-img-top" src="assets/img/BENZ-S500.svg" alt="">
+                        <div class="card-body ">
+                            <h4 class="card-title text-right">بنز s500</h4>
+                            <p class="card-text text-right">مدل 2018 </p>
+                        </div>
+                        <div class="card-body c-body-two d-flex rtl border-bottom">
+                            <div class="stars"></div>
+                            <div class="stars"></div>
+                            <div class="stars"></div>
+                            <div class="stars"></div>
+                            <div class="stars"></div>
+                        </div>
+                        <div class="price-cont">
+                            <p class="text-center"><span class="badge badge-primary badge-pill mr-2">1000000</span>هزینه
+                                هر
+                                شب اجاره </p>
+                        </div>
+                        <button class="btn w-100" id="log"> رزرو کنید</button>
+                    </div>
+
+                    <div class="card swiper-slide">
+                        <img class="card-img-top" src="assets/img/BENZ-S500.svg" alt="">
+                        <div class="card-body ">
+                            <h4 class="card-title text-right">بنز s500</h4>
+                            <p class="card-text text-right">مدل 2018 </p>
+                        </div>
+                        <div class="card-body c-body-two d-flex rtl border-bottom">
+                            <div class="stars"></div>
+                            <div class="stars"></div>
+                            <div class="stars"></div>
+                            <div class="stars"></div>
+                            <div class="stars"></div>
+                        </div>
+                        <div class="price-cont">
+                            <p class="text-center"><span class="badge badge-primary badge-pill mr-2">1000000</span>هزینه
+                                هر
+                                شب اجاره </p>
+                        </div>
+                        <button class="btn w-100" id="log"> رزرو کنید</button>
+
+                    </div>
+
+                    <div class="card swiper-slide">
+                        <img class="card-img-top" src="assets/img/BENZ-S500.svg" alt="">
+                        <div class="card-body ">
+                            <h4 class="card-title text-right">بنز s500</h4>
+                            <p class="card-text text-right">مدل 2018 </p>
+                        </div>
+                        <div class="card-body c-body-two d-flex rtl border-bottom">
+                            <div class="stars"></div>
+                            <div class="stars"></div>
+                            <div class="stars"></div>
+                            <div class="stars"></div>
+                            <div class="stars"></div>
+                        </div>
+                        <div class="price-cont">
+                            <p class="text-center"><span class="badge badge-primary badge-pill mr-2">1000000</span>هزینه
+                                هر
+                                شب اجاره </p>
+                        </div>
+                        <button class="btn w-100" id="log"> رزرو کنید</button>
+
+                    </div>
+
+                    <div class="card swiper-slide">
+                        <img class="card-img-top" src="assets/img/BENZ-S500.svg" alt="">
+                        <div class="card-body ">
+                            <h4 class="card-title text-right">بنز s500</h4>
+                            <p class="card-text text-right">مدل 2018 </p>
+                        </div>
+                        <div class="card-body c-body-two d-flex rtl border-bottom">
+                            <div class="stars"></div>
+                            <div class="stars"></div>
+                            <div class="stars"></div>
+                            <div class="stars"></div>
+                            <div class="stars"></div>
+                        </div>
+                        <div class="price-cont">
+                            <p class="text-center"><span class="badge badge-primary badge-pill mr-2">1000000</span>هزینه
+                                هر
+                                شب اجاره </p>
+                        </div>
+                        <button class="btn w-100" id="log"> رزرو کنید</button>
+
+                    </div>
+
+                    <div class="card swiper-slide">
+                        <img class="card-img-top" src="assets/img/BENZ-S500.svg" alt="">
+                        <div class="card-body ">
+                            <h4 class="card-title text-right">بنز s500</h4>
+                            <p class="card-text text-right">مدل 2018 </p>
+                        </div>
+                        <div class="card-body c-body-two d-flex rtl border-bottom">
+                            <div class="stars"></div>
+                            <div class="stars"></div>
+                            <div class="stars"></div>
+                            <div class="stars"></div>
+                            <div class="stars"></div>
+                        </div>
+                        <div class="price-cont">
+                            <p class="text-center"><span class="badge badge-primary badge-pill mr-2">1000000</span>هزینه
+                                هر
+                                شب اجاره </p>
+                        </div>
+                        <button class="btn w-100" id="log"> رزرو کنید</button>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="suggestions" style="margin-bottom: 200px;">
+        <div id="title-suggestion" class="w-100 mb-4" style="direction: rtl;">
+
+            <div class="w-75 pl-5 pr-4 d-flex flex-row-reverse justify-content-between mr-4 text-right"
+                style="direction: ltr;">
+                <h1>خودرو های ایرانی</h1>
+
+                <span>
+                    <p class="d-flex align-items-center mt-4 pl-4">
+
+                        <img src="assets/img/icons8-expand-arrow-50.png" alt="" id="img-one" srcset=""
+                            class="swiper-button-prev float-left mr-3">
+                        <img src="assets/img/icons8-expand-arrow-50.png" alt="" id="img-two" srcset=""
+                            class="swiper-button-next float-right">
+
+                    </p>
+                </span>
+            </div>
+
+        </div>
+        <div class="suggestiontwo d-flex flex-row">
+            <img src="assets/img/Component 27 – 1.svg" alt="one" class="px-5">
+            <div id="swiper" class="swiper-container w-75 pr-5 pl-4 d-flex">
+                <div class="card-columns swiper-wrapper">
+                    <div class="card swiper-slide">
+                        <img class="card-img-top" src="assets/img/BENZ-S500.svg" alt="">
+                        <div class="card-body">
+                            <h4 class="card-title text-right">بنز s500</h4>
+                            <p class="card-text text-right">مدل 2018 </p>
+                        </div>
+                        <div class="card-body c-body-two d-flex rtl border-bottom">
+                            <div class="stars"></div>
+                            <div class="stars"></div>
+                            <div class="stars"></div>
+                            <div class="stars"></div>
+                            <div class="stars"></div>
+                        </div>
+                        <div class="price-cont">
+                            <p class="text-center"><span class="badge badge-primary badge-pill mr-2">1000000</span>هزینه
+                                هر
+                                شب اجاره </p>
+                        </div>
+                        <button class="btn w-100" id="reg"> رزرو کنید</button>
+                    </div>
+
+                    <div class="card swiper-slide">
+                        <img class="card-img-top" src="assets/img/BENZ-S500.svg" alt="">
+                        <div class="card-body ">
+                            <h4 class="card-title text-right">بنز s500</h4>
+                            <p class="card-text text-right">مدل 2018 </p>
+                        </div>
+                        <div class="card-body c-body-two d-flex rtl border-bottom">
+                            <div class="stars"></div>
+                            <div class="stars"></div>
+                            <div class="stars"></div>
+                            <div class="stars"></div>
+                            <div class="stars"></div>
+                        </div>
+                        <div class="price-cont">
+                            <p class="text-center"><span class="badge badge-primary badge-pill mr-2">1000000</span>هزینه
+                                هر
+                                شب اجاره </p>
+                        </div>
+                        <button class="btn w-100" id="reg"> رزرو کنید</button>
+                    </div>
+
+                    <div class="card swiper-slide">
+                        <img class="card-img-top" src="assets/img/BENZ-S500.svg" alt="">
+                        <div class="card-body ">
+                            <h4 class="card-title text-right">بنز s500</h4>
+                            <p class="card-text text-right">مدل 2018 </p>
+                        </div>
+                        <div class="card-body c-body-two d-flex rtl border-bottom">
+                            <div class="stars"></div>
+                            <div class="stars"></div>
+                            <div class="stars"></div>
+                            <div class="stars"></div>
+                            <div class="stars"></div>
+                        </div>
+                        <div class="price-cont">
+                            <p class="text-center"><span class="badge badge-primary badge-pill mr-2">1000000</span>هزینه
+                                هر
+                                شب اجاره </p>
+                        </div>
+                        <button class="btn w-100" id="reg"> رزرو کنید</button>
+
+                    </div>
+                    <div class="card swiper-slide">
+                        <img class="card-img-top" src="assets/img/BENZ-S500.svg" alt="">
+                        <div class="card-body ">
+                            <h4 class="card-title text-right">بنز s500</h4>
+                            <p class="card-text text-right">مدل 2018 </p>
+                        </div>
+                        <div class="card-body c-body-two d-flex rtl border-bottom">
+                            <div class="stars"></div>
+                            <div class="stars"></div>
+                            <div class="stars"></div>
+                            <div class="stars"></div>
+                            <div class="stars"></div>
+                        </div>
+                        <div class="price-cont">
+                            <p class="text-center"><span class="badge badge-primary badge-pill mr-2">1000000</span>هزینه
+                                هر
+                                شب اجاره </p>
+                        </div>
+                        <button class="btn w-100" id="reg"> رزرو کنید</button>
+
+                    </div>
+
+                    <div class="card swiper-slide">
+                        <img class="card-img-top" src="assets/img/BENZ-S500.svg" alt="">
+                        <div class="card-body ">
+                            <h4 class="card-title text-right">بنز s500</h4>
+                            <p class="card-text text-right">مدل 2018 </p>
+                        </div>
+                        <div class="card-body c-body-two d-flex rtl border-bottom">
+                            <div class="stars"></div>
+                            <div class="stars"></div>
+                            <div class="stars"></div>
+                            <div class="stars"></div>
+                            <div class="stars"></div>
+                        </div>
+                        <div class="price-cont">
+                            <p class="text-center"><span class="badge badge-primary badge-pill mr-2">1000000</span>هزینه
+                                هر
+                                شب اجاره </p>
+                        </div>
+                        <button class="btn w-100" id="reg"> رزرو کنید</button>
+
+                    </div>
+
+                    <div class="card swiper-slide">
+                        <img class="card-img-top" src="assets/assets/img/BENZ-S500.svg" alt="">
+                        <div class="card-body ">
+                            <h4 class="card-title text-right">بنز s500</h4>
+                            <p class="card-text text-right">مدل 2018 </p>
+                        </div>
+                        <div class="card-body c-body-two d-flex rtl border-bottom">
+                            <div class="stars"></div>
+                            <div class="stars"></div>
+                            <div class="stars"></div>
+                            <div class="stars"></div>
+                            <div class="stars"></div>
+                        </div>
+                        <div class="price-cont">
+                            <p class="text-center"><span class="badge badge-primary badge-pill mr-2">1000000</span>هزینه
+                                هر
+                                شب اجاره </p>
+                        </div>
+                        <button class="btn w-100" id="reg"> رزرو کنید</button>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="iranian-cars"  style="margin-bottom: 200px;">
+
+        <div id="title-iranian" class="w-100 mb-4" style="direction: rtl;">
+
+            <div class="w-100 pl-5 pr-4 d-flex flex-row-reverse justify-content-between mr-4 text-right"
+                style="direction: ltr;">
+                <h1>خودرو های ایرانی</h1>
+
+                <span>
+                    <p class="d-flex align-items-center mt-4 pl-4">
+
+                        <img src="assets/img/icons8-expand-arrow-50.png" alt="" id="img-one" srcset=""
+                            class="swiper-button-prev float-left mr-3">
+                        <img src="assets/img/icons8-expand-arrow-50.png" alt="" id="img-two" srcset=""
+                            class="swiper-button-next float-right">
+
+                    </p>
+                </span>
+            </div>
+
+        </div>
+
+        <div class="suggestion-two d-flex flex-row">
+            <!-- <img src="img/Component 27 – 1.svg" alt="one" class="px-5"> -->
+            <div id="swiper" class="swiperrcontainer w-100 pr-5 pl-4 d-flex">
+                <div class="card-columns swiper-wrapper">
+                    <div class="card swiper-slide">
+                        <img class="card-img-top" src="img/BENZ-S500.svg" alt="">
+                        <div class="card-body">
+                            <h4 class="card-title text-right">بنز s500</h4>
+                            <p class="card-text text-right">مدل 2018 </p>
+                        </div>
+                        <div class="card-body c-body-two d-flex rtl border-bottom">
+                            <div class="stars"></div>
+                            <div class="stars"></div>
+                            <div class="stars"></div>
+                            <div class="stars"></div>
+                            <div class="stars"></div>
+                        </div>
+                        <div class="price-cont">
+                            <p class="text-center"><span class="badge badge-primary badge-pill mr-2">1000000</span>هزینه
+                                هر
+                                شب اجاره </p>
+                        </div>
+                        <button class="btn w-100" id="reg"> رزرو کنید</button>
+                    </div>
+
+                    <div class="card swiper-slide">
+                        <img class="card-img-top" src="assets/img/BENZ-S500.svg" alt="">
+                        <div class="card-body ">
+                            <h4 class="card-title text-right">بنز s500</h4>
+                            <p class="card-text text-right">مدل 2018 </p>
+                        </div>
+                        <div class="card-body c-body-two d-flex rtl border-bottom">
+                            <div class="stars"></div>
+                            <div class="stars"></div>
+                            <div class="stars"></div>
+                            <div class="stars"></div>
+                            <div class="stars"></div>
+                        </div>
+                        <div class="price-cont">
+                            <p class="text-center"><span class="badge badge-primary badge-pill mr-2">1000000</span>هزینه
+                                هر
+                                شب اجاره </p>
+                        </div>
+                        <button class="btn w-100" id="reg"> رزرو کنید</button>
+                    </div>
+
+                    <div class="card swiper-slide">
+                        <img class="card-img-top" src="assets/img/BENZ-S500.svg" alt="">
+                        <div class="card-body ">
+                            <h4 class="card-title text-right">بنز s500</h4>
+                            <p class="card-text text-right">مدل 2018 </p>
+                        </div>
+                        <div class="card-body c-body-two d-flex rtl border-bottom">
+                            <div class="stars"></div>
+                            <div class="stars"></div>
+                            <div class="stars"></div>
+                            <div class="stars"></div>
+                            <div class="stars"></div>
+                        </div>
+                        <div class="price-cont">
+                            <p class="text-center"><span class="badge badge-primary badge-pill mr-2">1000000</span>هزینه
+                                هر
+                                شب اجاره </p>
+                        </div>
+                        <button class="btn w-100" id="reg"> رزرو کنید</button>
+
+                    </div>
+                    <div class="card swiper-slide">
+                        <img class="card-img-top" src="assets/img/BENZ-S500.svg" alt="">
+                        <div class="card-body ">
+                            <h4 class="card-title text-right">بنز s500</h4>
+                            <p class="card-text text-right">مدل 2018 </p>
+                        </div>
+                        <div class="card-body c-body-two d-flex rtl border-bottom">
+                            <div class="stars"></div>
+                            <div class="stars"></div>
+                            <div class="stars"></div>
+                            <div class="stars"></div>
+                            <div class="stars"></div>
+                        </div>
+                        <div class="price-cont">
+                            <p class="text-center"><span class="badge badge-primary badge-pill mr-2">1000000</span>هزینه
+                                هر
+                                شب اجاره </p>
+                        </div>
+                        <button class="btn w-100" id="reg"> رزرو کنید</button>
+
+                    </div>
+
+                    <div class="card swiper-slide">
+                        <img class="card-img-top" src="assets/img/BENZ-S500.svg" alt="">
+                        <div class="card-body ">
+                            <h4 class="card-title text-right">بنز s500</h4>
+                            <p class="card-text text-right">مدل 2018 </p>
+                        </div>
+                        <div class="card-body c-body-two d-flex rtl border-bottom">
+                            <div class="stars"></div>
+                            <div class="stars"></div>
+                            <div class="stars"></div>
+                            <div class="stars"></div>
+                            <div class="stars"></div>
+                        </div>
+                        <div class="price-cont">
+                            <p class="text-center"><span class="badge badge-primary badge-pill mr-2">1000000</span>هزینه
+                                هر
+                                شب اجاره </p>
+                        </div>
+                        <button class="btn w-100" id="reg"> رزرو کنید</button>
+
+                    </div>
+
+                    <div class="card swiper-slide">
+                        <img class="card-img-top" src="assets/img/BENZ-S500.svg" alt="">
+                        <div class="card-body ">
+                            <h4 class="card-title text-right">بنز s500</h4>
+                            <p class="card-text text-right">مدل 2018 </p>
+                        </div>
+                        <div class="card-body c-body-two d-flex rtl border-bottom">
+                            <div class="stars"></div>
+                            <div class="stars"></div>
+                            <div class="stars"></div>
+                            <div class="stars"></div>
+                            <div class="stars"></div>
+                        </div>
+                        <div class="price-cont">
+                            <p class="text-center"><span class="badge badge-primary badge-pill mr-2">1000000</span>هزینه
+                                هر
+                                شب اجاره </p>
+                        </div>
+                        <button class="btn w-100" id="reg"> رزرو کنید</button>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    </div>
+
+    <footer class="w-100 h-auto bg-dark text-white">
+        <div class="w-100 h-auto px-5 d-flex flex-row-reverse justify-content-between align-items-center">
+            <div class="icon-logo">
+                <a class="navbar-brand text-white text-right  d-block h2" style="color: black;font-size: 10rem;"
+                    href="#">ل<span style="color: aqua;display: inline;">و</span>گو</a>
+                <div class="caption text-white mb-3">
+                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است
+                </div>
+            </div>
+            <div class="social-icons-two">
+                <img src="assets/img/youtube (2).svg" alt="" class="m-2">
+                <img src="assets/img/telegram (2).svg" alt="" class="m-2">
+                <img src="assets/img/whatsapp (2).svg" alt="" class="m-2">
+            </div>
+        </div>
+<div class="cont-elements-footer px-5 d-flex flex-row justify-content-between">
+    <div>
+        <h3 class="text-right">جست و جوی سریع</h3>
+        <hr class="bg-danger w-50 float-right">
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+    </div>
+    <div>
+        <h3 class="text-right">جست و جوی سریع</h3>
+        <hr class="bg-danger w-50 float-right">
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+    </div>
+    <div>
+        <h3 class="text-right">جست و جوی سریع</h3>
+        <hr class="bg-danger w-50 float-right">
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+    </div>
+</div>
+        <div class="copywrite w-100  bg-black p-4">کلیه حقوق سایت متعلف به محمدرضا جابری است</div>
+    </footer>
+
+</body>
+
+
+</html>
