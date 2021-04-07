@@ -20,6 +20,23 @@ document.addEventListener('scroll', function () {
     }
 })
 
+window.addEventListener("scroll",()=>{
+    if(window.pageYOffset>=54){
+        $('header#headsite').css("position","fixed");
+        $('header#headsite').css("transition","0.3s");
+        $('header#headsite').css("top","0");
+        
+    }
+    if(window.pageYOffset<=54){
+        $('header#headsite').css("transition","0.3s");
+        $('header#headsite').css("position","relative");
+        
+
+    }
+
+})
+
+
 var swiper2 = new Swiper('.swipercontainer', {
     slidesPerView: 3,
     spaceBetween: 30,

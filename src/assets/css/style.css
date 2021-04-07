@@ -1,9 +1,14 @@
-header {
+
+header#head{
     background: url("../img/you-x-ventures-vbxyFxlgpjM-unsplash.jpg")no-repeat;
     /* background-position: 0px; */
     background-position: 10px 0;
     background-size: cover;
     height: 85%;
+}
+header#headsite{
+    z-index: 99999999;
+    transition: 0.3s;
 }
 
 @font-face {
