@@ -20,6 +20,13 @@ document.addEventListener('scroll', function () {
     }
 })
 
+
+    setTimeout(()=>{
+    $('#loading-div-timing').css("display","none")
+  },6000)
+
+
+
 window.addEventListener("scroll",()=>{
     if(window.pageYOffset>=54){
         $('header#headsite').css("position","fixed");
@@ -37,49 +44,9 @@ window.addEventListener("scroll",()=>{
 })
 
 
-var swiper2 = new Swiper('.swipercontainer', {
-    slidesPerView: 3,
-    spaceBetween: 30,
-    slidesPerGroup: 3,
-    loop: true,
-    loopFillGroupWithBlank: true,
-    pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-    },
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-    },
-});
-var swiper2 = new Swiper('.swiper-container', {
-    slidesPerView: 3,
-    spaceBetween: 30,
-    slidesPerGroup: 3,
-    loop: true,
-    loopFillGroupWithBlank: true,
-    pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-    },
-    navigation: {
-        nextEl: '#img-one',
-        prevEl: '#img-two',
-    },
-});
+let timesone=document.querySelector('.timesone');
+let collSearch=document.querySelector('#coll-search-menu3');
 
-var swiper2 = new Swiper('.swiperrcontainer', {
-    slidesPerView: 4,
-    spaceBetween: 30,
-    slidesPerGroup: 3,
-    loop: true,
-    loopFillGroupWithBlank: true,
-    pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-    },
-    navigation: {
-        nextEl: '#img-one',
-        prevEl: '#img-two',
-    },
-});
+collSearch.addEventListener('hover',()=>{
+    $(timesone).css("display","block")
+})
