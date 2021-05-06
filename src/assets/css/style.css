@@ -414,23 +414,6 @@ transform: translateY(-5px);
 box-shadow: 0 15px 10px 5px rgba(180, 180, 180, 0.466);
 
 }
- .favorite,.suggestions,.iranian-cars{
-    /* transform: translateY(-1300px); */
-
-} 
-.suggestions{
-    /* transform: translateY(-1500px); */
-} 
-
-#title-suggestion , .suggestion{
-    /* transform: translateY(-800px); */
-    
-}
-footer{
-    /* transform: translateY(-400px);
-     */
-     /* background: black; */
-}
 
 .stars{
     background: url(../img/star_highlight.png) no-repeat;
@@ -468,10 +451,7 @@ img[img="one"]{
     overflow: hidden;
     /* margin-bottom: 400px; */
 }
-img[alt="bg"]{
-    /* transform: translateY(200px); */
-    /* z-index: 999; */
-}
+
 img[alt="bg-down"]{
     /* transform: translateY(-2000px); */
     position: fixed; 

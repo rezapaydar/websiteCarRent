@@ -14,63 +14,71 @@
         </div>
     </div>
 
-    <div id="cont-search" class="w-100 d-flex justify-content-center ">
 
-        <div class="search-box-combo d-flex flex-row-reverse w-75 shadow-lg  bg-light rounded">
+    <form [formGroup]="formSearcher">
+        <div id="cont-search" class="w-100 d-flex justify-content-center ">
+            <div class="search-box-combo  d-flex flex-row-reverse w-75 shadow-lg  bg-light rounded">
+                <div class="coll-search-menu" id="coll-search-menu1">
+                    <p class="text-search-menu"> اجاره استان </p>
+                    <div class="icon-down-arrow">
+                        <i class="fas fa-times-circle" id="fa-times-circle1" [style]="disp" (click)="closeicon1()"></i>
+                        <input type="text" class="cityname" [style]="disp"  formControlName="citySel">
+                        <img src="../../assets/img/down-arrow.svg" (click)="cityOpen()">
+                        <div class="cities bg-light shadow-lg" >
+                            <ul #citySel>
+                                <li *ngFor="let item of cities"  (click)='onClickCities($event)'>{{item.titleCity}}</li>
+                            </ul>
+                        </div>
+                    </div>
 
-            <div class="coll-search-menu" id="coll-search-menu1">
-                <p class="text-search-menu"> اجاره استان </p>
-                <div class="icon-down-arrow">
-                    <img src="../../assets/img/down-arrow.svg" alt="" srcset="">
-                    <div class="cities bg-light shadow-lg">
-                        <ul>
-                            <li  *ngFor="let item of cities">{{item.titleCity}}</li>
-                        </ul>
+                </div>
+
+
+                <div class="coll-search-menu" id="coll-search-menu2">
+                    <p class="text-search-menu">نوع ماشین</p>
+                    <div class="icon-down-arrow">
+                        <i class="fas fa-times-circle" id="fa-times-circle2" [style]="disp1" (click)="closeicon2()"></i>
+                        <input type="text" class="cityname d-inline" [style]="disp1" formControlName="typeSel">
+                        <img src="../../assets/img/down-arrow.svg" (click)="typeOpen()">
+                        <div class="types bg-light shadow-lg">
+                            <ul #typeSel>
+                                <li *ngFor="let item of types" (click)='onClickTypes($event)'>{{item.titleType}}</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
-            </div>
-
-
-            <div class="coll-search-menu" id="coll-search-menu2">
-                <p class="text-search-menu">نوع ماشین</p>
-                <div class="icon-down-arrow">
-                    <img src="../../assets/img/down-arrow.svg" alt="" srcset="">
-                    <div class="types bg-light shadow-lg">
-                        <ul >
-                            <li *ngFor="let item of types">{{item.titleType}}</li>
-                        </ul>
+                <div class="coll-search-menu" id="coll-search-menu3">
+                    <p class="text-search-menu">زمان اجاره</p>
+                    <div class="icon-down-arrow">
+                        <i class="fas fa-times-circle" id="fa-times-circle2" [style]="disp2" (click)="closeicon3()"></i>
+                        <input type="text" class="cityname" [style]="disp2" formControlName="timeSel">
+                        <img src="../../assets/img/down-arrow.svg" (click)="timeOpen()">
+                        <div class="timesone bg-light shadow-lg">
+                            <ul #timeSel>
+                                <li *ngFor="let item of timesServ" (click)='onClickTimes($event)'>
+                                    {{item.hour}}:{{item.minute}}</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="coll-search-menu" id="coll-search-menu3">
-                <p class="text-search-menu">زمان اجاره</p>
-                <div class="icon-down-arrow">
-                    <img src="../../assets/img/down-arrow.svg" alt="" srcset="">
-                    <div class="timesone bg-light shadow-lg">
-                        <ul >
-                            <li *ngFor="let item of timesServ" >{{item.hour}}:{{item.minute}}</li>
-                        </ul>
-                    </div>
+                <div class="coll-search-menu rtl">
+
+                    <button class="btn-primary rounded-right btn-search d-flex ">
+                        <div class="img-counter-arrow-left">
+                            &larr;
+                        </div>
+                        <p>جست و جو</p>
+                    </button>
+
+
                 </div>
-            </div>
-
-            <div class="coll-search-menu rtl">
-
-                <button class="btn-primary rounded-right btn-search d-flex ">
-                    <div class="img-counter-arrow-left">
-                        &larr;
-                    </div>
-                    <p>جست و جو</p>
-                </button>
-
-
             </div>
 
         </div>
+    </form>
 
-    </div>
     <!-- </div> -->
 
 
@@ -218,6 +226,7 @@
                     </div>
                     <button class="btn w-100" id="log"> رزرو کنید</button>
                 </div>
+
 
                 <div class="card swiper-slide">
                     <img class="card-img-top" src="../../assets/img/BENZ-S500.svg" alt="">
