@@ -7,6 +7,7 @@ import { StatusservService } from '../services/statusserv.service';
   styleUrls: ['./header.component.sass']
 })
 export class HeaderComponent implements OnInit {
+status=this.statusserv.name;
 disp1;
 disp2;
   constructor(private statusserv:StatusservService) {

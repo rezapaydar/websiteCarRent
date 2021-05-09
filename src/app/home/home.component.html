@@ -2,11 +2,11 @@
 
 <header class="w-100" id="head">
     <div class="logo">
-        <div class="logo-text">
+        <div class="logo-text" style="margin-top: 60px;">
             <a class="navbar-brand h2" style="color: white;" href="#">ل<span style="color: aqua;">و</span>گو</a>
             <p style="color:white;text-align: center;" class="h6">شعار وب سایت ما این است</p>
             <div class="lorem">
-                <p class="w-50 align-center" style="color: white;text-align: center;">لورم ایپسوم متن ساختگی با
+                <p class="w-50 text-white text-center">لورم ایپسوم متن ساختگی با
                     تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه
                     روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و
                     کاربردهای متنوع با هدف </p>
@@ -17,22 +17,23 @@
 
     <form [formGroup]="formSearcher">
         <div id="cont-search" class="w-100 d-flex justify-content-center ">
-            <div class="search-box-combo  d-flex flex-row-reverse w-75 shadow-lg  bg-light rounded">
+            <div
+                class="search-box-combo  d-flex flex-column flex-sm-row-reverse w-75 h-auto shadow-lg  bg-light rounded">
+
                 <div class="coll-search-menu" id="coll-search-menu1">
                     <p class="text-search-menu"> اجاره استان </p>
                     <div class="icon-down-arrow">
                         <i class="fas fa-times-circle" id="fa-times-circle1" [style]="disp" (click)="closeicon1()"></i>
-                        <input type="text" class="cityname" [style]="disp"  formControlName="citySel">
+                        <input type="text" class="cityname" [style]="disp" formControlName="citySel">
                         <img src="../../assets/img/down-arrow.svg" (click)="cityOpen()">
-                        <div class="cities bg-light shadow-lg" >
+                        <div class="cities bg-light shadow-lg">
                             <ul #citySel>
-                                <li *ngFor="let item of cities"  (click)='onClickCities($event)'>{{item.titleCity}}</li>
+                                <li *ngFor="let item of cities" (click)='onClickCities($event)'>{{item.titleCity}}</li>
                             </ul>
                         </div>
                     </div>
 
                 </div>
-
 
                 <div class="coll-search-menu" id="coll-search-menu2">
                     <p class="text-search-menu">نوع ماشین</p>
@@ -74,6 +75,7 @@
 
 
                 </div>
+
             </div>
 
         </div>
@@ -89,13 +91,16 @@
 
     <div class="conter-one">
 
-        <div class="b-g-conter" style="position: relative; z-index: -1;">
-            <img src="../../assets/img/Layer 2.png" alt="bg" class="w-100" style="position: absolute;">
+        <div class="b-g-conter">
+            <!-- <img src="../../assets/img/Layer 2.png" alt="bg" class="w-100" style="position: absolute;"> -->
 
 
-            <div class="main-conter" style="position: absolute;">
-                <div class="cards-icons w-75 d-flex m-auto " style="position: relative; top:300px">
-                    <div class="card-icon w-25 m-1 p-1">
+            <div class="main-conter"
+                style="width:100% !important;background: url(../../assets/img/mesh_bg1.svg);background-size: 100%;background-repeat: repeat-y;">
+
+                <div class="cards-icons w-75 d-flex m-auto row" style="padding: 200px 0;">
+
+                    <div class="card-icon p-1 col-12 col-sm-6 col-md-5 col-lg-3">
                         <div class="cont-img bg-white w-75 shadow-lg p-2 rounded-top">
                             <img src="../../assets/img/believe.png" alt="" class="w-100">
                         </div>
@@ -107,8 +112,9 @@
                             </p>
                         </div>
                     </div>
-                    <div class="card-icon w-25 m-1 p-1">
-                        <div class="cont-img bg-white w-75 shadow-lg p-2 rounded-top">
+
+                    <div class="card-icon p-1 col-12 col-sm-6 col-md-5 col-lg-3">
+                        <div class="cont-img bg-white w-75 shadow-lg p-2 rounded-top ">
                             <img src="../../assets/img/login.png" alt="" class="w-100">
                         </div>
                         <div class="card-body w-75 h-auto bg-white shadow-lg rounded-bottom">
@@ -120,7 +126,7 @@
                         </div>
                     </div>
 
-                    <div class="card-icon w-25  m-1 p-1">
+                    <div class="card-icon  p-1 col-12 col-sm-6 col-md-5 col-lg-3">
                         <div class="cont-img bg-white w-75 shadow-lg p-2 rounded-top">
                             <img src="../../assets/img/money.png" alt="" class="w-100">
                         </div>
@@ -133,7 +139,7 @@
                         </div>
                     </div>
 
-                    <div class="card-icon w-25  m-1 p-1">
+                    <div class="card-icon  p-1 col-12 col-sm-6 col-md-5 col-lg-3">
                         <div class="cont-img bg-white w-75 shadow-lg  rounded-top">
                             <img src="../../assets/img/online-learning.png" alt="" class="w-100">
                         </div>
@@ -145,9 +151,12 @@
                             </p>
                         </div>
                     </div>
-                </div>
 
-                <div class="best-serv w-100  p-5" style="position: relative; top:600px">
+                </div>
+            </div>
+
+            <div class="main-conter">
+                <div class="best-serv w-100">
                     <div class="text-center w-50 m-auto">
                         <h1 class="text-center">بهترین خدمات را از ما بگیرید</h1>
                         <p class="text-center"> لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده
@@ -158,9 +167,10 @@
 
                     </div>
                 </div>
+            </div>
 
-                <div class="glass-icon-cont w-100 h-50 px-5 d-flex flex-row-reverse"
-                    style="position: relative; top:900px">
+            <div class="main-conter" style="padding:200px 0;width:100% !important;background: url(../../assets/img/1333.svg);background-size: 110%;background-repeat: repeat-y;">
+                <div class="glass-icon-cont w-100 h-50 px-5 d-flex flex-row-reverse">
                     <div class="glass-icon rounded w-50 rounded-pill">
                         <img src="../../assets/img/space-shuttle.png" alt="" class="w-100 glass mr-5">
                     </div>
@@ -186,7 +196,7 @@
 
 </main>
 
-<div class="favorite" style="margin-top: 2100px; margin-bottom: 200px;">
+<div class="favorite" style="margin: 200px 0;">
 
     <div id="title-cont-specially" class="w-75 pl-5 pr-4 d-flex flex-row-reverse justify-content-between mb-4">
         <h1>تخفیفات ویژه</h1>
@@ -205,6 +215,7 @@
     <div class="cont-specially d-flex flex-row-reverse w-100">
         <img src="../../assets/img/Component 26 – 1.svg" alt="" img="one" class="px-5 w-25">
         <div id="swiper" class="swipercontainer w-75 pl-5 pr-4 d-flex">
+
             <div class="card-columns swiper-wrapper">
                 <div class="card swiper-slide">
                     <img class="card-img-top" src="../../assets/img/BENZ-S500.svg" alt="">

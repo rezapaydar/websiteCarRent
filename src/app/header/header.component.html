@@ -1,70 +1,113 @@
 <body>
-<div id="img-cont" class="w-auto img-container">
-    <img src="../../assets/img/object2.svg" alt="bg-down" class="w-100">
-</div>
-<div class="cont-fluid">
-    <div class="menu-hot-top w-100 px-5 py-1">
-        <div class="icons-brands">
-            <img src="../../assets/img/facebook.png" alt="">
-            <img src="../../assets/img/linkedin.png" alt="">
-            <img src="../../assets/img/twitter.png" alt="">
-            <img src="../../assets/img/youtube.png" alt="">
-        </div>
-        <div class="whatsapp-number">
-            <p class="pt-1 pr-2">09121000000</p>
-            <img src="../../assets/img/whatsapp (2).svg" alt="">
-        </div>
+    <div id="img-cont" class="w-auto img-container">
+        <img src="../../assets/img/object2.svg" alt="bg-down" class="w-100">
     </div>
-    <header class="w-100" id="headsite">
-        <nav class="nav w-100">
-            <nav class="navbar navbar-expand-md shadow navbar-dark d-flex flex-row-reverse px-5"
-                style="background-color: white;width: 100%;">
-                <div class="social-icons">
+    <div class="cont-fluid">
+        <div class="menu-hot-top w-100 px-5 py-1">
+            <div class="icons-brands">
+                <img src="../../assets/img/facebook.png" alt="">
+                <img src="../../assets/img/linkedin.png" alt="">
+                <img src="../../assets/img/twitter.png" alt="">
+                <img src="../../assets/img/youtube.png" alt="">
+            </div>
+            <div class="whatsapp-number">
+                <p class="pt-1 pr-2">09121000000</p>
+                <img src="../../assets/img/whatsapp (2).svg" alt="">
+            </div>
+        </div>
+        <header class="w-100" id="headsite">
+            <nav class="nav w-100">
+                <nav class="navbar navbar-expand-lg shadow navbar-dark d-flex flex-row-reverse px-5"
+                    style="background-color: white;width: 100%;" id="collapsenav">
+                    <div class="social-icons">
 
-                    <div class="icon-logo">
-                        <a class="navbar-brand d-block h2" style="color: black;" href="#">ل<span
-                                style="color: aqua;display: inline;">و</span>گو</a>
+                        <div class="icon-logo">
+                            <a class="navbar-brand d-block h2" style="color: black;" href="#">ل<span
+                                    style="color: aqua;display: inline;">و</span>گو</a>
+                        </div>
+                        <div class="slogan mx-3">
+                            <p>شعار وب سایت ما این است</p>
+                            <p>this is a logo for this website</p>
+                        </div>
+
                     </div>
-                    <div class="slogan mx-3">
-                        <p>شعار وب سایت ما این است</p>
-                        <p>this is a logo for this website</p>
+
+                    <button class="navbar-toggler text-secondary d-lg-none" type="button" data-toggle="collapse"
+                        data-target="#collapsenav" aria-controls="collapsibleNavId" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="collapsenav">
+                        <ul class="navbar-nav  mr-auto mt-2 mt-lg-0 m-auto text-right">
+                            <!-- <li >
+                                <div class="nav-item user-section d-flex flex-column align-items-center my-2">
+                                    <div class="buttons">
+                                        <button class="btn-sign  rounded-pill mr-3" id="log" [style]="disp1"
+                                            (click)="login()">ورود</button>
+                                        <button class="btn-sign  rounded-pill" id="reg">ثبت نام</button>
+                                    </div>
+                                    <div class="btn-group pt-2">
+                                        <button class="btn btn-sm dropdown-toggle" type="button" data-toggle="dropdown"
+                                            aria-haspopup="true" aria-expanded="false">
+                                            وارد شده به عنوان {{status}}
+                                        </button>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="#">مدیریت پروفایل</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item d-flex flex-row-reverse justify-content-center align-items-center"
+                                                href="#">خروج <i class="fas fa-power-off px-3"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li> -->
+                            <li class="nav-item active mx-2">
+                                <a class="nav-link =" href="#" data-toggle="dropdown">خانه <span
+                                        class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item mx-2">
+                                <a class="nav-link " href="#" data-toggle="dropdown">ماشین عروس</a>
+                            </li>
+                            <li class="nav-item mx-2">
+                                <a class="nav-link =" href="#" id="dropdownId" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">ماشین های لوکس</a>
+
+                            </li>
+                            <li class="nav-item mx-2">
+                                <a href="#" class="nav-link =" data-toggle="dropdown">تخفیفات ویژه</a>
+                            </li>
+                            <li class="nav-item mx-2">
+                                <a href="#" class="nav-link =" data-toggle="dropdown">سوالات متداول</a>
+                            </li>
+
+                        </ul>
                     </div>
 
-                </div>
-                <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse"
-                    data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
-                    aria-label="Toggle navigation"></button>
-                <div class="collapse navbar-collapse" id="collapsibleNavId">
-                    <ul class="navbar-nav d-flex flex-row-reverse mr-auto mt-2 mt-lg-0 m-auto">
-                        <li class="nav-item active mx-2">
-                            <a class="nav-link =" href="#" data-toggle="dropdown">خانه <span
-                                    class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item mx-2">
-                            <a class="nav-link " href="#" data-toggle="dropdown">ماشین عروس</a>
-                        </li>
-                        <li class="nav-item mx-2">
-                            <a class="nav-link =" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false">ماشین های لوکس</a>
-
-                        </li>
-                        <li class="nav-item mx-2">
-                            <a href="#" class="nav-link =" data-toggle="dropdown">تخفیفات ویژه</a>
-                        </li>
-                        <li class="nav-item mx-2">
-                            <a href="#" class="nav-link =" data-toggle="dropdown">سوالات متداول</a>
-                        </li>
-                    </ul>
-
-                </div>
-                <div class="user-section d-flex flex-column align-items-center my-2">
-                    <div class="buttons">
-                        <button class="btn-sign  rounded-pill mr-3" id="log" [style]="disp1" (click)="login()">ورود</button>
-                        <button class="btn-sign  rounded-pill" id="reg">ثبت نام</button>
+                    <div class="nav-item user-section d-flex flex-column align-items-center my-2">
+                        <div class="buttons">
+                            <button class="btn-sign  rounded-pill mr-3" id="log" [style]="disp1"
+                                (click)="login()">ورود</button>
+                            <button class="btn-sign  rounded-pill" id="reg">ثبت نام</button>
+                        </div>
+                        <div class="btn-group pt-2">
+                            <button class="btn btn-sm dropdown-toggle" type="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                وارد شده به عنوان {{status}}
+                            </button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">مدیریت پروفایل</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item d-flex flex-row-reverse justify-content-center align-items-center"
+                                    href="#">خروج <i class="fas fa-power-off px-3"></i></a>
+                            </div>
+                        </div>
                     </div>
-                </div>
+
+
+
+
+                </nav>
             </nav>
-        </nav>
-    </header>
-</div>
+        </header>
+    </div>
 </body>

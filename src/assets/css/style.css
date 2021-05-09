@@ -8,10 +8,16 @@ header#head{
     background-position: 10px 0;
     background-size: cover;
     height: 85%;
+    overflow: visible;
 }
 header#headsite{
-    z-index: 99999999;
+    z-index: 9;
     transition: 0.3s;
+    overflow: visible;
+    position: absolute;
+}
+.btn-group{
+    position: static;
 }
 
 @font-face {
@@ -104,7 +110,7 @@ h1 ,span{
 }
 
 .whatsapp-number img {
-    width: 28px;
+    width: 20px;
     /* transform: translateY(-5px); */
 }
 
@@ -113,7 +119,7 @@ h1 ,span{
 }
 
 .menu-hot-top .icons-brands img {
-    width: 28px;
+    width: 20px;
     transition: 0.5s;
 }
 
@@ -297,7 +303,8 @@ p.h6 {
     position: relative;
     /* top: -1950px; */
     z-index: 99;
-    background: rgba(255, 255, 255, 0.514);
+    padding-top:200px;
+    padding-bottom:200px;
 }
 
 .glass {
@@ -380,7 +387,7 @@ p.h6 {
     outline: none;
     border: none;
     font-weight: bold;
-    transform: translateY(-110px);
+    /* transform: translateY(-110px); */
     transition: 0.2s;
 }
 
@@ -463,8 +470,9 @@ img[alt="bg-down"]{
 }
 .copywrite{
     color: white;
-    background: black !important;
+    font-weight: bold;
     text-align: center;
+    font-size: 25px;
 }
 #img-one,#img-two,.swiper-button-prev,.swiper-button-next{
     transition: 0.2s;

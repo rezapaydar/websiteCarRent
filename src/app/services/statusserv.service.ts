@@ -5,6 +5,7 @@ import { BehaviorSubject } from "rxjs"
   providedIn: 'root'
 })
 export class StatusservService {
+  name="مهمان"
   isLogin: Boolean = false;
   isRegister: Boolean = false;
   disp;

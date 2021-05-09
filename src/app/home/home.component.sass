@@ -1,4 +1,4 @@
-@import '~swiper/swiper-bundle'
+
 $display: none
 @mixin displayer($disp:$display)
     display: $disp
@@ -88,7 +88,7 @@ body
 
         li
             // margin: 5px
-            padding: 10px 33.1px
+            padding: 2.5px 33.1px
             transition: 0.1s
 
             &:nth-child(3)
@@ -97,7 +97,6 @@ body
                 &:hover
                     cursor: no-drop
                     background: #4b4b4b
-                
 
             &:hover
                 background: #da2f2f
@@ -113,7 +112,7 @@ body
     display: none
 
     ul
-        width: 1013px
+        width: 100%
         height: auto
         list-style: none
         position: absolute
@@ -158,7 +157,7 @@ body
         border: (none !important)
         // border-bottom: (2px solid #525252 !important)
         outline: (none !important)
-        padding-bottom:10px
+        padding-bottom: 10px
 
     i
         position: absolute
@@ -168,9 +167,6 @@ body
         &:hover
             color: red
 
-        
-            
-
 .coll-search-menu
     display: flex
     align-items: center
@@ -178,3 +174,55 @@ body
     img
         position: relative
         left: 21%
+
+@media screen and (max-width: 590px)
+
+    header#head
+        margin-top: 100px
+
+    div.lorem
+        p
+            text-align: (right !important)
+
+
+    ul.navbar-nav
+        li
+            a
+                font-size: 10px
+
+    .timesone
+        width: 100%
+        display: none
+
+        ul
+            width: 100%
+            height: auto
+            list-style: none
+            position: relative
+            right: 25%
+            top: 60px
+            display: flex
+            flex-wrap: wrap
+            justify-content: center
+            padding-left: 0
+
+    #coll-search-menu3
+        &:hover
+            .timesone
+                background: blue
+                display: block
+
+    .types
+        width: 100%
+        display: none
+
+    ul
+        width: 100%
+        list-style: none
+        position: absolute
+        right: 25%
+        top: 60px
+        display: flex
+        flex-wrap: wrap
+        justify-content: center
+        padding-left: 0
