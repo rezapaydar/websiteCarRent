@@ -5,6 +5,7 @@ import { TypesOfCar } from "../models/types";
 import { timeServe } from "../models/times";
 import { HomeservService } from '../services/homeserv.service';
 import { StatusservService } from '../services/statusserv.service';
+import { SwiperComponent } from "swiper/angular";
 
 
 
@@ -178,6 +179,13 @@ export class HomeComponent implements OnInit {
       console.log('fuckkkkkk');
       
     }
+  }
+
+  onSwiper(swiper) {
+    console.log(swiper);
+  }
+  onSlideChange() {
+    console.log('slide change');
   }
 
 }

@@ -2,6 +2,14 @@
 //     z-index: 9999999999
 //     position: absolute
 
+img[alt="bg-down"]
+    filter: blur(5px)grayscale(100%)
+    transition: filter 0.4s
+
+    &:hover
+        filter: blur(5px)grayscale(0%)
+        
+
 @media screen and (max-width: 480px)
     ul.navbar-nav
         li

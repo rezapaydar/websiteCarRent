@@ -40,7 +40,7 @@ header#headsite{
     src: url('../fonts/Vazir.ttf');
 }
 
-p {
+p,div {
     font-family: vazir;
 }
 
@@ -48,7 +48,7 @@ button {
     font-family: vazir;
 }
 
-h1 ,span{
+h1,h2,h3,h4,h5,h6,span{
     font: b yekan;
 }
 

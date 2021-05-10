@@ -9,6 +9,8 @@ import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
+import { SwiperModule } from 'swiper/angular';
+import { SwiperComponent } from './swiper/swiper.component';
 // import {SwiperComponent} from './home/swiper/swiper.component'
 
 @NgModule({
@@ -17,13 +19,14 @@ import { LoginComponent } from './login/login.component';
     HomeComponent,
     HeaderComponent,
     FooterComponent,
-    LoginComponent
+    LoginComponent,
+    SwiperComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    
+    SwiperModule
   ],
   providers: [],
   bootstrap: [AppComponent]

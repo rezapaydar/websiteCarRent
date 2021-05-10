@@ -10,7 +10,7 @@
 
 let imgcont = document.getElementById('img-cont');
 document.addEventListener('scroll', function () {
-    if (window.pageYOffset < 800 || window.pageYOffset > 1600) {
+    if (window.pageYOffset < 800 || window.pageYOffset > 1800) {
         //    alert(window.pageYOffset)
         $('img[alt="bg-down"]').css("display", "none")
     }
