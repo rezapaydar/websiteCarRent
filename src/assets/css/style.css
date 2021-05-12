@@ -411,9 +411,8 @@ p.h6 {
 .card-columns .card{
     border: 2px solid white;
     border-radius: 20px;
-    height: 475px;
-    overflow: hidden;
-    box-shadow: 0 10px 20px 1px rgba(180, 180, 180, 0.466);
+    height: auto;
+    box-shadow: 0 10px 20px 0px rgba(212, 212, 212, 0.226);
     transition: 0.3s;
 }
 .card-columns .card:hover{
@@ -433,20 +432,20 @@ box-shadow: 0 15px 10px 5px rgba(180, 180, 180, 0.466);
     transform: translateY(-30px);
 
 }
-.card-columns .card button#log, .card-columns .card button#reg{
+/* .card-columns .card button#log, .card-columns .card button#reg{
 transform: translateY(30px);
 border-radius:20px;
-}
+} */
 /* main>img:nth-child(3){
 transform: skew(50px 10px);
 } */
-.swiper-button-next ,.swiper-button-prev{
+/* .swiper-button-next ,.swiper-button-prev{
     position: relative !important;
     top: 0 !important;
     left: 0 !important;
     display: block;
     /* transform: translateY(50px) !important; */
-}
+
 img[img="one"]{
     z-index: 2;
     background:  rgb(247, 246, 246);
@@ -474,14 +473,14 @@ img[alt="bg-down"]{
     text-align: center;
     font-size: 25px;
 }
-#img-one,#img-two,.swiper-button-prev,.swiper-button-next{
+/* #img-one,#img-two,.swiper-button-prev,.swiper-button-next{
     transition: 0.2s;
 }
 #img-one:hover,#img-two:hover,.swiper-button-prev:hover,.swiper-button-next:hover{
-    /* transform: scale(1.1); */
+    /* transform: scale(1.1); 
     width: 105%;
     height: 105%;
-}
+} */
 .junb{
     transform: translateX(900px);
     }

@@ -6,6 +6,8 @@ import { timeServe } from "../models/times";
 import { HomeservService } from '../services/homeserv.service';
 import { StatusservService } from '../services/statusserv.service';
 import { SwiperComponent } from "swiper/angular";
+import {MatCarouselSlide} from "@ngmodule/material-carousel"
+import { cars } from '../models/cars';
 
 
 
@@ -14,7 +16,7 @@ import { SwiperComponent } from "swiper/angular";
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.sass'],
-  providers: [HomeservService,StatusservService],
+  providers: [HomeservService, StatusservService],
 })
 
 
@@ -35,6 +37,9 @@ export class HomeComponent implements OnInit {
   types: TypesOfCar[] = [];
   cities: cities[] = [];
   timesServ: timeServe[] = [];
+  benz: cars[] = [];
+  toyota: cars[] = [];
+  bmw: cars[] = [];
 
   // @HostListener('click', ['$event.target'])
   onClickCities(e) {
@@ -50,7 +55,7 @@ export class HomeComponent implements OnInit {
     // this.formSearcher.control['citySel'].setValue(btn.innerText)
   }
 
-  
+
 
   onClickTypes(e) {
     this.disp1 = 'display:block !important;';
@@ -84,36 +89,36 @@ export class HomeComponent implements OnInit {
 
     // this.formSearcher.control['timeSel'].setValue(btn.innerText)
   }
-  closeicon1(){
-  this.disp = 'display:none !important;';
+  closeicon1() {
+    this.disp = 'display:none !important;';
 
   }
-  closeicon2(){
-  this.disp1 = 'display:none !important;';
+  closeicon2() {
+    this.disp1 = 'display:none !important;';
 
   }
-  closeicon3(){
-  this.disp2 = 'display:none !important;';
+  closeicon3() {
+    this.disp2 = 'display:none !important;';
 
   }
 
   cityOpen() {
-    this.citySel.nativeElement.style="display:flex";
-    this.typeSel.nativeElement.style="display:none";
-    this.timeSel.nativeElement.style="display:none";
+    this.citySel.nativeElement.style = "display:flex";
+    this.typeSel.nativeElement.style = "display:none";
+    this.timeSel.nativeElement.style = "display:none";
   }
   typeOpen() {
-    this.citySel.nativeElement.style="display:none";
-    this.typeSel.nativeElement.style="display:flex";
-    this.timeSel.nativeElement.style="display:none";
+    this.citySel.nativeElement.style = "display:none";
+    this.typeSel.nativeElement.style = "display:flex";
+    this.timeSel.nativeElement.style = "display:none";
   }
   timeOpen() {
-    this.citySel.nativeElement.style="display:none";
-    this.typeSel.nativeElement.style="display:none";
-    this.timeSel.nativeElement.style="display:flex";
+    this.citySel.nativeElement.style = "display:none";
+    this.typeSel.nativeElement.style = "display:none";
+    this.timeSel.nativeElement.style = "display:flex";
   }
 
-  constructor(private fb: FormBuilder , private homeServ:HomeservService,private statusserv:StatusservService) {
+  constructor(private fb: FormBuilder, private homeServ: HomeservService, private statusserv: StatusservService) {
 
     this.formSearcher = this.fb.group({
       citySel: [''],
@@ -167,6 +172,39 @@ export class HomeComponent implements OnInit {
       { hour: "21", minute: "30" },
     ]
 
+    this.benz = [
+      { name: "بنز-c200", brand: "benz", daily: true, monthy: true, weeky: true, img: "../../assets/img/cars/benz/benz-c200.jpg" },
+      { name: "بنز-e350", brand: "benz", daily: true, monthy: false, weeky: true, img: "../../assets/img/cars/benz/benz-E350.jpg" },
+      { name: "بنز-s500", brand: "benz", daily: true, monthy: true, weeky: false, img: "../../assets/img/cars/benz/benz-s500.jpg" },
+      { name: "بنز-sl63", brand: "benz", daily: true, monthy: true, weeky: true, img: "../../assets/img/cars/benz/benz-SL63.jpg" },
+      { name: "بنز-c200", brand: "benz", daily: true, monthy: true, weeky: true, img: "../../assets/img/cars/benz/benz-c200.jpg" },
+      { name: "بنز-e350", brand: "benz", daily: false, monthy: true, weeky: false, img: "../../assets/img/cars/benz/benz-E350.jpg" },
+      { name: "بنز-s500", brand: "benz", daily: true, monthy: false, weeky: true, img: "../../assets/img/cars/benz/benz-s500.jpg" },
+      { name: "بنز-sl63", brand: "benz", daily: true, monthy: false, weeky: true, img: "../../assets/img/cars/benz/benz-SL63.jpg" }
+    ]
+
+    this.toyota=[
+      { name: "تویوتا-land cuiser", brand: "toyota", daily: true, monthy: true, weeky: true, img: "../../assets/img/cars/toyota/land-cruiser.jpg" },
+      { name: "تویوتا-prrado", brand: "toyota", daily: true, monthy: false, weeky: true, img: "../../assets/img/cars/toyota/prrado-4-door.jpg" },
+      { name: "تویوتا-baby", brand: "toyota", daily: true, monthy: true, weeky: false, img: "../../assets/img/cars/toyota/toyota-baby.jpg" },
+      { name: "تویوتا-camry", brand: "toyota", daily: true, monthy: true, weeky: true, img: "../../assets/img/cars/toyota/toyota-camry.jpg" },
+      { name: "تویوتا-tuscon", brand: "toyota", daily: true, monthy: true, weeky: true, img: "../../assets/img/cars/toyota/tuscon.jpg" },
+      { name: "تویوتا-land cuiser", brand: "toyota", daily: false, monthy: true, weeky: false, img: "../../assets/img/cars/toyota/land-cruiser.jpg" },
+      { name: "تویوتا-prrado", brand: "toyota", daily: true, monthy: false, weeky: true, img: "../../assets/img/cars/toyota/prrado-4-door.jpg" },
+      { name: "تویوتا-baby", brand: "toyota", daily: true, monthy: false, weeky: true, img: "../../assets/img/cars/toyota/toyota-baby.jpg" }
+    ]
+
+    this.bmw=[
+      { name: "bmw-528", brand: "bmw", daily: true, monthy: true, weeky: true, img: "../../assets/img/cars/bmw/bmw-528.jpeg" },
+      { name: "bmw-i8", brand: "bmw", daily: true, monthy: false, weeky: true, img: "../../assets/img/cars/bmw/bmw-i8.jpg" },
+      { name: "bmw-x1", brand: "bmw", daily: true, monthy: true, weeky: false, img: "../../assets/img/cars/bmw/bmw-x1.jpg" },
+      { name: "bmw-x4", brand: "bmw", daily: true, monthy: true, weeky: true, img: "../../assets/img/cars/bmw/bmw-x4.jpg" },
+      { name: "bmw-528", brand: "bmw", daily: true, monthy: true, weeky: true, img: "../../assets/img/cars/bmw/bmw-528.jpeg" },
+      { name: "bmw-i8", brand: "bmw", daily: false, monthy: true, weeky: false, img: "../../assets/img/cars/bmw/bmw-i8.jpg" },
+      { name: "bmw-x1", brand: "bmw", daily: true, monthy: false, weeky: true, img: "../../assets/img/cars/bmw/bmw-x1.jpg" },
+      { name: "bmw-x4", brand: "bmw", daily: true, monthy: false, weeky: true, img: "../../assets/img/cars/bmw/bmw-x4.jpg" }
+    ]
+
   }
 
 
@@ -174,10 +212,10 @@ export class HomeComponent implements OnInit {
 
 
   ngOnInit(): void {
-    
-    if(localStorage.getItem("isLogin")==="false"){
+
+    if (localStorage.getItem("isLogin") === "false") {
       console.log('fuckkkkkk');
-      
+
     }
   }
 

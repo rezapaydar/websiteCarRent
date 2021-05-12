@@ -11,6 +11,7 @@ import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
 import { SwiperModule } from 'swiper/angular';
 import { SwiperComponent } from './swiper/swiper.component';
+import { TrueStrPipe } from './true-str.pipe';
 // import {SwiperComponent} from './home/swiper/swiper.component'
 
 @NgModule({
@@ -20,7 +21,8 @@ import { SwiperComponent } from './swiper/swiper.component';
     HeaderComponent,
     FooterComponent,
     LoginComponent,
-    SwiperComponent
+    SwiperComponent,
+    TrueStrPipe
   ],
   imports: [
     BrowserModule,

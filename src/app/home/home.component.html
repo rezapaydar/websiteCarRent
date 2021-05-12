@@ -87,6 +87,32 @@
 
 </header>
 
+<div class="my-4 mx-5" style="width:50%;height:700px;">
+    <mat-carousel
+  timings="250ms ease-in"
+  [autoplay]="true"
+  interval="5000"
+  color="accent"
+  maxWidth="auto"
+  proportion="25"
+  slides="5"
+  [loop]="true"
+  [hideArrows]="false"
+  [hideIndicators]="false"
+  [useKeyboard]="true"
+  [useMouseWheel]="false"
+  orientation="ltr"
+>
+  <mat-carousel-slide
+    #matCarouselSlide
+    *ngFor="let slide of slides; let i = index"
+    [image]="slide.image"
+    overlayColor="#00000040"
+    [hideOverlay]="false"
+  ></mat-carousel-slide>
+</mat-carousel>
+</div>
+
 <main class="w-100">
 
     <div class="conter-one">
@@ -169,14 +195,17 @@
                 </div>
             </div>
 
-            <div class="main-conter" style="padding:200px 0;width:100% !important;background: url(../../assets/img/1333.svg);background-size: 110%;background-repeat: repeat-y;color:white">
+            <div class="main-conter"
+                style="padding:200px 0;width:100% !important;background: url(../../assets/img/1333.png);background-size: 110%;background-repeat: repeat-y;color:white">
                 <div class="glass-icon-cont w-100 h-50 px-5 d-flex flex-row-reverse">
                     <div class="glass-icon rounded w-50 rounded-pill">
                         <img src="../../assets/img/space-shuttle.png" alt="" class="w-100 glass mr-5">
                     </div>
                     <div class="about-us-text mt-1 mb-0 d-flex flex-column align-items-center ">
-                        <h1 class="text-center text-white" id="title-about-us-text" style="color: white !important;">خدمات ما این است</h1>
-                        <p class="text-center text-white w-75 m-auto" id="thisservme" style="color: white !important;">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم
+                        <h1 class="text-center text-white" id="title-about-us-text" style="color: white !important;">
+                            خدمات ما این است</h1>
+                        <p class="text-center text-white w-75 m-auto" id="thisservme" style="color: white !important;">
+                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم
                             از صنعت
                             چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان
                             که لازم
@@ -199,7 +228,7 @@
 <div class="favorite" style="margin: 200px 0;">
 
     <div id="title-cont-specially" class="w-75 pl-5 pr-4 d-flex flex-row-reverse justify-content-between mb-4">
-        <h1>تخفیفات ویژه</h1>
+        <h1>خودرو های برند bmw</h1>
 
         <!-- <span>
             <p class="d-flex flex-row">
@@ -213,35 +242,55 @@
         </span> -->
     </div>
     <div class="cont-specially d-flex flex-row-reverse w-100">
-        <img src="../../assets/img/Component 26 – 1.svg" alt="" img="one" class="px-5 w-25">
+        <img src="../../assets/img/Component 26 – 1.svg" alt="" img="one" class="px-2 w-25">
         <div id="swiper" class="swipercontainer w-75 pl-5 pr-4 d-flex">
+            <swiper [slidesPerView]="3" [spaceBetween]="50" 
+            [breakpoints]="{
+                '500':{
+                    slidesPerView:1,
+                    spaceBetween:5
+                },
+                '640':{
+                    slidesPerView:2,
+                    spaceBetween:10
+                },
+                '768':{
+                    slidesPerView:3,
+                    spaceBetween:20
+                },
+                '1024':{
+                    slidesPerView:4,
+                    spaceBetween:50
+                }
+            }"
+            (swiper)="onSwiper($event)" (slideChange)="onSlideChange()"
+                [navigation]="true" [pagination]="{ clickable: true }" [scrollbar]="{ draggable: true }">
+                <ng-template swiperSlide *ngFor="let item of bmw">
+                    <div class="card" style="color: black;">
+                        <!-- <img class="card-img-top" src="../../assets/img/cars/benz/benz-SL63.jpg"> -->
+                        <img class="card-img-top" [src]="item.img">
+                        <div class="card-body" style="direction: rtl;">
+                            <h4 class="card-title text-right">{{item.name}}</h4>
+                            <p class="card-text text-muted text-right">برند : {{item.brand}} </p>
+                        </div>
+                        <div class="price-cont">
+                            <p class="text-center" style="font-size: 15px;direction: rtl;">
+                                امکان رزرو روزانه : <span class="d-inline "
+                                    [ngClass]="{'text-success': item.daily==true,'text-danger': item.daily==false}">{{item.daily|trueStr}}</span>
+                                <br>
+                                امکان رزرو هفتگی : <span class="d-inline "
+                                    [ngClass]="{'text-success': item.weeky==true,'text-danger': item.weeky==false}">{{item.weeky|trueStr}}</span>
+                                <br>
+                                امکان رزرو ماهانه : <span class="d-inline "
+                                    [ngClass]="{'text-success': item.monthy==true,'text-danger': item.monthy==false}">{{item.monthy|trueStr}}</span>
 
-            <div class="card-columns swiper-wrapper">
-
-                <div class="card swiper-slide">
-                    <img class="card-img-top" src="../../assets/img/BENZ-S500.svg" alt="">
-                    <div class="card-body">
-                        <h4 class="card-title text-right">بنز s500</h4>
-                        <p class="card-text text-right">مدل 2018 </p>
+                        </div>
+                        <button class="btn w-100" id="reg" style="position: relative;top: 0;"> رزرو کنید</button>
                     </div>
-                    <div class="card-body c-body-two d-flex rtl border-bottom">
-                        <div class="stars"></div>
-                        <div class="stars"></div>
-                        <div class="stars"></div>
-                        <div class="stars"></div>
-                        <div class="stars"></div>
-                    </div>
-                    <div class="price-cont">
-                        <p class="text-center"><span class="badge badge-primary badge-pill mr-2">1000000</span>هزینه
-                            هر
-                            شب اجاره </p>
-                    </div>
-                    <button class="btn w-100" id="log"> رزرو کنید</button>
-                </div>
 
+                </ng-template>
 
-                
-            </div>
+            </swiper>
         </div>
     </div>
 
@@ -253,7 +302,7 @@
 
         <div class="w-75 pl-5 pr-4 d-flex flex-row-reverse justify-content-between mr-4 text-right"
             style="direction: ltr;">
-            <h1>خودرو های ایرانی</h1>
+            <h1>خودرو های برند تویوتا</h1>
 
             <!-- <span>
                 <p class="d-flex align-items-center mt-4 pl-4">
@@ -269,30 +318,55 @@
 
     </div>
     <div class="suggestiontwo d-flex flex-row">
-        <img src="../../assets/img/Component 27 – 1.svg" alt="one" class="px-5">
+        <img src="../../assets/img/Component 27 – 1.svg" alt="one" class="px-2 w-25">
         <div id="swiper" class="swiper-container w-75 pr-5 pl-4 d-flex">
             <div class="card-columns swiper-wrapper">
+                <swiper [slidesPerView]="3" [spaceBetween]="50" (swiper)="onSwiper($event)"
+                    (slideChange)="onSlideChange()" [breakpoints]="{
+                        '500':{
+                            slidesPerView:1,
+                            spaceBetween:5
+                        },
+                        '640':{
+                            slidesPerView:2,
+                            spaceBetween:10
+                        },
+                        '768':{
+                            slidesPerView:3,
+                            spaceBetween:20
+                        },
+                        '1024':{
+                            slidesPerView:4,
+                            spaceBetween:50
+                        }
+                    }" [navigation]="true" [pagination]="{ clickable: true }"
+                    [scrollbar]="{ draggable: true } ">
+                    <ng-template swiperSlide *ngFor="let item of toyota">
+                        <div class="card" style="color: black;">
+                            <!-- <img class="card-img-top" src="../../assets/img/cars/benz/benz-SL63.jpg"> -->
+                            <img class="card-img-top" [src]="item.img">
+                            <div class="card-body" style="direction: rtl;">
+                                <h4 class="card-title text-right">{{item.name}}</h4>
+                                <p class="card-text text-muted text-right">برند : {{item.brand}} </p>
+                            </div>
+                            <div class="price-cont">
+                                <p class="text-center" style="font-size: 15px;direction: rtl;">
+                                    امکان رزرو روزانه : <span class="d-inline "
+                                        [ngClass]="{'text-success': item.daily==true,'text-danger': item.daily==false}">{{item.daily|trueStr}}</span>
+                                    <br>
+                                    امکان رزرو هفتگی : <span class="d-inline "
+                                        [ngClass]="{'text-success': item.weeky==true,'text-danger': item.weeky==false}">{{item.weeky|trueStr}}</span>
+                                    <br>
+                                    امکان رزرو ماهانه : <span class="d-inline "
+                                        [ngClass]="{'text-success': item.monthy==true,'text-danger': item.monthy==false}">{{item.monthy|trueStr}}</span>
 
-                <div class="card swiper-slide">
-                    <img class="card-img-top" src="../../assets/img/BENZ-S500.svg" alt="">
-                    <div class="card-body">
-                        <h4 class="card-title text-right">بنز s500</h4>
-                        <p class="card-text text-right">مدل 2018 </p>
-                    </div>
-                    <div class="card-body c-body-two d-flex rtl border-bottom">
-                        <div class="stars"></div>
-                        <div class="stars"></div>
-                        <div class="stars"></div>
-                        <div class="stars"></div>
-                        <div class="stars"></div>
-                    </div>
-                    <div class="price-cont">
-                        <p class="text-center"><span class="badge badge-primary badge-pill mr-2">1000000</span>هزینه
-                            هر
-                            شب اجاره </p>
-                    </div>
-                    <button class="btn w-100" id="reg"> رزرو کنید</button>
-                </div>
+                            </div>
+                            <button class="btn w-100" id="reg" style="position: relative;top: 0;"> رزرو کنید</button>
+                        </div>
+
+                    </ng-template>
+
+                </swiper>
 
 
             </div>
@@ -307,66 +381,69 @@
 
         <div class="w-100 pl-5 pr-4 d-flex flex-row-reverse justify-content-between mr-4 text-right"
             style="direction: ltr;">
-            <h1>خودرو های ایرانی</h1>
+            <h1>خودرو های برند بنز</h1>
 
-            <!-- <span>
-                <p class="d-flex align-items-center mt-4 pl-4">
 
-                    <img src="../../assets/img/icons8-expand-arrow-50.png" alt="" id="img-one" srcset=""
-                        class="swiper-button-prev float-left mr-3">
-                    <img src="../../assets/img/icons8-expand-arrow-50.png" alt="" id="img-two" srcset=""
-                        class="swiper-button-next float-right">
-
-                </p>
-            </span> -->
         </div>
 
     </div>
 
     <div class="suggestion-two d-flex flex-row">
-        <!-- <img src="img/Component 27 – 1.svg" alt="one" class="px-5"> -->
-        <div id="swiper" class="swiperrcontainer w-100 pr-5 pl-4 d-flex">
+        <!-- <img src="img/Component 27 – 1.svg" alt="one" class="px-5 col-12 col-sm-4 col-md-3 col-lg-2 "> -->
+        <div id="swiper" class="swiperrcontainer w-100 px-4 d-flex">
             <div class="card-columns swiper-wrapper">
+                <swiper [slidesPerView]="4" [spaceBetween]="50" (swiper)="onSwiper($event)"
+                    (slideChange)="onSlideChange()" [breakpoints]="{
+                        '400':{
+                            slidesPerView:1,
+                            spaceBetween:5
+                        },
+                        '500':{
+                            slidesPerView:2,
+                            spaceBetween:5
+                        },
+                        '640':{
+                            slidesPerView:3,
+                            spaceBetween:10
+                        },
+                        '768':{
+                            slidesPerView:4,
+                            spaceBetween:20
+                        },
+                        '1024':{
+                            slidesPerView:5,
+                            spaceBetween:50
+                        }
+                    }" [navigation]="true" [pagination]="{ clickable: true }"
+                    [scrollbar]="{ draggable: true }">
+                    <ng-template swiperSlide *ngFor="let item of benz">
+                        <div class="card" style="color: black;">
+                            <!-- <img class="card-img-top" src="../../assets/img/cars/benz/benz-SL63.jpg"> -->
+                            <img class="card-img-top" [src]="item.img">
+                            <div class="card-body" style="direction: rtl;">
+                                <h4 class="card-title text-right">{{item.name}}</h4>
+                                <p class="card-text text-muted text-right">برند : {{item.brand}} </p>
+                            </div>
+                            <div class="price-cont">
+                                <p class="text-center" style="font-size: 15px;direction: rtl;">
+                                    امکان رزرو روزانه : <span class="d-inline "
+                                        [ngClass]="{'text-success': item.daily==true,'text-danger': item.daily==false}">{{item.daily|trueStr}}</span>
+                                    <br>
+                                    امکان رزرو هفتگی : <span class="d-inline "
+                                        [ngClass]="{'text-success': item.weeky==true,'text-danger': item.weeky==false}">{{item.weeky|trueStr}}</span>
+                                    <br>
+                                    امکان رزرو ماهانه : <span class="d-inline "
+                                        [ngClass]="{'text-success': item.monthy==true,'text-danger': item.monthy==false}">{{item.monthy|trueStr}}</span>
 
-                <div class="card swiper-slide">
-                    <img class="card-img-top" src="../../assets/img/BENZ-S500.svg" alt="">
-                    <div class="card-body">
-                        <h4 class="card-title text-right">بنز s500</h4>
-                        <p class="card-text text-right">مدل 2018 </p>
-                    </div>
-                    <div class="card-body c-body-two d-flex rtl border-bottom">
-                        <div class="stars"></div>
-                        <div class="stars"></div>
-                        <div class="stars"></div>
-                        <div class="stars"></div>
-                        <div class="stars"></div>
-                    </div>
-                    <div class="price-cont">
-                        <p class="text-center"><span class="badge badge-primary badge-pill mr-2">1000000</span>هزینه
-                            هر
-                            شب اجاره </p>
-                    </div>
-                    <button class="btn w-100" id="reg"> رزرو کنید</button>
-                </div>
-                
-                <swiper
-                [slidesPerView]="3"
-                [spaceBetween]="50"
-                (swiper)="onSwiper($event)"
-                (slideChange)="onSlideChange()"
-                [navigation]="true"
-                [pagination]="{ clickable: true }"
-                [scrollbar]="{ draggable: true }"
-              >
-                <ng-template swiperSlide>Slide 1</ng-template>
-                <ng-template swiperSlide>Slide 2</ng-template>
-                <ng-template swiperSlide>Slide 3</ng-template>
-                <ng-template swiperSlide>Slide 4</ng-template>
-                <ng-template swiperSlide>Slide 5</ng-template>
-                <ng-template swiperSlide>Slide 6</ng-template>
-              </swiper>
+                            </div>
+                            <button class="btn w-100" id="reg" style="position: relative;top: 0;"> رزرو کنید</button>
+                        </div>
 
-                
+                    </ng-template>
+
+                </swiper>
+
+
 
             </div>
         </div>

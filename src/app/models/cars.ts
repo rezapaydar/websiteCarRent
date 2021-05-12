@@ -4,4 +4,5 @@ export interface cars{
     weeky:Boolean,
     monthy:Boolean,
     brand:String,
+    img:String
 }

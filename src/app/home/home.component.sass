@@ -1,3 +1,6 @@
+.card-img-top
+    width: 90%
+    height: 40%
 
 $display: none
 @mixin displayer($disp:$display)
@@ -7,13 +10,17 @@ body
     overflow: hidden
     background: rgb(247, 246, 246)
 
+    .price-cont
+        p
+            font-size:(12px !important) 
+
     .swiper-container
         width: 100%
         height: 100%
 
         .swiper-slide
             text-align: center
-            font-size: 18px
+            font-size: 12px
             background: #fff
             display: -webkit-box
             display: -ms-flexbox
