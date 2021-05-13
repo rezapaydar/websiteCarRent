@@ -12,7 +12,7 @@ body
 
     .price-cont
         p
-            font-size:(12px !important) 
+            font-size: (12px !important)
 
     .swiper-container
         width: 100%
@@ -35,57 +35,24 @@ body
             -webkit-align-items: center
             align-items: center
 
-.cities
-    width: 100%
-    display: none
-
-    ul
-        width: 1013px
-        list-style: none
-        position: absolute
-        right: 37px
-        top: 60px
-        background: #f5f5f5
-        display: flex
-        flex-wrap: wrap
-        justify-content: space-around
-        padding-left: 0
-
-        div.w-100
-            width: 100%
-            // position: absolute
-            // left: -146px
-            // top: 43px
-
-        li
-            // margin: 5px
-            padding: 10px 33.1px
-            transition: 0.1s
-
-            &:hover
-                background: #da2f2f
-                color: white
-
-#coll-search-menu1
-    &:hover
-        .cities
-            display: block
-
 .types
-    width: 100%
+    width: (100% !important)
     display: none
 
     ul
-        width: 1013px
+        width: (100% !important)
+        height: 300px
         list-style: none
         position: absolute
-        right: -234px
-        top: 60px
+        right: 25%
+        top: 20px
         background: #f5f5f5
-        display: flex
-        flex-wrap: nowrap
-        justify-content: center
+        // display: flex
+        // // flex-wrap: wrap
+        // justify-content: center
+        flex-direction: column
         padding-left: 0
+        overflow: scroll
 
         div.w-100
             width: 100%
@@ -94,9 +61,11 @@ body
             // top: 43px
 
         li
-            // margin: 5px
-            padding: 2.5px 33.1px
+            text-align: right
+            width: 100%
+            padding: 2.5px 5px
             transition: 0.1s
+            border-top: 0.3px solid #74747418
 
             &:nth-child(3)
                 color: #acacac
@@ -115,28 +84,33 @@ body
             display: block
 
 .timesone
-    width: 100%
+    width: (100% !important)
     display: none
 
     ul
         width: 100%
-        height: auto
+        height: 300px
         list-style: none
         position: absolute
-        right: -504px
-        top: 60px
+        right: 25%
+        top: 20px
         background: #f5f5f5
         display: flex
-        flex-wrap: wrap
+        // flex-wrap: wrap
         justify-content: center
+        flex-direction: column
         padding-left: 0
+        overflow: scroll
 
         div.w-100
             width: 100%
 
         li
-            padding: 10px 33.1px
+            text-align: justify
+            width: 100%
+            padding: 2.5px 33.1px
             transition: 0.1s
+            border-top: 0.3px solid #74747418
 
             &:nth-child(even)
                 color: #acacac
@@ -162,7 +136,6 @@ body
         background: transparent
         width: (50% !important)
         border: (none !important)
-        // border-bottom: (2px solid #525252 !important)
         outline: (none !important)
         padding-bottom: 10px
 
@@ -182,54 +155,84 @@ body
         position: relative
         left: 21%
 
-@media screen and (max-width: 590px)
 
-    header#head
-        margin-top: 100px
+@media only screen and (min-width: 1024px) and (max-width: 1365px)
 
-    div.lorem
-        p
-            text-align: (right !important)
-
-
-    ul.navbar-nav
-        li
-            a
-                font-size: 10px
-
-    .timesone
-        width: 100%
-        display: none
-
-        ul
-            width: 100%
-            height: auto
-            list-style: none
-            position: relative
-            right: 25%
-            top: 60px
-            display: flex
-            flex-wrap: wrap
-            justify-content: center
-            padding-left: 0
-
-    #coll-search-menu3
-        &:hover
-            .timesone
-                background: blue
-                display: block
-
-    .types
-        width: 100%
-        display: none
+.cities
+    width: (100% !important)
+    display: none
 
     ul
         width: 100%
+        height: 300px
         list-style: none
         position: absolute
         right: 25%
-        top: 60px
+        top: 20px
+        background: #f5f5f5
         display: flex
-        flex-wrap: wrap
+        // flex-wrap: wrap
         justify-content: center
+        flex-direction: column
         padding-left: 0
+        overflow: scroll
+
+        div.w-100
+            width: 100%
+            // position: absolute
+            // left: -146px
+            // top: 43px
+
+        li
+            text-align: justify
+            width: 100%
+            padding: 2.5px 33.1px
+            transition: 0.1s
+            border-top: 0.3px solid #74747418
+
+            &:hover
+                background: #da2f2f
+                color: white
+
+#coll-search-menu1
+    &:hover
+        .cities
+            display: block
+
+/*  Tablets in portrait mode, large display smartphones landscape mode */
+
+@media only screen and (min-width: 768px) and (max-width: 1023px)
+.search-box-combo
+    height: (auto !important)
+
+.logo-text
+    font-size: 100%
+
+@media only screen and (min-width: 421px) and (max-width: 767px)
+.search-box-combo
+    height: (auto !important)
+
+.logo-text
+    font-size: 80%
+    
+
+// a.navbar-brand
+//     font-size: 80%
+
+
+@media only screen and (max-width: 420px)
+
+.search-box-combo
+    height: (auto !important)
+
+header#head
+    margin-top: 100px
+
+div.lorem
+    p
+        text-align: (right !important)
+
+ul.navbar-nav
+    li
+        a
+            font-size: 10px

@@ -6,7 +6,7 @@ import { timeServe } from "../models/times";
 import { HomeservService } from '../services/homeserv.service';
 import { StatusservService } from '../services/statusserv.service';
 import { SwiperComponent } from "swiper/angular";
-import {MatCarouselSlide} from "@ngmodule/material-carousel"
+// import {MatCarouselSlide} from "@ngmodule/material-carousel"
 import { cars } from '../models/cars';
 
 

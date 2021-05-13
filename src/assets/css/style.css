@@ -209,8 +209,8 @@ h1,h2,h3,h4,h5,h6,span{
 }
 
 div.search-box-combo {
-    display: grid;
-    grid-template-columns: 25% 25% 25% 25%;
+    /* display: grid;
+    grid-template-columns: 25% 25% 25% 25%; */
     justify-content: space-between;
 }
 

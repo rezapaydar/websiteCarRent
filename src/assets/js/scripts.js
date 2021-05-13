@@ -1,26 +1,62 @@
-// window.addEventListener('load',function() {
-//     while(true){
-//         setInterval(() => {
-//             document.
-//         }, 1500);
-//     }
-// })
-// let scroll = window.scrollY;
+// import "@accursoft/jquery-caret";
+
+function getloc(e){
+alert(e.target.scrollTop)
+}
 
 
 let imgcont = document.getElementById('img-cont');
 document.addEventListener('scroll', function () {
-    if (window.pageYOffset < 800 || window.pageYOffset > 1800) {
-        //    alert(window.pageYOffset)
-        $('img[alt="bg-down"]').css("display", "none")
+
+    if (window.innerWidth >= 1024) {
+
+
+        if (window.pageYOffset < 1400 || window.pageYOffset > 2800) {
+            //    alert(window.pageYOffset)
+            $('img[alt="bg-down"]').css("display", "none")
+
+        }
+        else {
+
+            $('img[alt="bg-down"]').css("display", "block")
+
+
+        }
     }
-    else {
-
-        $('img[alt="bg-down"]').css("display", "block")
+    else if (window.innerWidth >= 768) {
 
 
+        if (window.pageYOffset < 1400 || window.pageYOffset > 2800) {
+            //    alert(window.pageYOffset)
+            $('img[alt="bg-down"]').css("display", "none")
+
+        }
+        else {
+
+            $('img[alt="bg-down"]').css("display", "block")
+
+
+        }
     }
+    else if (window.innerWidth <= 570) {
+
+
+        if (window.pageYOffset < 3500 || window.pageYOffset > 4500) {
+            //    alert(window.pageYOffset)
+            $('img[alt="bg-down"]').css("display", "none")
+
+        }
+        else {
+
+            $('img[alt="bg-down"]').css("display", "block")
+
+
+        }
+    }
+
 })
+
+
 
 
 setTimeout(() => {
