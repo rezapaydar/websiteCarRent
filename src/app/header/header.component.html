@@ -25,7 +25,7 @@
                             <a class="navbar-brand d-block h2" style="color: black;" href="#">ل<span
                                     style="color: aqua;display: inline;">و</span>گو</a>
                         </div>
-                        <div class="slogan mx-3">
+                        <div class="slogan d-none d-lg-block mx-3">
                             <p>شعار وب سایت ما این است</p>
                             <p>this is a logo for this website</p>
                         </div>
@@ -60,6 +60,19 @@
                                 <a href="#" class="nav-link =" data-toggle="dropdown">سوالات متداول</a>
                             </li>
 
+                            <li class="nav-item d-block d-lg-none">
+                                <button class="btn  btn-sm dropdown-toggle" type="button" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">
+                                    وارد شده به عنوان {{status}}
+                                </button>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#">مدیریت پروفایل</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item d-flex flex-row-reverse justify-content-center align-items-center"
+                                        href="#">خروج <i class="fas fa-power-off px-3"></i></a>
+                                </div>
+                            </li>
+
                         </ul>
                     </div>
 
@@ -69,8 +82,8 @@
                                 (click)="login()">ورود</button>
                             <button class="btn-sign  rounded-pill" id="reg">ثبت نام</button>
                         </div>
-                        <div class="btn-group pt-2">
-                            <button class="btn btn-sm dropdown-toggle" type="button" data-toggle="dropdown"
+                        <div class="btn-group pt-2 d-none d-lg-block" >
+                            <button class="btn  btn-sm dropdown-toggle" type="button" data-toggle="dropdown"
                                 aria-haspopup="true" aria-expanded="false">
                                 وارد شده به عنوان {{status}}
                             </button>

@@ -3,7 +3,7 @@
 <header class="w-100" id="head">
     <div class="logo">
         <div class="logo-text" style="margin-top: 60px;">
-            <a class="navbar-brand h2" style="color: white;" href="#">ل<span style="color: aqua;">و</span>گو</a>
+            <a class="navbar-brand h2" id="logo-abisefid" style="color: white;" href="#">ل<span style="color: aqua;">و</span>گو</a>
             <p style="color:white;text-align: center;" class="h6">شعار وب سایت ما این است</p>
             <div class="lorem">
                 <p class="w-50 text-white text-center">لورم ایپسوم متن ساختگی با
@@ -179,7 +179,7 @@
                 </div>
             </div>
 
-            <div class="main-conter">
+            <div class="main-conter" id="conterone">
                 <div class="best-serv w-100">
                     <div class="text-center w-50 m-auto" style="color: white !important; ">
                         <h1 class="text-center">بهترین خدمات را از ما بگیرید</h1>
@@ -397,9 +397,9 @@
             <div class="card-columns swiper-wrapper">
                 <swiper [slidesPerView]="4" [spaceBetween]="50" (swiper)="onSwiper($event)"
                     (slideChange)="onSlideChange()" [breakpoints]="{
-                        '400':{
-                            slidesPerView:2,
-                            spaceBetween:10
+                        '350':{
+                            slidesPerView:1,
+                            spaceBetween:5
                         },
                         '500':{
                             slidesPerView:2,
