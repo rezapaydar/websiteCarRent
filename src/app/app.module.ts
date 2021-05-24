@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Observable, Subject } from "rxjs";
 import { ReactiveFormsModule,FormBuilder } from "@angular/forms";
 import { BrowserModule } from '@angular/platform-browser';
+import { Router,ActivatedRoute,RouterModule } from "@angular/router";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,7 +11,6 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
 import { SwiperModule } from 'swiper/angular';
-import { SwiperComponent } from './swiper/swiper.component';
 import { TrueStrPipe } from './true-str.pipe';
 // import {SwiperComponent} from './home/swiper/swiper.component'
 
@@ -58,6 +58,10 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatTreeModule} from '@angular/material/tree';
 import {OverlayModule} from '@angular/cdk/overlay';
+import { NgbdCarouselBasicComponent } from './ngbd-carousel-basic/ngbd-carousel-basic.component';
+import {NgbCarouselModule, NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { ArticleCompComponent } from './article-comp/article-comp.component';
+
 
 @NgModule({
   declarations: [
@@ -66,10 +70,12 @@ import {OverlayModule} from '@angular/cdk/overlay';
     HeaderComponent,
     FooterComponent,
     LoginComponent,
-    SwiperComponent,
-    TrueStrPipe
+    TrueStrPipe,
+    NgbdCarouselBasicComponent,
+    ArticleCompComponent
   ],
   imports: [
+    RouterModule,
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
@@ -123,6 +129,8 @@ import {OverlayModule} from '@angular/cdk/overlay';
     OverlayModule,
     PortalModule,
     ScrollingModule,
+    NgbModule,
+    NgbCarouselModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -3,7 +3,8 @@
 <header class="w-100" id="head">
     <div class="logo">
         <div class="logo-text" style="margin-top: 60px;">
-            <a class="navbar-brand h2" id="logo-abisefid" style="color: white;" href="#">ل<span style="color: aqua;">و</span>گو</a>
+            <a class="navbar-brand h2" id="logo-abisefid" style="color: white;" href="#">ل<span
+                    style="color: aqua;">و</span>گو</a>
             <p style="color:white;text-align: center;" class="h6">شعار وب سایت ما این است</p>
             <div class="lorem">
                 <p class="w-50 text-white text-center">لورم ایپسوم متن ساختگی با
@@ -15,9 +16,10 @@
 
 
     <form [formGroup]="formSearcher">
-        <div id="cont-search" >
+        <div id="cont-search">
 
-            <div class="search-box-combo  d-flex flex-column flex-sm-row-reverse justify-content-around h-auto py-5 w-75 mx-auto shadow-lg  bg-light rounded" >
+            <div
+                class="search-box-combo  d-flex flex-column flex-sm-row-reverse justify-content-around h-auto py-5 w-75 mx-auto shadow-lg  bg-light rounded">
 
                 <div class="coll-search-menu w-100 w-lg-25" id="coll-search-menu1">
                     <p class="text-search-menu"> اجاره استان </p>
@@ -25,8 +27,8 @@
                         <i class="fas fa-times-circle" id="fa-times-circle1" [style]="disp" (click)="closeicon1()"></i>
                         <input type="text" class="cityname" [style]="disp" formControlName="citySel">
                         <img src="../../assets/img/down-arrow.svg" (click)="cityOpen()">
-                        <div class="cities " style="background: transparent;">
-                            <ul  #citySel>
+                        <div class="cities " style="background: transparent;z-index: 9999;">
+                            <ul #citySel>
                                 <li *ngFor="let item of cities" (click)='onClickCities($event)'>{{item.titleCity}}</li>
                             </ul>
                         </div>
@@ -39,7 +41,7 @@
                         <i class="fas fa-times-circle" id="fa-times-circle2" [style]="disp1" (click)="closeicon2()"></i>
                         <input type="text" class="cityname d-inline" [style]="disp1" formControlName="typeSel">
                         <img src="../../assets/img/down-arrow.svg" (click)="typeOpen()">
-                        <div class="types " style="background: transparent;">
+                        <div class="types " style="background: transparent;z-index: 9999;">
                             <ul class="w-100" #typeSel>
                                 <li *ngFor="let item of types" (click)='onClickTypes($event)'>{{item.titleType}}</li>
                             </ul>
@@ -53,7 +55,7 @@
                         <i class="fas fa-times-circle" id="fa-times-circle2" [style]="disp2" (click)="closeicon3()"></i>
                         <input type="text" class="cityname" [style]="disp2" formControlName="timeSel">
                         <img src="../../assets/img/down-arrow.svg" (click)="timeOpen()">
-                        <div class="timesone " style="background: transparent;">
+                        <div class="timesone " style="background: transparent;z-index: 9999;">
                             <ul class="w-100" #timeSel>
                                 <li *ngFor="let item of timesServ" (click)='onClickTimes($event)'>
                                     {{item.hour}}:{{item.minute}}</li>
@@ -85,31 +87,12 @@
 
 </header>
 
-<div class="my-4 mx-5" style="width:50%;height:700px;">
-    <!-- <mat-carousel
-  timings="250ms ease-in"
-  [autoplay]="true"
-  interval="5000"
-  color="accent"
-  maxWidth="auto"
-  proportion="25"
-  slides="5"
-  [loop]="true"
-  [hideArrows]="false"
-  [hideIndicators]="false"
-  [useKeyboard]="true"
-  [useMouseWheel]="false"
-  orientation="ltr"
->
-  <mat-carousel-slide
-    #matCarouselSlide
-    *ngFor="let slide of slides; let i = index"
-    [image]="slide.image"
-    overlayColor="#00000040"
-    [hideOverlay]="false"
-  ></mat-carousel-slide>
-</mat-carousel> -->
+
+<div class="w-75 mx-auto d-block" style="margin:100px 0;z-index: 1;">
+    <h2 class="text-center">مقاله های جدید</h2>
+    <app-ngbd-carousel-basic></app-ngbd-carousel-basic>
 </div>
+
 
 <main class="w-100">
 
@@ -194,7 +177,8 @@
             </div>
 
             <div class="main-conter"
-                style="padding:200px 0;width:100% !important;background: url(../../assets/img/1333.png);background-size: 110%;background-repeat: repeat-y;color:white" click="getloc(e)">
+                style="padding:200px 0;width:100% !important;background: url(../../assets/img/1333.png);background-size: 110%;background-repeat: repeat-y;color:white"
+                click="getloc(e)">
                 <div
                     class="glass-icon-cont w-100 h-50 px-5 d-flex justify-content-center align-items-center flex-column flex-md-row-reverse">
                     <div class="glass-icon rounded w-50 rounded-pill m-3">

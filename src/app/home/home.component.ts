@@ -8,9 +8,12 @@ import { StatusservService } from '../services/statusserv.service';
 import { SwiperComponent } from "swiper/angular";
 // import {MatCarouselSlide} from "@ngmodule/material-carousel"
 import { cars } from '../models/cars';
+import { Articles } from "../models/articles";
 
+import SwiperCore, { Parallax, Pagination, Navigation } from "swiper/core";
 
-
+// install Swiper modules
+SwiperCore.use([Parallax, Pagination, Navigation]);
 
 @Component({
   selector: 'app-home',
@@ -125,6 +128,8 @@ export class HomeComponent implements OnInit {
       typeSel: [''],
       timeSel: ['']
     })
+
+    
 
     this.types = [
       { titleType: "سواری معمولی", description: "ماشین سواری معمولی ، اجاره به صورت ساعتی", id: 1 },
