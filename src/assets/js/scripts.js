@@ -16,7 +16,7 @@ document.addEventListener('scroll', function () {
     if (window.innerWidth >= 1024) {
 
 
-        if (window.pageYOffset < 1400 || window.pageYOffset > 2800) {
+        if (window.pageYOffset < 650 || window.pageYOffset > 2000) {
             //    alert(window.pageYOffset)
             $('img[alt="bg-down"]').css("display", "none")
 
@@ -32,7 +32,7 @@ document.addEventListener('scroll', function () {
     else if (window.innerWidth >= 768) {
 
 
-        if (window.pageYOffset < 1400 || window.pageYOffset > 2800) {
+        if (window.pageYOffset < 650 || window.pageYOffset > 2000) {
             //    alert(window.pageYOffset)
             $('img[alt="bg-down"]').css("display", "none")
 

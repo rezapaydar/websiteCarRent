@@ -1,5 +1,25 @@
 <app-header></app-header>
-<div class="container">
-    <h1>fuckkk</h1>
+<div class="d-flex justify-content-center" style="padding:200px 0 100px 0;background-image: linear-gradient(to right, #92fe9d 0%, #00c9ff 100%);">
+  <form [formGroup]="newform">
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>نام کاربری یا ایمیل</mat-label>
+        <input matInput placeholder="folan@example.com" formControlName="username">
+        <mat-icon matSuffix>account_circle</mat-icon>
+        <!-- <mat-hint *ngIf="this.newform.control.username.hasError('required')">redHint</mat-hint> -->
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="fill">
+        <mat-label>گزرواژه</mat-label>
+        <input matInput formControlName="password">
+        <mat-icon matSuffix>vpn_key</mat-icon>
+        <!-- <mat-hint *ngIf="this.newform.control.username.hasError('required')">Hint</mat-hint> -->
+      </mat-form-field>
+    </p>
+    <p>
+      <button mat-raised-button color="warn" style="width: 100%;padding:5px;"><p>ورود</p></button>
+    </p>
+  </form>
 </div>
 <app-footer></app-footer>
