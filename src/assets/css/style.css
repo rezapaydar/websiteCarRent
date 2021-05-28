@@ -3,21 +3,43 @@ body{
     overflow-x: hidden;
 }
 header#head{
-    background: url("../img/you-x-ventures-vbxyFxlgpjM-unsplash.jpg")no-repeat;
+    background: url("../img/headerbg.jpg")no-repeat;
     /* background-position: 0px; */
     background-position: 10px 0;
     background-size: cover;
-    height: 85%;
+    height:100vh;
     overflow: visible;
+
 }
 header#headsite{
-    z-index: 9;
+    z-index: 99999;
     transition: 0.3s;
     overflow: visible;
     position: absolute;
 }
 .btn-group{
     position: static;
+}
+
+.custom-shape-divider-bottom-1622231172 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1622231172 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 46px;
+}
+
+.custom-shape-divider-bottom-1622231172 .shape-fill {
+    fill: #FFFFFF;
 }
 
 @font-face {
@@ -163,7 +185,7 @@ h1,h2,h3,h4,h5,h6,span{
 }
 
 .logo-text {
-    background: rgba(85, 84, 84, 0.233);
+    /* background: rgba(85, 84, 84, 0.233); */
     padding: 5px;
     transform: translateY(10px);
 }
