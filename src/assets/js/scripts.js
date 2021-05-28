@@ -98,7 +98,7 @@ window.addEventListener("scroll", () => {
         $('header#headsite').css("position", "fixed");
         $('header#headsite').css("transition", "0.3s");
         $('header#headsite').css("top", "0px");
-        $('header#headsite').css("background", "#e0e0e0");
+        $('header#headsite').css("background", "#fcfcfc");
         $('header#headsite').css("box-shadow", "20px 20px 60px #bebebe,-20px -20px 60px #ffffff");
 
     }

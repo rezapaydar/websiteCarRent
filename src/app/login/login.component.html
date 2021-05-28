@@ -17,6 +17,15 @@
         <!-- <mat-hint *ngIf="this.newform.control.username.hasError('required')">Hint</mat-hint> -->
       </mat-form-field>
     </p>
+    <section class="example-section">
+      <mat-checkbox class="example-margin" #signcheck>ثبت نام نکرده ام</mat-checkbox>
+    </section>
+    <mat-form-field appearance="fill" *ngIf="signcheck.checked">
+      <mat-label>ایمیل</mat-label>
+      <input matInput formControlName="username" placeholder="email">
+      <!-- <mat-icon matSuffix>email_key</mat-icon> -->
+      <!-- <mat-hint *ngIf="this.newform.control.username.hasError('required')">Hint</mat-hint> -->
+    </mat-form-field>
     <p>
       <button mat-raised-button color="warn" style="width: 100%;padding:5px;"><p>ورود</p></button>
     </p>
