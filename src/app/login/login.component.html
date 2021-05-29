@@ -1,34 +1,49 @@
 <app-header></app-header>
-<div class="d-flex justify-content-center" style="padding:200px 0 100px 0;background-image: linear-gradient(to right, #92fe9d 0%, #00c9ff 100%);">
-  <form [formGroup]="newform">
+<div class="d-flex justify-content-center"
+  style="padding:200px 0 100px 0;background-image: linear-gradient(to right, #92fe9d 0%, #00c9ff 100%);">
+  <form [formGroup]="newform" class="w-25" onsubmit="login()">
     <p>
-      <mat-form-field appearance="outline">
+      <mat-form-field appearance="fill" style="width: 100%;">
         <mat-label>نام کاربری یا ایمیل</mat-label>
-        <input matInput placeholder="folan@example.com" formControlName="username">
+        <input matInput placeholder="username" formControlName="username">
         <mat-icon matSuffix>account_circle</mat-icon>
-        <!-- <mat-hint *ngIf="this.newform.control.username.hasError('required')">redHint</mat-hint> -->
+        <mat-hint *ngIf="f.username.errors.required">نام کاربری احتیاج است</mat-hint>
       </mat-form-field>
     </p>
     <p>
-      <mat-form-field appearance="fill">
+      <mat-form-field appearance="fill" style="width: 100%;">
         <mat-label>گزرواژه</mat-label>
         <input matInput formControlName="password">
         <mat-icon matSuffix>vpn_key</mat-icon>
-        <!-- <mat-hint *ngIf="this.newform.control.username.hasError('required')">Hint</mat-hint> -->
+        <mat-hint *ngIf="f.password.errors.required">گذرواژه نیاز است</mat-hint>
+        <mat-hint *ngIf="f.password.errors.minlength">حداقل 8 کاراکتر نیاز است</mat-hint>
+
       </mat-form-field>
     </p>
-    <section class="example-section">
-      <mat-checkbox class="example-margin" #signcheck>ثبت نام نکرده ام</mat-checkbox>
-    </section>
-    <mat-form-field appearance="fill" *ngIf="signcheck.checked">
-      <mat-label>ایمیل</mat-label>
-      <input matInput formControlName="username" placeholder="email">
-      <!-- <mat-icon matSuffix>email_key</mat-icon> -->
-      <!-- <mat-hint *ngIf="this.newform.control.username.hasError('required')">Hint</mat-hint> -->
-    </mat-form-field>
+
+    <div class="formsignup" formGroupName="signup">
+
+      <div style="direction: rtl;text-align: right;">
+        <mat-checkbox #signcheck formControlName="signupcheck">ثبت نام نکرده ام</mat-checkbox>
+      </div>
+
+      <mat-form-field appearance="fill" style="width: 100%;" *ngIf="signcheck.checked">
+        <mat-label>ایمیل</mat-label>
+        <input matInput type="email" formControlName="emailsignup" placeholder="folan@example.com">
+        <mat-icon matSuffix>alternate_email</mat-icon>
+        <mat-hint *ngIf="f.emailsignup.errors.email">ایمیل صحیح وارد کنید!</mat-hint>
+      </mat-form-field>
+
+    </div>
+    
+
     <p>
-      <button mat-raised-button color="warn" style="width: 100%;padding:5px;"><p>ورود</p></button>
+      <button mat-raised-button color="warn" style="width: 100%;padding:5px;" type="submit">
+        <p>ورود</p>
+      </button>
     </p>
   </form>
+  
 </div>
+
 <app-footer></app-footer>

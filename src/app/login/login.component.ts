@@ -1,25 +1,46 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ErrorStateMatcher } from '@angular/material/core';
 import { CustomErrorMatcher } from './customerrormatcher';
-import { FormBuilder,Validators } from "@angular/forms";
+import { FormBuilder, Validators } from "@angular/forms";
+import { StatusservService } from '../services/statusserv.service';
 
 @Component({
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.sass'],
-  providers:[
-    // {provide:ErrorStateMatcher,useClass:CustomErrorMatcher}
+  providers: [
+    StatusservService,
   ]
 })
 export class LoginComponent implements OnInit {
-newform;
-  constructor(private fb:FormBuilder) { 
-    this.newform=this.fb.group({
-      username:['',Validators.required],
-      password:['',Validators.required]
+  @ViewChild('signcheck') signcheck: ElementRef;
+  newform;
+  constructor(private fb: FormBuilder, private statusserv: StatusservService) {
+
+    this.newform = this.fb.group({
+      username: ['', Validators.required,Validators.minLength(5)],
+      password: ['', Validators.required,Validators.minLength(8)],
+      signup: this.fb.group({
+          signupcheck: [],
+          emailsignup:['',Validators.required,Validators.email]
+      })
+
     })
+
+
   }
 
+  get f() { return this.newform.controls; }
+
+
   ngOnInit(): void {
+
   }
+
+  login() {
+    // this.statusserv.login()
+    console.log(this.newform);
+
+  }
+
 
 }
