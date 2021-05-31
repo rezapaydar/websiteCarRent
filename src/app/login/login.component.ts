@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
       password: ['', Validators.required,Validators.minLength(8)],
       signup: this.fb.group({
           signupcheck: [],
-          emailsignup:['',Validators.required,Validators.email]
+          emailsignup:['']
       })
 
     })
@@ -37,8 +37,8 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    // this.statusserv.login()
-    console.log(this.newform);
+    // this.statusserv.login(this.newform.value)
+    console.log(this.newform.value);
 
   }
 

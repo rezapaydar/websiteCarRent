@@ -3,8 +3,8 @@ body{
     overflow-x: hidden;
 }
 header#head{
-    background: url("../img/headerbg.jpg")no-repeat;
-    /* background-position: 0px; */
+    background: url("../images/headerbg.png")no-repeat;
+    background-position:0px -50px;
     /* background-position: 10px 0; */
     background-size: cover;
     height:100vh;
@@ -21,7 +21,7 @@ header#headsite{
     position: static;
 }
 
-.custom-shape-divider-bottom-1622231172 {
+.custom-shape-divider-bottom-1622355812 {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -29,16 +29,17 @@ header#headsite{
     overflow: hidden;
     line-height: 0;
     transform: rotate(180deg);
+    z-index: 0;
 }
 
-.custom-shape-divider-bottom-1622231172 svg {
+.custom-shape-divider-bottom-1622355812 svg {
     position: relative;
     display: block;
     width: calc(100% + 1.3px);
-    height: 46px;
+    height: 75px;
 }
 
-.custom-shape-divider-bottom-1622231172 .shape-fill {
+.custom-shape-divider-bottom-1622355812 .shape-fill {
     fill: #FFFFFF;
 }
 
@@ -66,7 +67,7 @@ p,div {
     font-family: vazir;
 }
 
-button {
+button{
     font-family: vazir;
 }
 
@@ -257,7 +258,7 @@ div.search-box-combo {
 }
 
 .coll-search-menu:hover .text-search-menu {
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 
 #cont-search {
@@ -267,7 +268,7 @@ div.search-box-combo {
 }
 
 .coll-search-menu button {
-    width: 200px;
+    width: 100%;
     padding: 10px;
     border: 0;
     display: flex;
@@ -365,10 +366,6 @@ p.h6 {
     transform: translateY(-60px);
 }
 
-.glass-icon-cont {
-    margin-button: ;
-    /* transform: translateY(-1600px); */
-}
 
 .about-us-text {
     /* background: #9e9e9e; */
@@ -525,10 +522,6 @@ img[alt="bg-down"]{
         transform: translate(-50%,-50%);
         width: 100px;
         height: 100px;
-        border: 10px solid white;
-        border-radius:50%;
-        border-top:10px solid red;
-        animation: anim 1s infinite linear;
         /* transition: 1s; */
     }
     
@@ -548,12 +541,12 @@ img[alt="bg-down"]{
         text-decoration: none;
         font-family: vazir,b yekan;
         border-radius: 7px;
-        font-size: 15px;
+        font-size: 10px;
         color: white;
         background: #ED5B00;
         transition: 1s;
         box-shadow: 6px 6px 0 black;
-        transform: skewX(-15deg);
+        /* transform: skewX(-15deg); */
     }
     
     .cta:focus {
@@ -577,7 +570,7 @@ img[alt="bg-down"]{
     }
     
       span {
-        transform: skewX(15deg) 
+        /* transform: skewX(15deg)  */
       }
     
       span:nth-child(2) {

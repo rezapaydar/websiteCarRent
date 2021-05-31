@@ -1,9 +1,10 @@
 <app-header></app-header>
-
-<header class="w-100" id="head" style="position: relative;
-top: -100px;">
+<div class="loading-div-timing" id="loading-div-timing">
+    <mat-spinner class="loading-div" color="warn"></mat-spinner>
+  </div>
+<header class="w-100" id="head" >
     <div class="logo">
-        <div class="logo-text" style="padding-top: 140px;">
+        <div class="logo-text" style="padding-top: 150px;">
             <a class="navbar-brand h2" id="logo-abisefid" style="color: white;" href="#">ل<span
                     style="color: aqua;">و</span>گو</a>
             <p style="color:white;text-align: center;" class="h6">شعار وب سایت ما این است</p>
@@ -16,58 +17,58 @@ top: -100px;">
     </div>
 
 
-    <form [formGroup]="formSearcher">
-        <div id="cont-search">
+    <form [formGroup]="formSearcher" style="position: relative;top: -30px;">
+        <div id="cont-search" >
 
             <div
-                class="search-box-combo  d-flex flex-column flex-sm-row-reverse justify-content-around h-auto py-3 w-75 mx-auto shadow-lg rounded" style="z-index: 9999999;;background: rgba(43, 43, 43, 0.418);color: white !important;">
+                class="search-box-combo  d-flex flex-column flex-sm-row-reverse justify-content-between h-auto py-3 w-75 mx-auto rounded" style="color: black !important;">
 
-                <div class="coll-search-menu w-100 w-lg-25" id="coll-search-menu1">
+                <div class="coll-search-menu w-100 w-lg-25 bg-light m-1" id="coll-search-menu1">
                     <p class="text-search-menu"> اجاره استان </p>
-                    <div class="icon-down-arrow">
-                        <i class="fas fa-times-circle" id="fa-times-circle1" [style]="disp" (click)="closeicon1()"></i>
-                        <input type="text" class="cityname" [style]="disp" formControlName="citySel">
-                        <img src="../../assets/img/down-arrow.svg" (click)="cityOpen()">
-                        <div class="cities " style="background: transparent;z-index: 9999;">
-                            <ul #citySel>
-                                <li *ngFor="let item of cities" (click)='onClickCities($event)'>{{item.titleCity}}</li>
-                            </ul>
+                    <div class="icon-down-arrow dropdown">
+                        <i class="fas fa-times-circle " id="fa-times-circle1" data-toggle="dropdown" [style]="disp" (click)="closeicon1()"></i>
+                        <input type="text" class="cityname dropdown-toggle" [style]="disp" formControlName="citySel">
+                        <img src="assets/images/down-arrow.svg" (click)="cityOpen()">
+                        <div class="cities dropdown-menu">
+                                <a class="dropdown-item"  *ngFor="let item of cities" (click)='onClickCities($event)'>{{item.titleCity}}</a>
                         </div>
                     </div>
                 </div>
 
-                <div class="coll-search-menu w-100 w-lg-25" id="coll-search-menu2">
+                
+
+                <div class="coll-search-menu w-100 w-lg-25 bg-light m-1" id="coll-search-menu2">
                     <p class="text-search-menu">نوع ماشین</p>
                     <div class="icon-down-arrow">
-                        <i class="fas fa-times-circle" id="fa-times-circle2" [style]="disp1" (click)="closeicon2()"></i>
-                        <input type="text" class="cityname d-inline" [style]="disp1" formControlName="typeSel">
-                        <img src="../../assets/img/down-arrow.svg" (click)="typeOpen()">
-                        <div class="types " style="background: transparent;z-index: 9999;">
-                            <ul class="w-100" #typeSel>
-                                <li *ngFor="let item of types" (click)='onClickTypes($event)'>{{item.titleType}}</li>
-                            </ul>
+                        <i class="fas fa-times-circle dropdown-toggle" data-toggle="dropdown" id="fa-times-circle2" [style]="disp1" data-toggle="dropdown" (click)="closeicon2()"></i>
+                        <input type="text" class="cityname d-inline "  [style]="disp1" formControlName="typeSel">
+                        <img src="assets/images/down-arrow.svg" (click)="typeOpen()">
+                        <div class="types dropdown-menu" >
+                            
+                                <a class="dropdown-item" *ngFor="let item of types" (click)='onClickTypes($event)'>{{item.titleType}}</a>
+                            
                         </div>
                     </div>
                 </div>
 
-                <div class="coll-search-menu w-100 w-lg-25" id="coll-search-menu3">
+                <div class="coll-search-menu w-100 w-lg-25 bg-light m-1" id="coll-search-menu3">
                     <p class="text-search-menu">زمان اجاره</p>
                     <div class="icon-down-arrow">
-                        <i class="fas fa-times-circle" id="fa-times-circle2" [style]="disp2" (click)="closeicon3()"></i>
+                        <i class="fas fa-times-circle dropdown-toggle" data-toggle="dropdown" id="fa-times-circle2" [style]="disp2" (click)="closeicon3()"></i>
                         <input type="text" class="cityname" [style]="disp2" formControlName="timeSel">
-                        <img src="../../assets/img/down-arrow.svg" (click)="timeOpen()">
-                        <div class="timesone " style="background: transparent;z-index: 9999;">
-                            <ul class="w-100" #timeSel>
-                                <li *ngFor="let item of timesServ" (click)='onClickTimes($event)'>
-                                    {{item.hour}}:{{item.minute}}</li>
-                            </ul>
+                        <img src="assets/images/down-arrow.svg" (click)="timeOpen()">
+                        <div class="timesone dropdown-menu" >
+                            
+                                <a class="dropdown-item" *ngFor="let item of timesServ" (click)='onClickTimes($event)'>
+                                    {{item.hour}}:{{item.minute}}</a>
+                         
                         </div>
                     </div>
                 </div>
 
-                <div class="coll-search-menu w-100 w-lg-25 rtl">
+                <div class="coll-search-menu  w-100 w-lg-25 rtl" id="btnsub">
 
-                    <button class="btn-primary rounded-right btn-search">
+                    <button class="btn-primary rounded-right btn-search shadow-lg">
                         <div class="img-counter-arrow-left">
                             &larr;
                         </div>
@@ -87,13 +88,6 @@ top: -100px;">
 
 </header>
 
-<div class="custom-shape-divider-bottom-1622231172">
-    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-        <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
-    </svg>
-</div>
-
-
 <main class="w-100">
 
     <div class="conter-one">
@@ -110,7 +104,7 @@ top: -100px;">
 
                     <div class="card-icon p-1 col-12 col-sm-6 col-md-5 col-lg-3">
                         <div class="cont-img bg-white w-75 shadow-lg p-2 rounded-top">
-                            <img src="../../assets/img/trust.png" alt="" class="w-100">
+                            <img src="assets/images/trust.png" alt="" class="w-100">
                         </div>
                         <div class="card-body w-75 h-auto bg-white shadow-lg rounded-bottom">
                             <p class="text-center">اعتماد و اطمینان</p>
@@ -123,7 +117,7 @@ top: -100px;">
 
                     <div class="card-icon p-1 col-12 col-sm-6 col-md-5 col-lg-3">
                         <div class="cont-img bg-white w-75 shadow-lg p-2 rounded-top ">
-                            <img src="../../assets/img/security.gif" alt="" class="w-100">
+                            <img src="assets/images/security.gif" alt="" class="w-100">
                             <!-- <img class="" src="https://img.icons8.com/color/144/000000/lock--v2.png"/>                       -->
                         </div>
                         <div class="card-body w-75 h-auto bg-white shadow-lg rounded-bottom">
@@ -137,7 +131,7 @@ top: -100px;">
 
                     <div class="card-icon  p-1 col-12 col-sm-6 col-md-5 col-lg-3">
                         <div class="cont-img bg-white w-75 shadow-lg p-2 rounded-top">
-                            <img src="../../assets/img/insuranse.png" alt="" class="w-100">
+                            <img src="assets/images/insuranse.png" alt="" class="w-100">
                         </div>
                         <div class="card-body w-75 h-auto bg-white shadow-lg rounded-bottom">
                             <p class="text-center">بیمه شخص ثالت</p>
@@ -150,7 +144,7 @@ top: -100px;">
 
                     <div class="card-icon  p-1 col-12 col-sm-6 col-md-5 col-lg-3">
                         <div class="cont-img bg-white w-75 shadow-lg  rounded-top">
-                            <img src="../../assets/img/license.png" alt="" class="w-100">
+                            <img src="assets/images/license.png" alt="" class="w-100">
                         </div>
                         <div class="card-body w-75 h-auto shadow-lg bg-white rounded-bottom">
                             <p class="text-center">دارای مجوز از وزارت کار</p>
@@ -208,12 +202,12 @@ top: -100px;">
             </div>
 
             <div class="main-conter"
-                style="padding:200px 0;width:100% !important;background-image: linear-gradient(0deg, #ffffff 0%, #009efd 100%);;background-size: 110%;background-repeat: repeat-y;color:white"
+                style="padding:50px 0;width:100% !important;background-image: linear-gradient(0deg, #ffffff 0%, #009efd 100%);;background-size: 110%;background-repeat: repeat-y;color:white"
                 click="getloc(e)">
                 <div
                     class="glass-icon-cont w-100 h-50 px-5 d-flex justify-content-center align-items-center flex-column flex-md-row-reverse">
                     <div class="glass-icon rounded w-50 rounded-pill m-3">
-                        <img src="../../assets/img/shuttle.png" alt="" class="w-100 glass mr-5">
+                        <img src="assets/images/shuttle.png" alt="" class="w-100 glass mr-5">
                     </div>
                     <div class="about-us-text mt-1 mb-0 d-flex flex-column align-items-center ">
                         <h1 class="text-center text-white" id="title-about-us-text" style="color: white !important;">
@@ -226,7 +220,7 @@ top: -100px;">
                             که لازم
                             استیپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
                         </p>
-                        <button class="m-0 rounded" id="reservenet">!رزرو کنید</button>
+                        <button mat-raised-button class="m-0 rounded" style="font-family: vazir;" color="warn">!رزرو کنید</button>
                     </div>
                 </div>
             </div>
@@ -242,22 +236,14 @@ top: -100px;">
 
     <div id="title-cont-specially" class="w-75 pl-5 pr-4 d-flex flex-row-reverse justify-content-between mb-4">
         <h1>خودرو های برند bmw</h1>
-
-        <!-- <span>
-            <p class="d-flex flex-row">
-
-                <img src="../../assets/img/icons8-expand-arrow-50.png" alt="" id="img-one"
-                    class="swiper-button-prev float-left mr-3">
-                <img src="../../assets/img/icons8-expand-arrow-50.png" alt="" id="img-two"
-                    class="swiper-button-next float-right">
-
-            </p>
-        </span> -->
     </div>
     <div class="cont-specially d-flex flex-row-reverse w-100">
-        <img src="../../assets/img/Component 26 – 1.svg" alt="" img="one" class="px-2 w-25">
-        <div id="swiper" class="swipercontainer w-75 pl-5 pr-4 d-flex">
+        <div id="swiper" class="swipercontainer w-100 pl-5 pr-4 d-flex">
             <swiper [slidesPerView]="3" [spaceBetween]="50" [breakpoints]="{
+                '250':{
+                    slidesPerView:1,
+                    spaceBetween:5
+                },
                 '350':{
                     slidesPerView:1,
                     spaceBetween:5
@@ -280,6 +266,10 @@ top: -100px;">
                 }
             }" (swiper)="onSwiper($event)" (slideChange)="onSlideChange()" [navigation]="true"
                 [pagination]="{ clickable: true }" [scrollbar]="{ draggable: true }">
+                <ng-template swiperSlide>
+                    <img src="assets/images/Component 26 – 1.svg" alt="" img="one" class="px-2 w-100">
+                </ng-template>
+                
                 <ng-template swiperSlide *ngFor="let item of bmw">
                     <div class="card" style="color: black;">
                         <!-- <img class="card-img-top" src="../../assets/img/cars/benz/benz-SL63.jpg"> -->
@@ -318,26 +308,18 @@ top: -100px;">
         <div class="w-75 pl-5 pr-4 d-flex flex-row-reverse justify-content-between mr-4 text-right"
             style="direction: ltr;">
             <h1>خودرو های برند تویوتا</h1>
-
-            <!-- <span>
-                <p class="d-flex align-items-center mt-4 pl-4">
-
-                    <img src="../../assets/img/icons8-expand-arrow-50.png" alt="" id="img-one" srcset=""
-                        class="swiper-button-prev float-left mr-3">
-                    <img src="../../assets/img/icons8-expand-arrow-50.png" alt="" id="img-two" srcset=""
-                        class="swiper-button-next float-right">
-
-                </p>
-            </span> -->
         </div>
 
     </div>
     <div class="suggestiontwo d-flex flex-row">
-        <img src="../../assets/img/Component 27 – 1.svg" alt="one" class="px-2 w-25">
-        <div id="swiper" class="swiper-container w-75 pr-5 pl-4 d-flex">
+        <div id="swiper" class="swiper-container w-100 pr-5 pl-4 d-flex">
             <div class="card-columns swiper-wrapper">
-                <swiper [slidesPerView]="3" [spaceBetween]="50" (swiper)="onSwiper($event)"
+                <swiper [slidesPerView]="3" dir="rtl" [spaceBetween]="50" (swiper)="onSwiper($event)"
                     (slideChange)="onSlideChange()" [breakpoints]="{
+                        '250':{
+                            slidesPerView:1,
+                            spaceBetween:5
+                        },
                         '350':{
                             slidesPerView:1,
                             spaceBetween:5
@@ -359,6 +341,10 @@ top: -100px;">
                             spaceBetween:50
                         }
                     }" [navigation]="true" [pagination]="{ clickable: true }" [scrollbar]="{ draggable: true } ">
+                    <ng-template swiperSlide>
+                        <img src="assets/images/Component 27 – 1.svg" alt="one" class="px-2 w-100">
+                    </ng-template>
+                    
                     <ng-template swiperSlide *ngFor="let item of toyota">
                         <div class="card" style="color: black;">
                             <!-- <img class="card-img-top" src="../../assets/img/cars/benz/benz-SL63.jpg"> -->
@@ -412,6 +398,10 @@ top: -100px;">
             <div class="card-columns swiper-wrapper">
                 <swiper [slidesPerView]="4" [spaceBetween]="50" (swiper)="onSwiper($event)"
                     (slideChange)="onSlideChange()" [breakpoints]="{
+                        '250':{
+                            slidesPerView:1,
+                            spaceBetween:5
+                        },
                         '350':{
                             slidesPerView:1,
                             spaceBetween:5

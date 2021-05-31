@@ -61,6 +61,7 @@ import {OverlayModule} from '@angular/cdk/overlay';
 import { NgbdCarouselBasicComponent } from './ngbd-carousel-basic/ngbd-carousel-basic.component';
 import {NgbCarouselModule, NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { ArticleCompComponent } from './article-comp/article-comp.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
 
 
 @NgModule({
@@ -77,6 +78,7 @@ import { ArticleCompComponent } from './article-comp/article-comp.component';
   imports: [
     RouterModule,
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     ReactiveFormsModule,
     SwiperModule,

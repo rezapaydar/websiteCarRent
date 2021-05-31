@@ -16,6 +16,7 @@ export class StatusservService {
   }
 
   login() {
+    // alert(login)
     this.isLogin = true;
     this.disp = 'display:none !important;';
 // alert()

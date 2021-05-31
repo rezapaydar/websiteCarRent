@@ -1,22 +1,17 @@
 // import "@accursoft/jquery-caret";
 
-$(document).ready(()=>{
-    $('img[alt="bg-down"]').css("display", "none")
-})
-
-function getloc(e){
-alert(e.target.scrollTop)
-}
-
-
+$('img[alt="bg-down"]').css("display", "none")
 let imgcont = document.getElementById('img-cont');
-let conterone=document.getElementById("conterone");
+let conterone = document.getElementById("conterone");
+// document.addEventListener('click',()=>{
+//     alert(window.pageYOffset)
+// })
 document.addEventListener('scroll', function () {
 
     if (window.innerWidth >= 1024) {
 
 
-        if (window.pageYOffset < 650 || window.pageYOffset > 2000) {
+        if (window.pageYOffset < 750 || window.pageYOffset > 1700) {
             //    alert(window.pageYOffset)
             $('img[alt="bg-down"]').css("display", "none")
 
@@ -47,49 +42,58 @@ document.addEventListener('scroll', function () {
     }
     else if (window.innerWidth <= 570) {
 
-        $("#conterone").css("background", "black")
-        $('img[alt="bg-down"]').css("display", "none")
+        // $("#conterone").css("background", "black")
+        // $('img[alt="bg-down"]').css("display", "none")
 
 
-        // if (window.pageYOffset < 3200 || window.pageYOffset > 4500) {
-        //     //    alert(window.pageYOffset)
-        //     $('img[alt="bg-down"]').css("display", "none")
+        if (window.pageYOffset < 2050 || window.pageYOffset > 3500) {
+            //    alert(window.pageYOffset)
+            $('img[alt="bg-down"]').css("display", "none")
 
-        // }
-        // else {
+        }
+        else {
+            $('img[alt="bg-down"]').css("display", "block")
+            $('img[alt="bg-down"]').css("width", "200% !important")
 
-        //     $(conterone).css("background", "black")
+            // $(conterone).css("background", "black")
 
 
-        // }
+        }
     }
     else if (window.innerWidth <= 350) {
 
-        $("#conterone").css("background", "black")
-        $('img[alt="bg-down"]').css("display", "none")
+        // $("#conterone").css("background", "black")
+        // $('img[alt="bg-down"]').css("display", "block")
 
-        // if (window.pageYOffset < 4500 || window.pageYOffset > 5000) {
-        //     //    alert(window.pageYOffset)
-        //     $('img[alt="bg-down"]').css("display", "none")
+        if (window.pageYOffset < 4500 || window.pageYOffset > 5000) {
+            //    alert(window.pageYOffset)
+            $('img[alt="bg-down"]').css("display", "none")
 
-        // }
-        // else {
+        }
+        else {
 
-        //     $('img[alt="bg-down"]').css("display", "block")
+            $('img[alt="bg-down"]').css("display", "block")
 
 
-        // }
+        }
     }
 
 
 })
+
+function getloc(e) {
+    alert(e.target.scrollTop)
+}
+
+
+
 
 
 
 
 setTimeout(() => {
     $('#loading-div-timing').css("display", "none")
-}, 6000)
+}, 5000)
 
 
 

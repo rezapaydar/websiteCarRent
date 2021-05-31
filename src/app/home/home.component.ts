@@ -6,6 +6,8 @@ import { timeServe } from "../models/times";
 import { HomeservService } from '../services/homeserv.service';
 import { StatusservService } from '../services/statusserv.service';
 import { SwiperComponent } from "swiper/angular";
+import Swal from 'sweetalert2'
+
 // import {MatCarouselSlide} from "@ngmodule/material-carousel"
 import { cars } from '../models/cars';
 import { Articles } from "../models/articles";
@@ -178,36 +180,36 @@ export class HomeComponent implements OnInit {
     ]
 
     this.benz = [
-      { name: "بنز-c200", brand: "benz", daily: true, monthy: true, weeky: true, img: "../../assets/img/cars/benz/benz-c200.jpg" },
-      { name: "بنز-e350", brand: "benz", daily: true, monthy: false, weeky: true, img: "../../assets/img/cars/benz/benz-E350.jpg" },
-      { name: "بنز-s500", brand: "benz", daily: true, monthy: true, weeky: false, img: "../../assets/img/cars/benz/benz-s500.jpg" },
-      { name: "بنز-sl63", brand: "benz", daily: true, monthy: true, weeky: true, img: "../../assets/img/cars/benz/benz-SL63.jpg" },
-      { name: "بنز-c200", brand: "benz", daily: true, monthy: true, weeky: true, img: "../../assets/img/cars/benz/benz-c200.jpg" },
-      { name: "بنز-e350", brand: "benz", daily: false, monthy: true, weeky: false, img: "../../assets/img/cars/benz/benz-E350.jpg" },
-      { name: "بنز-s500", brand: "benz", daily: true, monthy: false, weeky: true, img: "../../assets/img/cars/benz/benz-s500.jpg" },
-      { name: "بنز-sl63", brand: "benz", daily: true, monthy: false, weeky: true, img: "../../assets/img/cars/benz/benz-SL63.jpg" }
+      { name: "بنز-c200", brand: "benz", daily: true, monthy: true, weeky: true, img: "assets/images/cars/benz/benz-c200.jpg" },
+      { name: "بنز-e350", brand: "benz", daily: true, monthy: false, weeky: true, img: "assets/images/cars/benz/benz-E350.jpg" },
+      { name: "بنز-s500", brand: "benz", daily: true, monthy: true, weeky: false, img: "assets/images/cars/benz/benz-s500.jpg" },
+      { name: "بنز-sl63", brand: "benz", daily: true, monthy: true, weeky: true, img: "assets/images/cars/benz/benz-SL63.jpg" },
+      { name: "بنز-c200", brand: "benz", daily: true, monthy: true, weeky: true, img: "assets/images/cars/benz/benz-c200.jpg" },
+      { name: "بنز-e350", brand: "benz", daily: false, monthy: true, weeky: false, img: "assets/images/cars/benz/benz-E350.jpg" },
+      { name: "بنز-s500", brand: "benz", daily: true, monthy: false, weeky: true, img: "assetimages/cars/benz/benz-s500.jpg" },
+      { name: "بنز-sl63", brand: "benz", daily: true, monthy: false, weeky: true, img: "assets/images/cars/benz/benz-SL63.jpg" }
     ]
 
     this.toyota=[
-      { name: "تویوتا-land cuiser", brand: "toyota", daily: true, monthy: true, weeky: true, img: "../../assets/img/cars/toyota/land-cruiser.jpg" },
-      { name: "تویوتا-prrado", brand: "toyota", daily: true, monthy: false, weeky: true, img: "../../assets/img/cars/toyota/prrado-4-door.jpg" },
-      { name: "تویوتا-baby", brand: "toyota", daily: true, monthy: true, weeky: false, img: "../../assets/img/cars/toyota/toyota-baby.jpg" },
-      { name: "تویوتا-camry", brand: "toyota", daily: true, monthy: true, weeky: true, img: "../../assets/img/cars/toyota/toyota-camry.jpg" },
-      { name: "تویوتا-tuscon", brand: "toyota", daily: true, monthy: true, weeky: true, img: "../../assets/img/cars/toyota/tuscon.jpg" },
-      { name: "تویوتا-land cuiser", brand: "toyota", daily: false, monthy: true, weeky: false, img: "../../assets/img/cars/toyota/land-cruiser.jpg" },
-      { name: "تویوتا-prrado", brand: "toyota", daily: true, monthy: false, weeky: true, img: "../../assets/img/cars/toyota/prrado-4-door.jpg" },
-      { name: "تویوتا-baby", brand: "toyota", daily: true, monthy: false, weeky: true, img: "../../assets/img/cars/toyota/toyota-baby.jpg" }
+      { name: "تویوتا-land cuiser", brand: "toyota", daily: true, monthy: true, weeky: true, img: "assets/images/cars/toyota/land-cruiser.jpg" },
+      { name: "تویوتا-prrado", brand: "toyota", daily: true, monthy: false, weeky: true, img: "assets/images/cars/toyota/prrado-4-door.jpg" },
+      { name: "تویوتا-baby", brand: "toyota", daily: true, monthy: true, weeky: false, img: "assets/images/cars/toyota/toyota-baby.jpg" },
+      { name: "تویوتا-camry", brand: "toyota", daily: true, monthy: true, weeky: true, img: "assets/images/cars/toyota/toyota-camry.jpg" },
+      { name: "تویوتا-tuscon", brand: "toyota", daily: true, monthy: true, weeky: true, img: "assets/images/cars/toyota/tuscon.jpg" },
+      { name: "تویوتا-land cuiser", brand: "toyota", daily: false, monthy: true, weeky: false, img: "assets/images/cars/toyota/land-cruiser.jpg" },
+      { name: "تویوتا-prrado", brand: "toyota", daily: true, monthy: false, weeky: true, img: "assets/images/cars/toyota/prrado-4-door.jpg" },
+      { name: "تویوتا-baby", brand: "toyota", daily: true, monthy: false, weeky: true, img: "assets/images/cars/toyota/toyota-baby.jpg" }
     ]
 
     this.bmw=[
-      { name: "bmw-528", brand: "bmw", daily: true, monthy: true, weeky: true, img: "../../assets/img/cars/bmw/bmw-528.jpeg" },
-      { name: "bmw-i8", brand: "bmw", daily: true, monthy: false, weeky: true, img: "../../assets/img/cars/bmw/bmw-i8.jpg" },
-      { name: "bmw-x1", brand: "bmw", daily: true, monthy: true, weeky: false, img: "../../assets/img/cars/bmw/bmw-x1.jpg" },
-      { name: "bmw-x4", brand: "bmw", daily: true, monthy: true, weeky: true, img: "../../assets/img/cars/bmw/bmw-x4.jpg" },
-      { name: "bmw-528", brand: "bmw", daily: true, monthy: true, weeky: true, img: "../../assets/img/cars/bmw/bmw-528.jpeg" },
-      { name: "bmw-i8", brand: "bmw", daily: false, monthy: true, weeky: false, img: "../../assets/img/cars/bmw/bmw-i8.jpg" },
-      { name: "bmw-x1", brand: "bmw", daily: true, monthy: false, weeky: true, img: "../../assets/img/cars/bmw/bmw-x1.jpg" },
-      { name: "bmw-x4", brand: "bmw", daily: true, monthy: false, weeky: true, img: "../../assets/img/cars/bmw/bmw-x4.jpg" }
+      { name: "bmw-528", brand: "bmw", daily: true, monthy: true, weeky: true, img: "assets/images/cars/bmw/bmw-528.jpeg" },
+      { name: "bmw-i8", brand: "bmw", daily: true, monthy: false, weeky: true, img: "assets/images/cars/bmw/bmw-i8.jpg" },
+      { name: "bmw-x1", brand: "bmw", daily: true, monthy: true, weeky: false, img: "assets/images/cars/bmw/bmw-x1.jpg" },
+      { name: "bmw-x4", brand: "bmw", daily: true, monthy: true, weeky: true, img: "assets/images/cars/bmw/bmw-x4.jpg" },
+      { name: "bmw-528", brand: "bmw", daily: true, monthy: true, weeky: true, img: "assets/images/cars/bmw/bmw-528.jpeg" },
+      { name: "bmw-i8", brand: "bmw", daily: false, monthy: true, weeky: false, img: "assets/images/cars/bmw/bmw-i8.jpg" },
+      { name: "bmw-x1", brand: "bmw", daily: true, monthy: false, weeky: true, img: "assets/images/cars/bmw/bmw-x1.jpg" },
+      { name: "bmw-x4", brand: "bmw", daily: true, monthy: false, weeky: true, img: "assets/images/cars/bmw/bmw-x4.jpg" }
     ]
 
   }
@@ -219,9 +221,22 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
 
     if (localStorage.getItem("isLogin") === "false") {
-      console.log('fuckkkkkk');
+      // console.log('fuckkkkkk');
 
     }
+
+    setTimeout(() => {
+
+      Swal.fire({
+        title: 'سلام',
+        text: 'این یک وب سایت دمو است، خوشحال میشم یک نگاه کوتاه به این وب سایت بندازید و نظر خودتون رو در دایرکت من بفرستید',
+        icon: 'success',
+        confirmButtonText: '!باشه'
+      })
+
+  }, 5000)
+
+   
   }
 
   onSwiper(swiper) {

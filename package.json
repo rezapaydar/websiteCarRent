@@ -28,6 +28,7 @@
     "bootstrap": "^4.5.0",
     "ng-uikit-pro-standard": "^1.0.0",
     "rxjs": "~6.6.0",
+    "sweetalert2": "^11.0.14",
     "swiper": "^6.5.9",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.3"
