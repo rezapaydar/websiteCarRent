@@ -45,6 +45,9 @@ export class HomeComponent implements OnInit {
   benz: cars[] = [];
   toyota: cars[] = [];
   bmw: cars[] = [];
+  hyu: cars[] = [];
+  kia: cars[] = [];
+  porsche: cars[] = [];
 
   // @HostListener('click', ['$event.target'])
   onClickCities(e) {
@@ -212,7 +215,29 @@ export class HomeComponent implements OnInit {
       { name: "bmw-x4", brand: "bmw", daily: true, monthy: false, weeky: true, img: "assets/images/cars/bmw/bmw-x4.jpg" }
     ]
 
+    this.hyu=[
+      { name: "hyundai-genesis", brand: "hyundai", daily: true, monthy: true, weeky: true, img: "assets/images/cars/hyu/hyundai-genesis.jpg" },
+      { name: "hyundai-santa-fe", brand: "hyundai", daily: true, monthy: true, weeky: true, img: "assets/images/cars/hyu/hyundai-santa-fe.jpg" },
+      { name: "hyundai-sonata", brand: "hyundai", daily: true, monthy: true, weeky: true, img: "assets/images/cars/hyu/hyundai-sonata.jpg" },
+
+    ]
+
+    this.porsche=[
+      { name: "porsche-boxster", brand: "porsche", daily: false, monthy: true, weeky: true, img: "assets/images/cars/porsche/porsche-boxster.jpg" },
+      { name: "porsche-cayenne", brand: "porsche", daily: true, monthy: false, weeky: true, img: "assets/images/cars/porsche/porsche-cayenne.jpg" },
+      { name: "porsche-macan", brand: "porsche", daily: true, monthy: true, weeky: true, img: "assets/images/cars/porsche/porsche-macan.jpg" },
+      { name: "porsche-panamera", brand: "porsche", daily: true, monthy: false, weeky: false, img: "assets/images/cars/porsche/porsche-panamera.jpg" },
+    ]
+
+    this.kia=[
+      { name: "kia-cerato", brand: "kia", daily: false, monthy: true, weeky: true, img: "assets/images/cars/kia/kia-cerato.jpg" },
+      { name: "kia-sorento", brand: "kia", daily: false, monthy: true, weeky: true, img: "assets/images/cars/kia/kia-sorento.jpg" },
+      { name: "optima", brand: "kia", daily: true, monthy: false, weeky: false, img: "assets/images/cars/kia/optima.jpg" },
+      { name: "sportage", brand: "kia", daily: true, monthy: true, weeky: false, img: "assets/images/cars/kia/sportage.jpg" },
+
+    ]
   }
+
 
 
 

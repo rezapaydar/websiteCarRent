@@ -1,5 +1,6 @@
 // import "@accursoft/jquery-caret";
 
+
 $('img[alt="bg-down"]').css("display", "none")
 let imgcont = document.getElementById('img-cont');
 let conterone = document.getElementById("conterone");
@@ -11,7 +12,7 @@ document.addEventListener('scroll', function () {
     if (window.innerWidth >= 1024) {
 
 
-        if (window.pageYOffset < 750 || window.pageYOffset > 1700) {
+        if (window.pageYOffset < 950 || window.pageYOffset > 2250) {
             //    alert(window.pageYOffset)
             $('img[alt="bg-down"]').css("display", "none")
 

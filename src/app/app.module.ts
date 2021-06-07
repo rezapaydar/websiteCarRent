@@ -12,6 +12,8 @@ import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
 import { SwiperModule } from 'swiper/angular';
 import { TrueStrPipe } from './true-str.pipe';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+
 // import {SwiperComponent} from './home/swiper/swiper.component'
 
 import { MatButtonModule } from "@angular/material/button";
@@ -61,7 +63,8 @@ import {OverlayModule} from '@angular/cdk/overlay';
 import { NgbdCarouselBasicComponent } from './ngbd-carousel-basic/ngbd-carousel-basic.component';
 import {NgbCarouselModule, NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { ArticleCompComponent } from './article-comp/article-comp.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SearchforcarsComponent } from '../app/searchforcars/searchforcars.component';
 
 
 @NgModule({
@@ -73,9 +76,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     LoginComponent,
     TrueStrPipe,
     NgbdCarouselBasicComponent,
-    ArticleCompComponent
+    ArticleCompComponent,
+    SearchforcarsComponent,
   ],
   imports: [
+    InfiniteScrollModule,
     RouterModule,
     BrowserModule,
     BrowserAnimationsModule,
