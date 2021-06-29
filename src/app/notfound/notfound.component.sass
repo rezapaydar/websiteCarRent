@@ -1,0 +1,36 @@
+#notfoundpic
+    transition: 0.5s
+    animation: animpic 5s infinite
+
+@keyframes animpic
+    0%
+        transform: translateY(0px)
+
+    50%
+        transform: translateY(10px)
+
+    100%
+        transform: translateY(0px)
+
+#paranotfound
+    transition: 0.1s
+    animation: animpic2 5s infinite
+    background: rgba( 255, 255, 255, 0.05 )
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 )
+    backdrop-filter: blur( 9.5px )
+    -webkit-backdrop-filter: blur( 9.5px )
+    border-radius: 10px
+    border: 1px solid rgba( 255, 255, 255, 0.18 )
+    height: auto
+    padding: 10px
+
+@keyframes animpic2
+    0%
+        transform: translateY(0px)
+
+    50%
+        background: red
+        box-shadow: 0 8px 32px 0 #db00005e
+
+    100%
+        transform: translateY(0px)

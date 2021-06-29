@@ -65,6 +65,7 @@ import {NgbCarouselModule, NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { ArticleCompComponent } from './article-comp/article-comp.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SearchforcarsComponent } from '../app/searchforcars/searchforcars.component';
+import { NotfoundComponent } from './notfound/notfound.component';
 
 
 @NgModule({
@@ -78,6 +79,7 @@ import { SearchforcarsComponent } from '../app/searchforcars/searchforcars.compo
     NgbdCarouselBasicComponent,
     ArticleCompComponent,
     SearchforcarsComponent,
+    NotfoundComponent,
   ],
   imports: [
     InfiniteScrollModule,

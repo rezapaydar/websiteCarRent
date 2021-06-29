@@ -37,6 +37,11 @@ export class SearchforcarsComponent implements OnInit {
       { name: 'hyundai', completed: false, color: 'accent' },
       { name: 'kia', completed: false, color: 'accent' },
       { name: 'porsche', completed: false, color: 'accent' },
+    ],
+    reservasion:[
+      {name:'روزانه',completed:false,color:'accent'},
+      {name:'هفتگی',completed:false,color:'accent'},
+      {name:'ماهانه',completed:false,color:'accent'},
     ]
   };
 
@@ -50,25 +55,26 @@ export class SearchforcarsComponent implements OnInit {
 
   getcarss() {
     return [
-      { name: "benz-c200", brand: "benz", daily: true, monthy: true, weeky: true, img: "assets/images/cars/benz/benz-c200.jpg" },
+      { name: "toyota-camry", brand: "toyota", daily: true, monthy: true, weeky: true, img: "assets/images/cars/toyota/toyota-camry.jpg" },
       { name: "benz-e350", brand: "benz", daily: true, monthy: false, weeky: true, img: "assets/images/cars/benz/benz-E350.jpg" },
+      { name: "toyota-land cuiser", brand: "toyota", daily: true, monthy: true, weeky: true, img: "assets/images/cars/toyota/land-cruiser.jpg" },
+
       { name: "benz-s500", brand: "benz", daily: true, monthy: true, weeky: false, img: "assets/images/cars/benz/benz-s500.jpg" },
       { name: "benz-sl63", brand: "benz", daily: true, monthy: true, weeky: true, img: "assets/images/cars/benz/benz-SL63.jpg" },
       { name: "benz-c200", brand: "benz", daily: true, monthy: true, weeky: true, img: "assets/images/cars/benz/benz-c200.jpg" },
+      { name: "bmw-x1", brand: "bmw", daily: true, monthy: true, weeky: false, img: "assets/images/cars/bmw/bmw-x1.jpg" },
       { name: "benz-e350", brand: "benz", daily: false, monthy: true, weeky: false, img: "assets/images/cars/benz/benz-E350.jpg" },
       { name: "benz-s500", brand: "benz", daily: true, monthy: false, weeky: true, img: "assetimages/cars/benz/benz-s500.jpg" },
       { name: "benz-sl63", brand: "benz", daily: true, monthy: false, weeky: true, img: "assets/images/cars/benz/benz-SL63.jpg" },
-      { name: "toyota-land cuiser", brand: "toyota", daily: true, monthy: true, weeky: true, img: "assets/images/cars/toyota/land-cruiser.jpg" },
+      { name: "benz-c200", brand: "benz", daily: true, monthy: true, weeky: true, img: "assets/images/cars/benz/benz-c200.jpg" },
       { name: "toyota-prrado", brand: "toyota", daily: true, monthy: false, weeky: true, img: "assets/images/cars/toyota/prrado-4-door.jpg" },
       { name: "toyota-baby", brand: "toyota", daily: true, monthy: true, weeky: false, img: "assets/images/cars/toyota/toyota-baby.jpg" },
-      { name: "toyota-camry", brand: "toyota", daily: true, monthy: true, weeky: true, img: "assets/images/cars/toyota/toyota-camry.jpg" },
       { name: "toyota-tuscon", brand: "toyota", daily: true, monthy: true, weeky: true, img: "assets/images/cars/toyota/tuscon.jpg" },
       { name: "toyota-land cuiser", brand: "toyota", daily: false, monthy: true, weeky: false, img: "assets/images/cars/toyota/land-cruiser.jpg" },
       { name: "toyota-prrado", brand: "toyota", daily: true, monthy: false, weeky: true, img: "assets/images/cars/toyota/prrado-4-door.jpg" },
       { name: "toyota-baby", brand: "toyota", daily: true, monthy: false, weeky: true, img: "assets/images/cars/toyota/toyota-baby.jpg" },
       { name: "bmw-528", brand: "bmw", daily: true, monthy: true, weeky: true, img: "assets/images/cars/bmw/bmw-528.jpeg" },
       { name: "bmw-i8", brand: "bmw", daily: true, monthy: false, weeky: true, img: "assets/images/cars/bmw/bmw-i8.jpg" },
-      { name: "bmw-x1", brand: "bmw", daily: true, monthy: true, weeky: false, img: "assets/images/cars/bmw/bmw-x1.jpg" },
       { name: "bmw-x4", brand: "bmw", daily: true, monthy: true, weeky: true, img: "assets/images/cars/bmw/bmw-x4.jpg" },
       { name: "bmw-528", brand: "bmw", daily: true, monthy: true, weeky: true, img: "assets/images/cars/bmw/bmw-528.jpeg" },
       { name: "bmw-i8", brand: "bmw", daily: false, monthy: true, weeky: false, img: "assets/images/cars/bmw/bmw-i8.jpg" },
@@ -153,6 +159,27 @@ export class SearchforcarsComponent implements OnInit {
       { name: "sportage", brand: "kia", daily: true, monthy: true, weeky: false, img: "assets/images/cars/kia/sportage.jpg" },
 
     ]
+  }
+
+  allcheck(){
+
+    if(this.task.completed==true){
+      this.getcars=this.getcarss()
+
+      // alert("fuckkk")
+    }else{
+
+      this.getcars=[]
+
+
+    }
+
+  }
+
+  checkbrand(){
+
+
+
   }
 
   ngOnInit(): void {
@@ -167,19 +194,34 @@ export class SearchforcarsComponent implements OnInit {
 
   }
 
-  doSearch() {
-    this.resultSearch = this.getcars.filter((item: cars) => {
-      return item.name.toLowerCase().indexOf(this.myControl.value.toLowerCase()) > -1;
-    })
-    if (this.resultSearch.length > 0) {
-      this.getcars = this.resultSearch;
-    } else {
-      this.getcars = this.getcarss();
+
+  doSearch(event) {
+
+    if(event.toLowerCase()=="all"){
+            this.getcars = this.getcarss();
+
+    }else{
+
+      this.resultSearch = this.getcarss().filter((item) => {
+
+        // console.log(item.name.toLowerCase());
+    
+    
+          return item.name.toLowerCase().includes(event.toLowerCase());
+    
+        })
+        this.getcars = this.resultSearch;
+
     }
 
+    
 
-    console.log(this.myControl);
 
+  }
+
+  reservaisonChange(...e){
+    console.log(e);
+    
   }
 
   private _filter(value: string): string[] {
@@ -191,9 +233,22 @@ export class SearchforcarsComponent implements OnInit {
   allComplete: boolean = false;
 
   updateAllComplete(e,event) {
-    this.allComplete = this.task.subtasks != null && this.task.subtasks.every(t => t.completed);
-    console.log(e,event);
+
+    // console.log();
     
+    
+    // this.allComplete = this.task.subtasks != null && this.task.subtasks.every(t => t.completed);
+    // console.log(e,event);
+ if(event.checked==true){
+  this.resultSearch = this.getcarss().filter((item) => {
+
+      return item.name.toLowerCase().includes(e.toLowerCase());
+
+    })
+ }
+      this.getcars = this.resultSearch;
+      // this.task.subtasks.forEach(t => t.completed = false);
+
   }
 
   newcheckbox(){
@@ -214,7 +269,11 @@ export class SearchforcarsComponent implements OnInit {
     if (this.task.subtasks == null) {
       return;
     }
+    if (this.task.reservasion == null) {
+      return;
+    }
     this.task.subtasks.forEach(t => t.completed = completed);
+    this.task.reservasion.forEach(t => t.completed = completed);
   }
 
 

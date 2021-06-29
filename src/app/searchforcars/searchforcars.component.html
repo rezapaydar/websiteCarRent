@@ -1,80 +1,181 @@
 <app-header></app-header>
 
-<div class="container-fluid bg-maroon row d-flex justify-content-between" style="padding: 100px 0;">
+<div
+  class="container-fluid bg-maroon row d-flex justify-content-between"
+  style="padding: 100px 0"
+>
+ 
 
-
-  <div class="col-12 col-sm-6 col-md-7 col-lg-8 pl-5" style="padding-top: 45px; margin-right: 10px;">
-    <p class="shadow-sm" style="direction: rtl;text-align: right;" dir="rtl">
+  <div
+    class="col-12 col-sm-6 col-md-7 col-lg-8 pl-5"
+    style="padding-top: 45px; margin-right: 10px"
+  >
+    <p class="shadow-sm" style="direction: rtl; text-align: right" dir="rtl">
       <mat-toolbar>
         <form class="example-form">
           <mat-form-field class="example-full-width">
-            <mat-label style="text-align: right;font-size: 20px;">نام ماشین یا برند</mat-label>
-            <input type="text" placeholder="Pick one" aria-label="Number" matInput [formControl]="myControl"
-              [matAutocomplete]="auto" style="text-align: right;">
-            <button mat-raised-button color="primary" type="button" (click)="doSearch()">جست و جو</button>
+            <mat-label style="text-align: right; font-size: 20px"
+              >نام ماشین یا برند</mat-label
+            >
+            <input
+              type="text"
+              placeholder="Pick one"
+              aria-label="Number"
+              matInput
+              [formControl]="myControl"
+              [matAutocomplete]="auto"
+              style="text-align: right"
+              #sfield
+            />
+            <button
+              mat-raised-button
+              color="primary"
+              type="button"
+              (click)="doSearch(myControl.value)"
+              style="font-family: vazir;"
+            >
+              جست و جو
+            </button>
             <mat-autocomplete #auto="matAutocomplete">
-              <mat-option *ngFor="let option of filteredOptions | async" [value]="option" style="text-align: right;">
-                {{option}}
+              <mat-option
+                *ngFor="let option of filteredOptions | async"
+                [value]="option"
+                style="text-align: right"
+              >
+                {{ option }}
               </mat-option>
             </mat-autocomplete>
           </mat-form-field>
         </form>
-
       </mat-toolbar>
     </p>
-    <div class="card-columns">
 
-      <div class="card" *ngFor="let item of getcars" style="color: black;">
+    <div class="card-columns">
+      <div class="card  col-12 col-sm-5 col-lg-7" *ngFor="let item of getcars" style="color: black">
         <!-- <img class="card-img-top" src="../../assets/img/cars/benz/benz-SL63.jpg"> -->
-        <img class="card-img-top" [src]="item.img">
-        <div class="card-body" style="direction: rtl;">
-          <h4 class="card-title text-right">{{item.name}}</h4>
-          <p class="card-text text-muted text-right">برند : {{item.brand}} </p>
+        <img class="card-img-top" [src]="item.img" />
+        <div class="card-body" style="direction: rtl">
+          <h4 class="card-title text-right">{{ item.name }}</h4>
+          <p class="card-text text-muted text-right">برند : {{ item.brand }}</p>
         </div>
         <div class="price-cont">
-          <p class="text-center" style="font-size: 15px;direction: rtl;">
-            امکان رزرو روزانه : <span class="d-inline "
-              [ngClass]="{'text-success': item.daily==true,'text-danger': item.daily==false}">{{item.daily|trueStr}}</span>
-            <br>
-            امکان رزرو هفتگی : <span class="d-inline "
-              [ngClass]="{'text-success': item.weeky==true,'text-danger': item.weeky==false}">{{item.weeky|trueStr}}</span>
-            <br>
-            امکان رزرو ماهانه : <span class="d-inline "
-              [ngClass]="{'text-success': item.monthy==true,'text-danger': item.monthy==false}">{{item.monthy|trueStr}}</span>
-
+          <p class="text-center" style="font-size: 15px; direction: rtl">
+            امکان رزرو روزانه :
+            <span
+              class="d-inline"
+              [ngClass]="{
+                'text-success': item.daily == true,
+                'text-danger': item.daily == false
+              }"
+              >{{ item.daily | trueStr }}</span
+            >
+            <br />
+            امکان رزرو هفتگی :
+            <span
+              class="d-inline"
+              [ngClass]="{
+                'text-success': item.weeky == true,
+                'text-danger': item.weeky == false
+              }"
+              >{{ item.weeky | trueStr }}</span
+            >
+            <br />
+            امکان رزرو ماهانه :
+            <span
+              class="d-inline"
+              [ngClass]="{
+                'text-success': item.monthy == true,
+                'text-danger': item.monthy == false
+              }"
+              >{{ item.monthy | trueStr }}</span
+            >
+          </p>
         </div>
-        <button class="btn w-100" id="reg" style="position: relative;top: 0;"> رزرو کنید</button>
+
+        <button class="btn w-100" id="reg" style="position: relative; top: 0">
+          رزرو کنید
+        </button>
       </div>
     </div>
-
   </div>
 
 
+  <div
+  class="searchmenu col-12 col-sm-12 col-md-4 col-lg-3"
+  
+>
+  <button
+    class="navbar-toggler text-secondary d-lg-none"
+    type="button"
+    data-toggle="collapse"
+    data-target="#searchlist"
+    aria-controls="collapsibleNavId"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+    dir="rtl"
+  >
+    <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
+  </button>
 
-  <div class="col-12 col-sm-5 col-md-4 col-lg-3 bg-light py-3 shadow-sm"
-    style="direction: rtl;text-align: right;right:0;">
+  <div
+    class="py-3 shadow-sm"
+    style="direction: rtl; text-align: right"
+    id="searchlist"
+  >
     <section class="example-section">
+
       <span class="example-list-section">
-        <mat-checkbox class="example-margin" [checked]="allComplete" [color]="task.color"
-          [indeterminate]="someComplete()" (change)="setAll($event.checked)">
-          <span style="font-family: vazir;margin-right:3px">
-            {{task.name}}
+        <mat-checkbox
+          class="example-margin"
+          [checked]="allComplete"
+          [color]="task.color"
+          (click)="allcheck()"
+          [indeterminate]="someComplete()"
+          (change)="setAll($event.checked)"
+        >
+        
+          <span style="font-family: vazir; margin-right: 3px">
+            {{ task.name }}
           </span>
         </mat-checkbox>
       </span>
+
       <span class="example-list-section">
         <ul>
-          <li *ngFor="let subtask of task.subtasks" style="list-style-type: none;padding: 2px;">
-            <mat-checkbox [checked]="subtask.completed" #newcheckbox [color]="subtask.color" (click)="checkaya()" (ngModelChange)="updateAllComplete(subtask.name,$event)">
-              <span style="font-family: vazir;margin-right:3px;" dir="rtl">
-               یرند : {{subtask.name}}  
+          <li
+            *ngFor="let subtask of task.subtasks"
+            style="list-style-type: none; padding: 2px"
+          >
+            <mat-checkbox
+              [checked]="subtask.completed"
+              #newcheckbox
+              [color]="subtask.color"
+              (change)="updateAllComplete(subtask.name, $event)"
+              id="{{ subtask.name }}"
+            >
+              <span style="font-family: vazir; margin-right: 3px" dir="rtl">
+                یرند : {{ subtask.name }}
               </span>
+            </mat-checkbox>
+          </li>
+          <hr>
+          <li *ngFor="let reserve of task.reservasion">
+            <mat-checkbox [checked]="reserve.completed" 
+            (click)="reservaisonChange(reserve)">
+              
+            <span style="font-family: vazir; margin-right: 3px" dir="rtl">
+              امکان رزرو : {{ reserve.name }}
+            </span>
+
             </mat-checkbox>
           </li>
         </ul>
       </span>
+
     </section>
   </div>
+
+</div>
 
 </div>
 
