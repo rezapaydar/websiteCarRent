@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { StatusservService } from '../services/statusserv.service';
 
 @Component({
@@ -7,10 +8,11 @@ import { StatusservService } from '../services/statusserv.service';
   styleUrls: ['./header.component.sass']
 })
 export class HeaderComponent implements OnInit {
+isloggedin:Boolean = this.statusserv.isLogin;
 status=this.statusserv.name;
 disp1;
 disp2;
-  constructor(private statusserv:StatusservService) {
+  constructor(private statusserv:StatusservService,private router:Router) {
    }
 
   ngOnInit(): void {
@@ -19,8 +21,19 @@ disp2;
     
   }
 
-  login(){
-    this.statusserv.login()
+  managerprofile(){
+
+if(this.isloggedin==true){
+  this.router.navigate(['dashboard'])
+}else{
+  this.router.navigate(['login'])
+
+}
+
   }
+
+  // login(){
+  //   this.statusserv.login()
+  // }
 
 }

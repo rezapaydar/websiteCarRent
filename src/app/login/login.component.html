@@ -1,48 +1,59 @@
 <app-header></app-header>
-<div class="d-flex justify-content-center" style="padding:200px 0 100px 0;background-image: linear-gradient(to right, #92fe9d 0%, #00c9ff 100%);">
-  <form [formGroup]="newform" class="row container mx-auto" (onsubmit)="login()">
+
+<div
+  class="d-flex justify-content-center"
+  style="
+    padding: 150px 0 100px 0;
+    background-image: linear-gradient(to right, #92fe9d 0%, #00c9ff 100%);
+  "
+>
+  <form
+    [formGroup]="newform"
+    class="row container mx-auto"
+    (onsubmit)="login()"
+  >
+
+  <div class="toggler-link d-flex mx-auto col-12 justify-content-center" >
+    <a class=" p-5">
+      <p [@openClose]="isbig ? 'big' : 'small'">ورود</p>
+    </a>
+    <span style="line-height: 100px;">/</span>
+    <a class=" p-5" (click)="toggleRegister()" [@openClose]="isbig ? 'small' : 'big'">
+      <p>ثبت نام</p>
+    </a>
+</div>
 
     <p class="col-12 col-lg-7 mx-auto">
-      <mat-form-field appearance="fill" style="width: 100%;">
+      <mat-form-field appearance="fill" style="width: 100%">
         <mat-label>نام کاربری یا ایمیل</mat-label>
-        <input matInput placeholder="username" formControlName="username">
+        <input matInput placeholder="username" formControlName="username" />
         <mat-icon matSuffix>account_circle</mat-icon>
         <!-- <mat-hint *ngIf="f.username.errors.required">نام کاربری احتیاج است</mat-hint> -->
       </mat-form-field>
     </p>
 
     <p class="col-12 col-lg-7 mx-auto">
-      <mat-form-field appearance="fill" style="width: 100%;">
+      <mat-form-field appearance="fill" style="width: 100%">
         <mat-label>گزرواژه</mat-label>
-        <input matInput formControlName="password" type="password">
+        <input matInput formControlName="password" type="password" />
         <mat-icon matSuffix>vpn_key</mat-icon>
         <!-- <mat-hint *ngIf="f.password.errors.required">گذرواژه نیاز است</mat-hint>
         <mat-hint *ngIf="f.password.errors.minlength">حداقل 8 کاراکتر نیاز است</mat-hint> -->
       </mat-form-field>
     </p>
 
-    <div class="formsignup col-12  row" formGroupName="signup">
-
-      <div class="col-12 col-lg-7 mx-auto" style="direction: rtl;text-align: right;">
-        <mat-checkbox #signcheck formControlName="signupcheck">ثبت نام نکرده ام</mat-checkbox>
-      </div>
-
-      <p class="col-12 col-lg-7 mx-auto">
-        <mat-form-field appearance="fill" style="width: 100%;" *ngIf="signcheck.checked">
-          <mat-label>ایمیل</mat-label>
-          <input matInput type="email" formControlName="emailsignup" placeholder="folan@example.com">
-          <mat-icon matSuffix>alternate_email</mat-icon>
-          <!-- <mat-hint *ngIf="f.emailsignup.errors.email">ایمیل صحیح وارد کنید!</mat-hint> -->
-        </mat-form-field>
-      </p>
-
-    </div>
-    
-      <button class="col-12 col-lg-7 mx-auto" style="font-family: vazir;" mat-raised-button color="warn"  type="submit">
-        ورود
-      </button>
-  </form>
   
+
+    <button
+      class="col-12 col-lg-7 mx-auto"
+      style="font-family: vazir"
+      mat-raised-button
+      color="warn"
+      type="submit"
+    >
+      ورود
+    </button>
+  </form>
 </div>
 
 <app-footer></app-footer>

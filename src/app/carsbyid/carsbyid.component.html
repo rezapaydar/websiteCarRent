@@ -1,0 +1,193 @@
+<app-header></app-header>
+<div
+  class="example-container"
+  [class.example-is-mobile]="mobileQuery.matches"
+  style="margin-top: 100px"
+>
+  <mat-toolbar color="primary" class="example-toolbar" dir="rtl">
+    <button mat-icon-button (click)="snav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <h1 style="font-family: vazir">مشخصات فنی</h1>
+  </mat-toolbar>
+  <mat-drawer-container
+    class="example-container p-5 row"
+    dir="rtl"
+    style="margin-top: 50px; background: white"
+  >
+    <mat-drawer
+      opened
+      #snav
+      [mode]="mobileQuery.matches ? 'over' : 'side'"
+      fixedTopGap="56"
+      class="p-5"
+    >
+      <label class="text-right">مشخصات فنی:</label>
+      <ul class="text-right">
+        <li>air bag</li>
+        <li>ترمز abs</li>
+        <li>ساندروف</li>
+        <li>صندلی های راحتی</li>
+        <li>کولر و بخاری</li>
+      </ul>
+      <label class="text-right">قابلیت رزرو:</label>
+      <ul class="text-right">
+        <li *ngFor="let item of getcar">
+          <div class="price-cont">
+            <p class="text-center" style="font-size: 15px; direction: rtl">
+              امکان رزرو روزانه :
+              <span
+                class="d-inline"
+                [ngClass]="{
+                  'text-success': item.daily == true,
+                  'text-danger': item.daily == false
+                }"
+                >{{ item.daily | trueStr }}</span
+              >
+              <br />
+              امکان رزرو هفتگی :
+              <span
+                class="d-inline"
+                [ngClass]="{
+                  'text-success': item.weeky == true,
+                  'text-danger': item.weeky == false
+                }"
+                >{{ item.weeky | trueStr }}</span
+              >
+              <br />
+              امکان رزرو ماهانه :
+              <span
+                class="d-inline"
+                [ngClass]="{
+                  'text-success': item.monthy == true,
+                  'text-danger': item.monthy == false
+                }"
+                >{{ item.monthy | trueStr }}</span
+              >
+            </p>
+          </div>
+        </li>
+      </ul>
+    </mat-drawer>
+    <mat-drawer-content class="">
+      <div class="div p-5 row" *ngFor="let item of getcar">
+        <img [src]="item.img" alt="" class="col-12 col-lg-6" id="carimg" />
+        <div class="title col-12 col-lg-6">
+          <h1 class="text-right">{{ item.name }}</h1>
+          <p class="text-muted text-right">{{ item.brand }}</p>
+        </div>
+        <p class="text-right">
+          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
+          استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در
+          ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و
+          کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی
+          در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می
+          طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی
+          الخصوص طراحان خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد، در این
+          صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها، و
+          شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای
+          اصلی، و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده
+          قرار گیرد.
+        </p>
+        <div class="reservation">
+          <div>
+            <label>دوره زمانی رزرو</label>
+            <mat-radio-group
+              [formControl]="formC"
+              (change)="periodOfReservasion()"
+            >
+              <mat-radio-button *ngIf="item.daily" class="p-3" value="daily"
+                >روزانه</mat-radio-button
+              >
+              <mat-radio-button *ngIf="item.weeky" class="p-3" value="weeky"
+                >هفتگی</mat-radio-button
+              >
+              <mat-radio-button *ngIf="item.monthy" class="p-3" value="monphy"
+                >ماهانه</mat-radio-button
+              >
+            </mat-radio-group>
+          </div>
+
+          <div
+            class="
+              w-100
+              row
+              d-flex
+              flex-column flex-lg-row
+              justify-content-center
+            "
+            dir="rtl"
+          >
+            <p class="col-12 col-lg-8">
+              <mat-form-field appearance="fill" style="width: 130%">
+                <label class="text-right"> روز و ساعت تحویل</label>
+                <input type="text" #datepickerInput class="w-100" matInput />
+                <ng-persian-datepicker
+                  class="w-50 h-100"
+                  [input]="datepickerInput"
+                  [uiTheme]="'light'"
+                  [timeMeridian]="true"
+                  #picker
+                ></ng-persian-datepicker>
+              </mat-form-field>
+            </p>
+
+            <p class="col-12 col-lg-8">
+              <mat-form-field appearance="fill" style="width: 130%">
+                <label class="text-right"> روز و ساعت عودت</label>
+                <input type="text" #datepickerrr class="w-100" matInput />
+                <ng-persian-datepicker
+                  class="h-100"
+                  style="width: 150px"
+                  [input]="datepickerrr"
+                  [uiTheme]="'light'"
+                  [timeMeridian]="true"
+                ></ng-persian-datepicker>
+              </mat-form-field>
+            </p>
+            <!-- 
+            <div
+              class="example-ripple-container mat-elevation-z4"
+              matRipple
+              [matRippleCentered]="centered"
+              [matRippleDisabled]="disabled"
+              [matRippleUnbounded]="unbounded"
+              [matRippleRadius]="radius"
+              [matRippleColor]="color"
+            >
+              Click me
+            </div> -->
+
+            <div class="col-12 col-lg-8 d-flex justify-content-center">
+              <button
+                mat-flat-button
+                color="accent"
+                style="background: #3700b3; font-family: vazir; color: white"
+              >
+                خواندن قوانین و مقررات
+              </button>
+              <button
+                mat-flat-button
+                style="background: #259b24; font-family: vazir; color: white"
+              >
+                خواندم و موافقم <mat-icon>done</mat-icon>
+              </button>
+            </div>
+            <div class="col-12 col-lg-8 m-3 d-flex justify-content-center">
+              <button
+                mat-flat-button
+                class="w-100"
+                color="warn"
+                [matRippleCentered]="centered"
+                style="font-family: vazir; color: white"
+              >
+                ثبت سفارش
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-drawer-content>
+  </mat-drawer-container>
+</div>
+<app-footer></app-footer>

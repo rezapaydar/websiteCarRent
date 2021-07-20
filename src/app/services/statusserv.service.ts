@@ -28,6 +28,6 @@ export class StatusservService {
   }
 
   register() {
-    this.isRegister = true
+    this.isRegister = true;
   }
 }

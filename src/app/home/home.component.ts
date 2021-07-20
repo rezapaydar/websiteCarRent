@@ -6,6 +6,7 @@ import { timeServe } from "../models/times";
 import { HomeservService } from '../services/homeserv.service';
 import { StatusservService } from '../services/statusserv.service';
 import { SwiperComponent } from "swiper/angular";
+import { Router } from "@angular/router";
 import Swal from 'sweetalert2'
 
 // import {MatCarouselSlide} from "@ngmodule/material-carousel"
@@ -13,6 +14,7 @@ import { cars } from '../models/cars';
 import { Articles } from "../models/articles";
 
 import SwiperCore, { Parallax, Pagination, Navigation } from "swiper/core";
+import { Title } from '@angular/platform-browser';
 
 // install Swiper modules
 SwiperCore.use([Parallax, Pagination, Navigation]);
@@ -41,13 +43,19 @@ export class HomeComponent implements OnInit {
 
   types: TypesOfCar[] = [];
   cities: cities[] = [];
-  timesServ: timeServe[] = [];
+  timesServ = [];
   benz: cars[] = [];
   toyota: cars[] = [];
   bmw: cars[] = [];
   hyu: cars[] = [];
   kia: cars[] = [];
   porsche: cars[] = [];
+
+
+
+  public setTitle(newTitle: string) {
+    this.titleService.setTitle(newTitle);
+  }
 
   // @HostListener('click', ['$event.target'])
   onClickCities(e) {
@@ -126,7 +134,7 @@ export class HomeComponent implements OnInit {
     this.timeSel.nativeElement.style = "display:flex";
   }
 
-  constructor(private fb: FormBuilder, private homeServ: HomeservService, private statusserv: StatusservService) {
+  constructor(public router:Router,private fb: FormBuilder, private homeServ: HomeservService, private statusserv: StatusservService,public titleService:Title) {
 
     this.formSearcher = this.fb.group({
       citySel: [''],
@@ -156,84 +164,65 @@ export class HomeComponent implements OnInit {
     ]
 
     this.timesServ = [
-      { hour: "10", minute: "00" },
-      { hour: "10", minute: "30" },
-      { hour: "11", minute: "00" },
-      { hour: "11", minute: "30" },
-      { hour: "12", minute: "00" },
-      { hour: "12", minute: "30" },
-      { hour: "13", minute: "00" },
-      { hour: "13", minute: "30" },
-      { hour: "14", minute: "00" },
-      { hour: "14", minute: "30" },
-      { hour: "15", minute: "00" },
-      { hour: "15", minute: "30" },
-      { hour: "16", minute: "00" },
-      { hour: "16", minute: "30" },
-      { hour: "17", minute: "00" },
-      { hour: "17", minute: "30" },
-      { hour: "18", minute: "00" },
-      { hour: "18", minute: "30" },
-      { hour: "19", minute: "00" },
-      { hour: "19", minute: "30" },
-      { hour: "20", minute: "00" },
-      { hour: "20", minute: "30" },
-      { hour: "21", minute: "00" },
-      { hour: "21", minute: "30" },
+      {showbe:'خیابان شریعتی ، پشت کافه حیدر'},
+      {showbe:'خیابان شریعتی ، پشت کافه حیدر'},
+      {showbe:'خیابان شریعتی ، پشت کافه حیدر'},
+      {showbe:'خیابان شریعتی ، پشت کافه حیدر'},
+      {showbe:'خیابان شریعتی ، پشت کافه حیدر'},
     ]
 
     this.benz = [
-      { name: "بنز-c200", brand: "benz", daily: true, monthy: true, weeky: true, img: "assets/images/cars/benz/benz-c200.jpg" },
-      { name: "بنز-e350", brand: "benz", daily: true, monthy: false, weeky: true, img: "assets/images/cars/benz/benz-E350.jpg" },
-      { name: "بنز-s500", brand: "benz", daily: true, monthy: true, weeky: false, img: "assets/images/cars/benz/benz-s500.jpg" },
-      { name: "بنز-sl63", brand: "benz", daily: true, monthy: true, weeky: true, img: "assets/images/cars/benz/benz-SL63.jpg" },
-      { name: "بنز-c200", brand: "benz", daily: true, monthy: true, weeky: true, img: "assets/images/cars/benz/benz-c200.jpg" },
-      { name: "بنز-e350", brand: "benz", daily: false, monthy: true, weeky: false, img: "assets/images/cars/benz/benz-E350.jpg" },
-      { name: "بنز-s500", brand: "benz", daily: true, monthy: false, weeky: true, img: "assetimages/cars/benz/benz-s500.jpg" },
-      { name: "بنز-sl63", brand: "benz", daily: true, monthy: false, weeky: true, img: "assets/images/cars/benz/benz-SL63.jpg" }
+      {id:102, name: "بنز-c200", brand: "benz", daily: true, monthy: true, weeky: true, img: "assets/images/cars/benz/benz-c200.jpg" },
+      {id:103, name: "بنز-e350", brand: "benz", daily: true, monthy: false, weeky: true, img: "assets/images/cars/benz/benz-E350.jpg" },
+      {id:104, name: "بنز-s500", brand: "benz", daily: true, monthy: true, weeky: false, img: "assets/images/cars/benz/benz-s500.jpg" },
+      {id:105, name: "بنز-sl63", brand: "benz", daily: true, monthy: true, weeky: true, img: "assets/images/cars/benz/benz-SL63.jpg" },
+      {id:106, name: "بنز-c200", brand: "benz", daily: true, monthy: true, weeky: true, img: "assets/images/cars/benz/benz-c200.jpg" },
+      {id:107, name: "بنز-e350", brand: "benz", daily: false, monthy: true, weeky: false, img: "assets/images/cars/benz/benz-E350.jpg" },
+      {id:108, name: "بنز-s500", brand: "benz", daily: true, monthy: false, weeky: true, img: "assetimages/cars/benz/benz-s500.jpg" },
+      {id:109, name: "بنز-sl63", brand: "benz", daily: true, monthy: false, weeky: true, img: "assets/images/cars/benz/benz-SL63.jpg" }
     ]
 
     this.toyota=[
-      { name: "تویوتا-land cuiser", brand: "toyota", daily: true, monthy: true, weeky: true, img: "assets/images/cars/toyota/land-cruiser.jpg" },
-      { name: "تویوتا-prrado", brand: "toyota", daily: true, monthy: false, weeky: true, img: "assets/images/cars/toyota/prrado-4-door.jpg" },
-      { name: "تویوتا-baby", brand: "toyota", daily: true, monthy: true, weeky: false, img: "assets/images/cars/toyota/toyota-baby.jpg" },
-      { name: "تویوتا-camry", brand: "toyota", daily: true, monthy: true, weeky: true, img: "assets/images/cars/toyota/toyota-camry.jpg" },
-      { name: "تویوتا-tuscon", brand: "toyota", daily: true, monthy: true, weeky: true, img: "assets/images/cars/toyota/tuscon.jpg" },
-      { name: "تویوتا-land cuiser", brand: "toyota", daily: false, monthy: true, weeky: false, img: "assets/images/cars/toyota/land-cruiser.jpg" },
-      { name: "تویوتا-prrado", brand: "toyota", daily: true, monthy: false, weeky: true, img: "assets/images/cars/toyota/prrado-4-door.jpg" },
-      { name: "تویوتا-baby", brand: "toyota", daily: true, monthy: false, weeky: true, img: "assets/images/cars/toyota/toyota-baby.jpg" }
+      {id:110, name: "تویوتا-land cuiser", brand: "toyota", daily: true, monthy: true, weeky: true, img: "assets/images/cars/toyota/land-cruiser.jpg" },
+      {id:111, name: "تویوتا-prrado", brand: "toyota", daily: true, monthy: false, weeky: true, img: "assets/images/cars/toyota/prrado-4-door.jpg" },
+      {id:112, name: "تویوتا-baby", brand: "toyota", daily: true, monthy: true, weeky: false, img: "assets/images/cars/toyota/toyota-baby.jpg" },
+      {id:113, name: "تویوتا-camry", brand: "toyota", daily: true, monthy: true, weeky: true, img: "assets/images/cars/toyota/toyota-camry.jpg" },
+      {id:114, name: "تویوتا-tuscon", brand: "toyota", daily: true, monthy: true, weeky: true, img: "assets/images/cars/toyota/tuscon.jpg" },
+      {id:115, name: "تویوتا-land cuiser", brand: "toyota", daily: false, monthy: true, weeky: false, img: "assets/images/cars/toyota/land-cruiser.jpg" },
+      {id:116, name: "تویوتا-prrado", brand: "toyota", daily: true, monthy: false, weeky: true, img: "assets/images/cars/toyota/prrado-4-door.jpg" },
+      {id:117, name: "تویوتا-baby", brand: "toyota", daily: true, monthy: false, weeky: true, img: "assets/images/cars/toyota/toyota-baby.jpg" }
     ]
 
     this.bmw=[
-      { name: "bmw-528", brand: "bmw", daily: true, monthy: true, weeky: true, img: "assets/images/cars/bmw/bmw-528.jpeg" },
-      { name: "bmw-i8", brand: "bmw", daily: true, monthy: false, weeky: true, img: "assets/images/cars/bmw/bmw-i8.jpg" },
-      { name: "bmw-x1", brand: "bmw", daily: true, monthy: true, weeky: false, img: "assets/images/cars/bmw/bmw-x1.jpg" },
-      { name: "bmw-x4", brand: "bmw", daily: true, monthy: true, weeky: true, img: "assets/images/cars/bmw/bmw-x4.jpg" },
-      { name: "bmw-528", brand: "bmw", daily: true, monthy: true, weeky: true, img: "assets/images/cars/bmw/bmw-528.jpeg" },
-      { name: "bmw-i8", brand: "bmw", daily: false, monthy: true, weeky: false, img: "assets/images/cars/bmw/bmw-i8.jpg" },
-      { name: "bmw-x1", brand: "bmw", daily: true, monthy: false, weeky: true, img: "assets/images/cars/bmw/bmw-x1.jpg" },
-      { name: "bmw-x4", brand: "bmw", daily: true, monthy: false, weeky: true, img: "assets/images/cars/bmw/bmw-x4.jpg" }
+      {id:118, name: "bmw-528", brand: "bmw", daily: true, monthy: true, weeky: true, img: "assets/images/cars/bmw/bmw-528.jpeg" },
+      {id:119, name: "bmw-i8", brand: "bmw", daily: true, monthy: false, weeky: true, img: "assets/images/cars/bmw/bmw-i8.jpg" },
+      {id:120, name: "bmw-x1", brand: "bmw", daily: true, monthy: true, weeky: false, img: "assets/images/cars/bmw/bmw-x1.jpg" },
+      {id:121, name: "bmw-x4", brand: "bmw", daily: true, monthy: true, weeky: true, img: "assets/images/cars/bmw/bmw-x4.jpg" },
+      {id:122, name: "bmw-528", brand: "bmw", daily: true, monthy: true, weeky: true, img: "assets/images/cars/bmw/bmw-528.jpeg" },
+      {id:123, name: "bmw-i8", brand: "bmw", daily: false, monthy: true, weeky: false, img: "assets/images/cars/bmw/bmw-i8.jpg" },
+      {id:124, name: "bmw-x1", brand: "bmw", daily: true, monthy: false, weeky: true, img: "assets/images/cars/bmw/bmw-x1.jpg" },
+      {id:125, name: "bmw-x4", brand: "bmw", daily: true, monthy: false, weeky: true, img: "assets/images/cars/bmw/bmw-x4.jpg" }
     ]
 
     this.hyu=[
-      { name: "hyundai-genesis", brand: "hyundai", daily: true, monthy: true, weeky: true, img: "assets/images/cars/hyu/hyundai-genesis.jpg" },
-      { name: "hyundai-santa-fe", brand: "hyundai", daily: true, monthy: true, weeky: true, img: "assets/images/cars/hyu/hyundai-santa-fe.jpg" },
-      { name: "hyundai-sonata", brand: "hyundai", daily: true, monthy: true, weeky: true, img: "assets/images/cars/hyu/hyundai-sonata.jpg" },
+      {id:126, name: "hyundai-genesis", brand: "hyundai", daily: true, monthy: true, weeky: true, img: "assets/images/cars/hyu/hyundai-genesis.jpg" },
+      {id:127, name: "hyundai-santa-fe", brand: "hyundai", daily: true, monthy: true, weeky: true, img: "assets/images/cars/hyu/hyundai-santa-fe.jpg" },
+      {id:128, name: "hyundai-sonata", brand: "hyundai", daily: true, monthy: true, weeky: true, img: "assets/images/cars/hyu/hyundai-sonata.jpg" },
 
     ]
 
     this.porsche=[
-      { name: "porsche-boxster", brand: "porsche", daily: false, monthy: true, weeky: true, img: "assets/images/cars/porsche/porsche-boxster.jpg" },
-      { name: "porsche-cayenne", brand: "porsche", daily: true, monthy: false, weeky: true, img: "assets/images/cars/porsche/porsche-cayenne.jpg" },
-      { name: "porsche-macan", brand: "porsche", daily: true, monthy: true, weeky: true, img: "assets/images/cars/porsche/porsche-macan.jpg" },
-      { name: "porsche-panamera", brand: "porsche", daily: true, monthy: false, weeky: false, img: "assets/images/cars/porsche/porsche-panamera.jpg" },
+      {id:129, name: "porsche-boxster", brand: "porsche", daily: false, monthy: true, weeky: true, img: "assets/images/cars/porsche/porsche-boxster.jpg" },
+      {id:130, name: "porsche-cayenne", brand: "porsche", daily: true, monthy: false, weeky: true, img: "assets/images/cars/porsche/porsche-cayenne.jpg" },
+      {id:131, name: "porsche-macan", brand: "porsche", daily: true, monthy: true, weeky: true, img: "assets/images/cars/porsche/porsche-macan.jpg" },
+      {id:132, name: "porsche-panamera", brand: "porsche", daily: true, monthy: false, weeky: false, img: "assets/images/cars/porsche/porsche-panamera.jpg" },
     ]
 
     this.kia=[
-      { name: "kia-cerato", brand: "kia", daily: false, monthy: true, weeky: true, img: "assets/images/cars/kia/kia-cerato.jpg" },
-      { name: "kia-sorento", brand: "kia", daily: false, monthy: true, weeky: true, img: "assets/images/cars/kia/kia-sorento.jpg" },
-      { name: "optima", brand: "kia", daily: true, monthy: false, weeky: false, img: "assets/images/cars/kia/optima.jpg" },
-      { name: "sportage", brand: "kia", daily: true, monthy: true, weeky: false, img: "assets/images/cars/kia/sportage.jpg" },
+      {id:133, name: "kia-cerato", brand: "kia", daily: false, monthy: true, weeky: true, img: "assets/images/cars/kia/kia-cerato.jpg" },
+      {id:134, name: "kia-sorento", brand: "kia", daily: false, monthy: true, weeky: true, img: "assets/images/cars/kia/kia-sorento.jpg" },
+      {id:135, name: "optima", brand: "kia", daily: true, monthy: false, weeky: false, img: "assets/images/cars/kia/optima.jpg" },
+      {id:136, name: "sportage", brand: "kia", daily: true, monthy: true, weeky: false, img: "assets/images/cars/kia/sportage.jpg" },
 
     ]
   }
@@ -244,6 +233,8 @@ export class HomeComponent implements OnInit {
 
 
   ngOnInit(): void {
+
+    this.setTitle('خانه / کارنتال')
 
     if (localStorage.getItem("isLogin") === "false") {
       // console.log('fuckkkkkk');
@@ -269,6 +260,10 @@ export class HomeComponent implements OnInit {
   }
   onSlideChange() {
     console.log('slide change');
+  }
+
+  gotoreserve(item){
+    this.router.navigate(['/cars'],{queryParams:{id:item.id}})
   }
 
 }

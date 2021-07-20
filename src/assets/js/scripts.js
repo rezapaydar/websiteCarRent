@@ -74,6 +74,7 @@ document.addEventListener('scroll', function () {
         else {
 
             $('img[alt="bg-down"]').css("display", "block")
+            $('img[alt="bg-down"]').css("transform", "translateX(500px)")
 
 
         }
@@ -105,8 +106,8 @@ window.addEventListener("scroll", () => {
         $('header#headsite').css("top", "0px");
         $('header#headsite').css("background", "#fcfcfc");
         $('header#headsite').css("box-shadow", "20px 20px 60px #bebebe,-20px -20px 60px #ffffff");
-      
-      
+
+
         // $('div.searchmenu').css("position", "fixed");
         // $('div.searchmenu').css("transition", "0.3s");
         // $('div.searchmenu').css("top", "300px");
@@ -139,3 +140,22 @@ let collSearch = document.querySelector('#coll-search-menu3');
 collSearch.addEventListener('hover', () => {
     $(timesone).css("display", "block")
 })
+
+
+$(document).ready(function () {
+    $('.minus').click(function () {
+        var $input = $(this).parent().find('input');
+        var count = parseInt($input.val()) - 1;
+        count = count < 1 ? 1 : count;
+        $input.val(count);
+        $input.change();
+        return false;
+    });
+    $('.plus').click(function () {
+        var $input = $(this).parent().find('input');
+        $input.val(parseInt($input.val()) + 1);
+        $input.change();
+        return false;
+    });
+});
+

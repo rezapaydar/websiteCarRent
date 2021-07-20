@@ -1,0 +1,142 @@
+<app-header></app-header>
+<div
+  class="d-flex justify-content-center"
+  style="
+    padding: 200px 0 100px 0;
+    background-image: linear-gradient(to right, #92fe9d 0%, #00c9ff 100%);
+  "
+>
+  <form [formGroup]="newform" class="row container mx-auto">
+    
+    <div class="toggler-link d-flex mx-auto col-12 justify-content-center">
+      <a class="p-5" (click)="toggleRegister()">
+        <p [@openClose]="isbig ? 'small' : 'big'">ورود</p>
+      </a>
+      <span style="line-height: 100px">/</span>
+      <a
+        class="p-5"
+        (click)="toggleRegister()"
+        [@openClose]="isbig ? 'big' : 'small'"
+      >
+        <p>ثبت نام</p>
+      </a>
+    </div>
+
+    <div class="col-12 col-lg-6 mx-auto">
+      <mat-form-field appearance="outline" style="width: 100%">
+        <input matInput placeholder="نام" formControlName="name" />
+        <mat-icon matSuffix>person</mat-icon>
+        <!-- <mat-hint *ngIf="f.username.errors.required">نام کاربری احتیاج است</mat-hint> -->
+      </mat-form-field>
+    </div>
+
+    <p class="col-12 col-lg-6 mx-auto">
+      <mat-form-field appearance="outline" style="width: 100%">
+        <input matInput formControlName="family" placeholder="نام خانوادگی" type="text" />
+        <mat-icon matSuffix>group</mat-icon>
+      </mat-form-field>
+    </p>
+
+    <p class="col-12 col-lg-7 mx-auto">
+      <mat-form-field appearance="outline" style="width: 100%">
+        <input
+          matInput
+          type="email"
+          formControlName="email"
+          placeholder="folan@example.com"
+        />
+        <mat-icon matSuffix>alternate_email</mat-icon>
+        <!-- <mat-hint *ngIf="f.emailsignup.errors.email">ایمیل صحیح وارد کنید!</mat-hint> -->
+      </mat-form-field>
+    </p>
+
+    <p class="col-12 col-lg-7 mx-auto">
+      <mat-form-field appearance="outline" style="width: 100%">
+        <mat-label>موبایل</mat-label>
+        <input
+          matInput
+          type="text"
+          placeholder="موبایل"
+          formControlName="mobile"
+        />
+        <mat-icon matSuffix>phone</mat-icon>
+      </mat-form-field>
+    </p>
+
+    <p class="col-12 col-lg-7 mx-auto">
+      <mat-form-field appearance="outline" style="width: 100%">
+        <mat-label>گذرواژه</mat-label>
+        <input
+          matInput
+          [type]="hide ? 'password' : 'text'"
+          placeholder="گذرواژه"
+          formControlName="password"
+          #password
+          (input)="powermetter(password.value)"
+        />
+        <button
+          mat-icon-button
+          matSuffix
+          (click)="hide = !hide"
+          [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide"
+        >
+          <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+        </button>
+      </mat-form-field>
+    </p>
+
+    <label class="mx-auto col-12 col-lg-7 text-right">
+      گذروازه باید شامل
+      <ul dir="rtl" style="list-style-type: none;">
+        <li>10 کاراکتر</li>
+        <li>1 کاراکتر بزرگ</li>
+        <li>1 عدد</li>
+        <li>(#,%) 1 کاراکتر ویژه</li>
+      </ul>
+    </label>
+
+    <label class="mx-auto col-12 col-lg-7 text-center">{{
+      powerpass | powermetter
+    }}</label>
+    <div class="progress col-12 col-lg-7 mx-auto">
+      <div
+        class="progress-bar progress-bar-striped progress-bar-animated"
+        [ngClass]="{
+          'bg-danger': powerpass == 30,
+          'bg-warning': powerpass == 70,
+          'bg-success': powerpass == 100,
+          'w-25': powerpass == 30,
+          'w-75': powerpass == 70,
+          'w-100': powerpass == 100
+        }"
+      ></div>
+    </div>
+
+    <p class="col-12 col-lg-7 mx-auto" >
+      <mat-form-field appearance="outline" style="width: 100%">
+        <mat-label>تکرار گذرواژه</mat-label>
+        <input
+          matInput
+          type="password"
+          placeholder=" تکرار گذرواژه  "
+          formControlName="passwordRepeat"
+          [type]="hide ? 'password' : 'text'"
+        />
+        <mat-icon matSuffix>vpn_key</mat-icon>
+      </mat-form-field>
+    </p>
+
+    <button
+      class="col-12 col-lg-7 mx-auto"
+      style="font-family: vazir"
+      mat-raised-button
+      color="warn"
+      type="submit"
+    >
+      ثبت نام
+    </button>
+  </form>
+</div>
+
+<app-footer></app-footer>

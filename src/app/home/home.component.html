@@ -1,90 +1,27 @@
 <app-header></app-header>
-<div id="img-cont" class="w-auto img-container">
-    <img src="assets/images/22.jpg" alt="bg-down" class="w-100" style="display: none;">
+<div id="img-cont" class="w-auto img-container" style="overflow:visible;">
+    <img src="assets/images/22.jpg" alt="bg-down"  style="display: none;">
 </div>
 <div class="loading-div-timing" id="loading-div-timing">
     <mat-spinner class="loading-div" color="warn"></mat-spinner>
   </div>
 <header class="w-100" id="head" >
     <div class="logo">
-        <div class="logo-text" style="padding-top: 150px;">
+        <div class="logo-text" style="padding-top: 100px;">
             <a class="navbar-brand h2" id="logo-abisefid" style="color: white;" href="#">ل<span
-                    style="color: aqua;">و</span>گو</a>
+                style="color: aqua;">و</span>گو</a>
             <p style="color:white;text-align: center;" class="h6">شعار وب سایت ما این است</p>
             <div class="lorem">
-                <p class="w-50 text-white text-center">لورم ایپسوم متن ساختگی با
-                    تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه
-                </p>
+                <h5 class="w-50 text-white text-center" style="line-height: 200%;">
+                    <ngx-typed-js [strings]="['امن برای معاملات', 'پر قدرت ', 'با بهترین امکانات']" [shuffle]="true" [loop]="true" 
+                    [typeSpeed]="130">
+                      کارنتال وب سایتی   <span class="typing bg-success p-1"></span>
+                      </ngx-typed-js>
+                    </h5>
             </div>
         </div>
     </div>
 
-
-    <form [formGroup]="formSearcher" style="position: relative;top: -30px;">
-        <div id="cont-search" >
-
-            <div
-                class="search-box-combo  d-flex flex-column flex-sm-row-reverse justify-content-between h-auto py-3 w-75 mx-auto rounded" style="color: black !important;">
-
-                <div class="coll-search-menu w-100 w-lg-25 bg-light m-1" id="coll-search-menu1">
-                    <p class="text-search-menu"> اجاره استان </p>
-                    <div class="icon-down-arrow dropdown">
-                        <i class="fas fa-times-circle " id="fa-times-circle1" data-toggle="dropdown" [style]="disp" (click)="closeicon1()"></i>
-                        <input type="text" class="cityname dropdown-toggle" [style]="disp" formControlName="citySel">
-                        <img src="assets/images/down-arrow.svg" (click)="cityOpen()">
-                        <div class="cities dropdown-menu">
-                                <a class="dropdown-item"  *ngFor="let item of cities" (click)='onClickCities($event)'>{{item.titleCity}}</a>
-                        </div>
-                    </div>
-                </div>
-
-                
-
-                <div class="coll-search-menu w-100 w-lg-25 bg-light m-1" id="coll-search-menu2">
-                    <p class="text-search-menu">نوع ماشین</p>
-                    <div class="icon-down-arrow">
-                        <i class="fas fa-times-circle dropdown-toggle" data-toggle="dropdown" id="fa-times-circle2" [style]="disp1" data-toggle="dropdown" (click)="closeicon2()"></i>
-                        <input type="text" class="cityname d-inline "  [style]="disp1" formControlName="typeSel">
-                        <img src="assets/images/down-arrow.svg" (click)="typeOpen()">
-                        <div class="types dropdown-menu" >
-                            
-                                <a class="dropdown-item" *ngFor="let item of types" (click)='onClickTypes($event)'>{{item.titleType}}</a>
-                            
-                        </div>
-                    </div>
-                </div>
-
-                <div class="coll-search-menu w-100 w-lg-25 bg-light m-1" id="coll-search-menu3">
-                    <p class="text-search-menu">زمان اجاره</p>
-                    <div class="icon-down-arrow">
-                        <i class="fas fa-times-circle dropdown-toggle" data-toggle="dropdown" id="fa-times-circle2" [style]="disp2" (click)="closeicon3()"></i>
-                        <input type="text" class="cityname" [style]="disp2" formControlName="timeSel">
-                        <img src="assets/images/down-arrow.svg" (click)="timeOpen()">
-                        <div class="timesone dropdown-menu" >
-                            
-                                <a class="dropdown-item" *ngFor="let item of timesServ" (click)='onClickTimes($event)'>
-                                    {{item.hour}}:{{item.minute}}</a>
-                         
-                        </div>
-                    </div>
-                </div>
-
-                <div class="coll-search-menu  w-100 w-lg-25 rtl" id="btnsub">
-
-                    <button class="btn-primary rounded-right btn-search shadow-lg">
-                        <div class="img-counter-arrow-left">
-                            &larr;
-                        </div>
-                        <p>جست و جو</p>
-                    </button>
-
-
-                </div>
-
-            </div>
-
-        </div>
-    </form>
     
 
     <!-- </div> -->
@@ -293,7 +230,7 @@
                                     [ngClass]="{'text-success': item.monthy==true,'text-danger': item.monthy==false}">{{item.monthy|trueStr}}</span>
 
                         </div>
-                        <button class="btn w-100" id="reg" style="position: relative;top: 0;"> رزرو کنید</button>
+                        <button class="btn w-100" id="reg" style="position: relative;top: 0;" (click)="gotoreserve(item)"> رزرو کنید</button>
                     </div>
 
                 </ng-template>
@@ -368,7 +305,7 @@
                                         [ngClass]="{'text-success': item.monthy==true,'text-danger': item.monthy==false}">{{item.monthy|trueStr}}</span>
 
                             </div>
-                            <button class="btn w-100" id="reg" style="position: relative;top: 0;"> رزرو کنید</button>
+                            <button class="btn w-100" id="reg" style="position: relative;top: 0;" (click)="gotoreserve(item)"> رزرو کنید</button>
                         </div>
 
                     </ng-template>
@@ -446,7 +383,7 @@
                                         [ngClass]="{'text-success': item.monthy==true,'text-danger': item.monthy==false}">{{item.monthy|trueStr}}</span>
 
                             </div>
-                            <button class="btn w-100" id="reg" style="position: relative;top: 0;"> رزرو کنید</button>
+                            <button class="btn w-100" id="reg" style="position: relative;top: 0;" (click)="gotoreserve(item)"> رزرو کنید</button>
                         </div>
 
                     </ng-template>

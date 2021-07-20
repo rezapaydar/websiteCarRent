@@ -3,11 +3,11 @@ body{
     overflow-x: hidden;
 }
 header#head{
-    background: url("../images/headerbg.png")no-repeat;
-    background-position:0px -50px;
+    background: url("../images/headerbg.jpg")no-repeat;
+    /* background-position:0px -50px; */
     /* background-position: 10px 0; */
     background-size: cover;
-    height:100vh;
+    height:110vh;
     overflow: visible;
 
 }
@@ -218,9 +218,9 @@ h1,h2,h3,h4,h5,h6,span{
     transform: rotate(-90deg);
 } */
 
-.input-group-prepend: {
+/* .input-group-prepend: {
     transform: rotate(-90deg);
-}
+} */
 
 .date-time-picker input, .date-time-picker button {
     width: 180px;
@@ -451,19 +451,7 @@ box-shadow: 0 15px 10px 5px rgba(180, 180, 180, 0.466);
     transform: translateY(-30px);
 
 }
-/* .card-columns .card button#log, .card-columns .card button#reg{
-transform: translateY(30px);
-border-radius:20px;
-} */
-/* main>img:nth-child(3){
-transform: skew(50px 10px);
-} */
-/* .swiper-button-next ,.swiper-button-prev{
-    position: relative !important;
-    top: 0 !important;
-    left: 0 !important;
-    display: block;
-    /* transform: translateY(50px) !important; */
+
 
 img[img="one"]{
     z-index: 2;
@@ -478,9 +466,12 @@ img[img="one"]{
 }
 
 img[alt="bg-down"]{
-    /* transform: translateY(-2000px); */
+    height:150%;
     position: fixed; 
     z-index: -5; 
+    /* filter: blur(5px)grayscale(100%); */
+    transition: all 0.4s;
+    transform: translateY(-100px);
     /* display: none; */
 }
 .show{
